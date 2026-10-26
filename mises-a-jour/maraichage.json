@@ -1,0 +1,19 @@
+{
+  "version": "1.0.4",
+  "notes": "TAMTUI Maraîchage Pro 1.0.4 : améliorations et corrections. Vos données et votre licence sont conservées.",
+  "pub_date": "2026-10-26T17:46:12.027Z",
+  "platforms": {
+    "darwin-x86_64": {
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTSjYyKy85eHIrNkVNbldnVDdCeVN4ZHZSZ2NoelpJSWFReTBPRzFhdU1jYnZBZHhVZG5MMzhtQysreE9yOUZ0enU4WmVVMTBLZ1JVM2RhMnFxdmtPZ21nbmZhZlU1VXc0PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzMDM2MDU3CWZpbGU6VEFNVFVJIE1hcmHDrmNoYWdlIFByby5hcHAudGFyLmd6CmVjdXlpT09YOVJ1SlZiYWtSQVVVVmtDRHZCVHp5dFlFMmJWZUhkSDAwQ3g5dyt6WExiVU5tVzRzb3hGeWwxM3ZCcHpHYW4yQkhFeVhlM3pxOE1CUEN3PT0K",
+      "url": "https://tamtui.github.io/TAMTUI-TELECHARGEMENTS/fichiers/maraichage/TAMTUI-Maraichage-Pro-1.0.4-Mac.app.tar.gz"
+    },
+    "darwin-aarch64": {
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTSjYyKy85eHIrNkVNbldnVDdCeVN4ZHZSZ2NoelpJSWFReTBPRzFhdU1jYnZBZHhVZG5MMzhtQysreE9yOUZ0enU4WmVVMTBLZ1JVM2RhMnFxdmtPZ21nbmZhZlU1VXc0PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzMDM2MDU3CWZpbGU6VEFNVFVJIE1hcmHDrmNoYWdlIFByby5hcHAudGFyLmd6CmVjdXlpT09YOVJ1SlZiYWtSQVVVVmtDRHZCVHp5dFlFMmJWZUhkSDAwQ3g5dyt6WExiVU5tVzRzb3hGeWwxM3ZCcHpHYW4yQkhFeVhlM3pxOE1CUEN3PT0K",
+      "url": "https://tamtui.github.io/TAMTUI-TELECHARGEMENTS/fichiers/maraichage/TAMTUI-Maraichage-Pro-1.0.4-Mac.app.tar.gz"
+    },
+    "windows-x86_64": {
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTSjYyKy85eHIrNkxxRERKV3ZoZWxNckI4OEpwMW13anU1OWpkTys4ZjNFdHVKY0dUOGpvMkZYUXIwR1RHdWVwMGc3TEJYUDlxR21MRDlJTUxaQ0ZNZWVMdzVYSGdJUkF3PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzMDM2MDgwCWZpbGU6VEFNVFVJIE1hcmHDrmNoYWdlIFByb18xLjAuNF94NjQtc2V0dXAuZXhlClA1SUlDcnU4SUhST080S3pLQUh4ZjNLTDJCU3pXVk11SndtVU5McmV4ak1OS1BMUmcxU2w3SFkzTEJJYTY3OE9EVnFPUXY3WHFMWXBZN0l4UGFQa0JBPT0K",
+      "url": "https://tamtui.github.io/TAMTUI-TELECHARGEMENTS/fichiers/maraichage/TAMTUI-Maraichage-Pro-1.0.4-Windows-installateur.exe"
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "version": "2.1.5",
+  "notes": "TAMTUI Suite Pro 2.1.5 : améliorations et corrections. Vos données et votre licence sont conservées.",
+  "pub_date": "2026-10-26T17:46:02.477Z",
+  "platforms": {
+    "darwin-x86_64": {
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTSjYyKy85eHIrNkhGOWtGT1YzcjVpeFJjWitKUjZZRVRyYTBUbUx3dUFSNzlQVFVkSzFIUW1aTkVINzM4VDBRbTFxb0h3UU81OThrVlpkaGlQVHZZZktDNnhWa1h0K0FNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzMDM2MTk5CWZpbGU6VEFNVFVJIFN1aXRlIFByby5hcHAudGFyLmd6CmR6djJmbzBDUzZrNDZGUnZYL3dNbmJGbTVmYS8vK3dEelBaVE5JUWM0U1BFcDlQci8xQUZRVzg4bnJOcE5HTDhKd1d4T3VOcFE3Zmlxa051VHVRS0F3PT0K",
+      "url": "https://tamtui.github.io/TAMTUI-TELECHARGEMENTS/fichiers/agriculture/TAMTUI-Suite-Pro-2.1.5-Mac.app.tar.gz"
+    },
+    "darwin-aarch64": {
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTSjYyKy85eHIrNkhGOWtGT1YzcjVpeFJjWitKUjZZRVRyYTBUbUx3dUFSNzlQVFVkSzFIUW1aTkVINzM4VDBRbTFxb0h3UU81OThrVlpkaGlQVHZZZktDNnhWa1h0K0FNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzMDM2MTk5CWZpbGU6VEFNVFVJIFN1aXRlIFByby5hcHAudGFyLmd6CmR6djJmbzBDUzZrNDZGUnZYL3dNbmJGbTVmYS8vK3dEelBaVE5JUWM0U1BFcDlQci8xQUZRVzg4bnJOcE5HTDhKd1d4T3VOcFE3Zmlxa051VHVRS0F3PT0K",
+      "url": "https://tamtui.github.io/TAMTUI-TELECHARGEMENTS/fichiers/agriculture/TAMTUI-Suite-Pro-2.1.5-Mac.app.tar.gz"
+    },
+    "windows-x86_64": {
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTSjYyKy85eHIrNktTVnpTSG1XZmlqbm9jeFJYeE1HY3l2NGYzMnZaalM1TXZmTEZIWTFjUjZ5N2tHcFRPNXdrazhPNW54QVg4RjhmNUxlelM4c0YvaEhXYmk4aVZRR1FJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzMDM2Mjc3CWZpbGU6VEFNVFVJIFN1aXRlIFByb18yLjEuNV94NjQtc2V0dXAuZXhlCm9SbEZCaTkvNE95Nm5EaEZiNFN2dG15OWJCZ2xMc2ExM0syenRVVDFXRWRXMGZqZGRETWZnbGFtQ0piS2VJc29XL2ZqQi9qK3RVaFZlZkxsS0UzQUJBPT0K",
+      "url": "https://tamtui.github.io/TAMTUI-TELECHARGEMENTS/fichiers/agriculture/TAMTUI-Suite-Pro-2.1.5-Windows-installateur.exe"
+    }
+  }
+}

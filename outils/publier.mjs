@@ -40,15 +40,19 @@ for (const p of PRODUITS) {
   const nomExe = `${p.base}-${version}-Windows-installateur.exe`, nomDmg = `${p.base}-${version}-Mac-tous-modeles.dmg`, nomTar = `${p.base}-${version}-Mac.app.tar.gz`;
   if (!actifs[nomExe] || !actifs[nomDmg]) { console.log(`⚠ ${p.nom} ${version} : installateurs absents de la version privée, ignoré.`); continue; }
   const tag = `${p.id}-v${version}`;
-  const url = n => `https://github.com/${PUBLIC}/releases/download/${tag}/${n}`;
+  const url = n => `${SITE}/fichiers/${p.id}/${n}`;
   if (etat[p.id]?.version === version) { console.log(`= ${p.nom} ${version} déjà publié.`); continue; }
   const majAuto = Boolean(actifs[`${nomExe}.sig`] && actifs[nomTar] && actifs[`${nomTar}.sig`]);
   if (!SIMULATION) {
     const tmp = join("/tmp", `publication-${p.id}-${version}`); rmSync(tmp, { recursive: true, force: true }); mkdirSync(tmp);
     const motifs = [nomExe, nomDmg, ...(majAuto ? [`${nomExe}.sig`, nomTar, `${nomTar}.sig`] : [])];
-    gh("release", "download", rel.tag_name, "-R", p.depot, "-D", tmp, ...motifs.flatMap(m => ["-p", m]));
-    const fichiers = readdirSync(tmp).filter(f => !f.endsWith(".sig")).map(f => join(tmp, f));
-    gh("release", "create", tag, "-R", PUBLIC, "--title", `${p.nom} ${version}`, "--notes", `${p.nom} ${version} — installateurs Windows et Mac (Intel et Apple).`, ...fichiers);
+    // Les installateurs sont déposés dans le site lui-même (fichiers/<logiciel>/), servi par GitHub Pages.
+    const dossier = join(RACINE, "fichiers", p.id);
+    rmSync(dossier, { recursive: true, force: true }); mkdirSync(dossier, { recursive: true });
+    for (const m of motifs) {
+      const contenu = execFileSync("gh", ["api", `repos/${p.depot}/releases/assets/${actifs[m].id}`, "-H", "Accept: application/octet-stream"], { maxBuffer: 1 << 30 });
+      writeFileSync(join(m.endsWith(".sig") ? tmp : dossier, m), contenu);
+    }
     if (majAuto) {
       const sig = n => readFileSync(join(tmp, n), "utf8").trim();
       const mac = { signature: sig(`${nomTar}.sig`), url: url(nomTar) };
