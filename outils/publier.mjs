@@ -1,9 +1,10 @@
 // Publication des logiciels TAMTUI sur la page de téléchargement publique (GitHub Pages).
 // Pour chaque logiciel : lit la dernière version publiée dans son dépôt PRIVÉ, copie les installateurs
-// dans une version du dépôt PUBLIC TAMTUI-TELECHARGEMENTS, écrit le fichier de mise à jour automatique
+// dans le site (fichiers/<logiciel>/), écrit le fichier de mise à jour automatique
 // (mises-a-jour/<logiciel>.json) et régénère la page index.html.
 //
 //   node outils/publier.mjs               publie les nouvelles versions, puis commit et push
+//   Bouton GitHub : onglet Actions › Publier (workflow publier.yml), variable NOTES = « Quoi de neuf ».
 //   node outils/publier.mjs --simulation  ne copie rien : régénère seulement la page (aperçu)
 import { execFileSync } from "node:child_process";
 import { existsSync, mkdirSync, readFileSync, readdirSync, rmSync, statSync, writeFileSync } from "node:fs";
@@ -56,7 +57,7 @@ for (const p of PRODUITS) {
     if (majAuto) {
       const sig = n => readFileSync(join(tmp, n), "utf8").trim();
       const mac = { signature: sig(`${nomTar}.sig`), url: url(nomTar) };
-      const manifeste = { version, notes: `${p.nom} ${version} : améliorations et corrections. Vos données et votre licence sont conservées.`, pub_date: new Date().toISOString(),
+      const manifeste = { version, notes: process.env.NOTES?.trim() || `${p.nom} ${version} : améliorations et corrections. Vos données et votre licence sont conservées.`, pub_date: new Date().toISOString(),
         platforms: { "darwin-x86_64": mac, "darwin-aarch64": mac, "windows-x86_64": { signature: sig(`${nomExe}.sig`), url: url(nomExe) } } };
       mkdirSync(join(RACINE, "mises-a-jour"), { recursive: true });
       writeFileSync(join(RACINE, "mises-a-jour", `${p.id}.json`), JSON.stringify(manifeste, null, 2) + "\n");

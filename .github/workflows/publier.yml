@@ -1,0 +1,39 @@
+name: Publier
+# Bouton « Publier » (onglet Actions) : copie sur la page de téléchargement les dernières versions
+# fabriquées des 4 logiciels, et active leur mise à jour automatique.
+# Ce dépôt est public : ses minutes de fabrication GitHub sont gratuites et illimitées.
+on:
+  workflow_dispatch:
+    inputs:
+      nouveautes:
+        description: "Quoi de neuf ? (texte montré aux utilisateurs dans le bandeau de mise à jour, facultatif)"
+        required: false
+        type: string
+permissions:
+  contents: write
+jobs:
+  publier:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - name: Publier les nouvelles versions
+        env:
+          # Clé d'accès en lecture seule aux 4 dépôts privés (secret LECTURE_DEPOTS_PRIVES).
+          GH_TOKEN: ${{ secrets.LECTURE_DEPOTS_PRIVES }}
+          NOTES: ${{ inputs.nouveautes }}
+        run: |
+          if [ -z "$GH_TOKEN" ]; then
+            echo "::error::Le secret LECTURE_DEPOTS_PRIVES est absent. Suivez l'étape « Installation, une seule fois » du guide."
+            exit 1
+          fi
+          for d in TAMTUI-AGRICULTURE-PRO-13 TAMTUI-ELEVAGE-PRO TAMTUI-PISCICULTURE-PRO TAMTUI-MARAICHAGE-PRO; do
+            if ! gh api "repos/Tamtui/$d" --jq .name >/dev/null 2>&1; then
+              echo "::error::La clé d'accès LECTURE_DEPOTS_PRIVES ne peut pas lire $d (clé expirée ou dépôt non coché). Refaites une clé d'accès comme indiqué dans le guide."
+              exit 1
+            fi
+          done
+          git config user.name "TAMTUI"
+          git config user.email "tamtui@users.noreply.github.com"
+          node outils/publier.mjs
