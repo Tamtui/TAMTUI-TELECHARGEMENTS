@@ -1,0 +1,135 @@
+// Publication des logiciels TAMTUI sur la page de téléchargement publique (GitHub Pages).
+// Pour chaque logiciel : lit la dernière version publiée dans son dépôt PRIVÉ, copie les installateurs
+// dans une version du dépôt PUBLIC TAMTUI-TELECHARGEMENTS, écrit le fichier de mise à jour automatique
+// (mises-a-jour/<logiciel>.json) et régénère la page index.html.
+//
+//   node outils/publier.mjs               publie les nouvelles versions, puis commit et push
+//   node outils/publier.mjs --simulation  ne copie rien : régénère seulement la page (aperçu)
+import { execFileSync } from "node:child_process";
+import { existsSync, mkdirSync, readFileSync, readdirSync, rmSync, statSync, writeFileSync } from "node:fs";
+import { join } from "node:path";
+
+const PUBLIC = "Tamtui/TAMTUI-TELECHARGEMENTS";
+const SITE = "https://tamtui.github.io/TAMTUI-TELECHARGEMENTS";
+const RACINE = new URL("..", import.meta.url).pathname;
+const SIMULATION = process.argv.includes("--simulation");
+// Coordonnées affichées sur la page (laisser vide pour ne pas afficher la ligne).
+const CONTACT = { telephone: "", whatsapp: "", email: "" };
+
+const PRODUITS = [
+  { id: "agriculture", nom: "TAMTUI Suite Pro", activite: "Agriculture", depot: "Tamtui/TAMTUI-AGRICULTURE-PRO-13", base: "TAMTUI-Suite-Pro", prefixe: "TMT-", couleur: "#2f7d32", icone: "🌾",
+    texte: "Producteurs, exploitations, parcelles géolocalisées, cultures par campagne, récoltes, intrants, stocks, ventes et finances." },
+  { id: "elevage", nom: "TAMTUI Élevage Pro", activite: "Élevage", depot: "Tamtui/TAMTUI-ELEVAGE-PRO", base: "TAMTUI-Elevage-Pro", prefixe: "TME-", couleur: "#8a5a14", icone: "🐄",
+    texte: "Éleveurs, troupeaux et animaux, santé et vaccinations, reproduction, pesées, alimentation, pâturages et production." },
+  { id: "pisciculture", nom: "TAMTUI Pisciculture Pro", activite: "Pisciculture", depot: "Tamtui/TAMTUI-PISCICULTURE-PRO", base: "TAMTUI-Pisciculture-Pro", prefixe: "TMP-", couleur: "#1f6fa8", icone: "🐟",
+    texte: "Bassins et cages, lots de poissons, qualité de l'eau, santé, écloserie, croissance, alimentation et récoltes." },
+  { id: "maraichage", nom: "TAMTUI Maraîchage Pro", activite: "Maraîchage", depot: "Tamtui/TAMTUI-MARAICHAGE-PRO", base: "TAMTUI-Maraichage-Pro", prefixe: "TMM-", couleur: "#c2561b", icone: "🥬",
+    texte: "Parcelles et planches, semences et pépinière, cultures, protection, irrigation, fertilisation et récoltes successives." },
+];
+
+const gh = (...args) => execFileSync("gh", args, { encoding: "utf8", stdio: ["ignore", "pipe", "pipe"] });
+const fichierEtat = join(RACINE, "produits.json");
+const etat = existsSync(fichierEtat) ? JSON.parse(readFileSync(fichierEtat, "utf8")) : {};
+const taille = o => o >= 1048576 ? `${(o / 1048576).toFixed(1).replace(".", ",")} Mo` : `${Math.round(o / 1024)} Ko`;
+let change = false;
+
+for (const p of PRODUITS) {
+  const rel = JSON.parse(gh("api", `repos/${p.depot}/releases/latest`));
+  const version = rel.tag_name.replace(/^v/, "");
+  const actifs = Object.fromEntries(rel.assets.map(a => [a.name, a]));
+  const nomExe = `${p.base}-${version}-Windows-installateur.exe`, nomDmg = `${p.base}-${version}-Mac-tous-modeles.dmg`, nomTar = `${p.base}-${version}-Mac.app.tar.gz`;
+  if (!actifs[nomExe] || !actifs[nomDmg]) { console.log(`⚠ ${p.nom} ${version} : installateurs absents de la version privée, ignoré.`); continue; }
+  const tag = `${p.id}-v${version}`;
+  const url = n => `https://github.com/${PUBLIC}/releases/download/${tag}/${n}`;
+  if (etat[p.id]?.version === version) { console.log(`= ${p.nom} ${version} déjà publié.`); continue; }
+  const majAuto = Boolean(actifs[`${nomExe}.sig`] && actifs[nomTar] && actifs[`${nomTar}.sig`]);
+  if (!SIMULATION) {
+    const tmp = join("/tmp", `publication-${p.id}-${version}`); rmSync(tmp, { recursive: true, force: true }); mkdirSync(tmp);
+    const motifs = [nomExe, nomDmg, ...(majAuto ? [`${nomExe}.sig`, nomTar, `${nomTar}.sig`] : [])];
+    gh("release", "download", rel.tag_name, "-R", p.depot, "-D", tmp, ...motifs.flatMap(m => ["-p", m]));
+    const fichiers = readdirSync(tmp).filter(f => !f.endsWith(".sig")).map(f => join(tmp, f));
+    gh("release", "create", tag, "-R", PUBLIC, "--title", `${p.nom} ${version}`, "--notes", `${p.nom} ${version} — installateurs Windows et Mac (Intel et Apple).`, ...fichiers);
+    if (majAuto) {
+      const sig = n => readFileSync(join(tmp, n), "utf8").trim();
+      const mac = { signature: sig(`${nomTar}.sig`), url: url(nomTar) };
+      const manifeste = { version, notes: `${p.nom} ${version} : améliorations et corrections. Vos données et votre licence sont conservées.`, pub_date: new Date().toISOString(),
+        platforms: { "darwin-x86_64": mac, "darwin-aarch64": mac, "windows-x86_64": { signature: sig(`${nomExe}.sig`), url: url(nomExe) } } };
+      mkdirSync(join(RACINE, "mises-a-jour"), { recursive: true });
+      writeFileSync(join(RACINE, "mises-a-jour", `${p.id}.json`), JSON.stringify(manifeste, null, 2) + "\n");
+    }
+    rmSync(tmp, { recursive: true, force: true });
+  }
+  etat[p.id] = { version, date: rel.published_at.slice(0, 10), majAuto,
+    windows: { nom: nomExe, taille: taille(actifs[nomExe].size), url: url(nomExe) }, mac: { nom: nomDmg, taille: taille(actifs[nomDmg].size), url: url(nomDmg) } };
+  change = true;
+  console.log(`✓ ${p.nom} ${version}${majAuto ? " (mise à jour automatique activée)" : ""}${SIMULATION ? " — simulation" : ""}`);
+}
+
+// ---------- Page de téléchargement ----------
+const e = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const dateFr = d => new Date(d + "T12:00:00").toLocaleDateString("fr-FR", { day: "numeric", month: "long", year: "numeric" });
+const guides = existsSync(join(RACINE, "guides")) ? readdirSync(join(RACINE, "guides")) : [];
+const logo = existsSync(join(RACINE, "logo.png"));
+const cartes = PRODUITS.filter(p => etat[p.id]).map(p => {
+  const s = etat[p.id], guide = guides.find(g => g.includes(p.base));
+  return `<article class="carte" style="--c:${p.couleur}">
+    <header><span class="icone">${p.icone}</span><div><h2>${e(p.nom)}</h2><span class="activite">${e(p.activite)}</span></div><span class="version">v${e(s.version)}</span></header>
+    <p>${e(p.texte)}</p>
+    <div class="boutons">
+      <a class="bouton" href="${e(s.windows.url)}">⊞ Windows <small>${e(s.windows.taille)} · .exe</small></a>
+      <a class="bouton" href="${e(s.mac.url)}">🍎 Mac <small>${e(s.mac.taille)} · Intel et Apple</small></a>
+    </div>
+    <footer>${guide ? `<a href="guides/${e(guide)}">📘 Guide de l'utilisateur (PDF)</a>` : ""}<span>Publié le ${dateFr(s.date)} · code ordinateur <code>${p.prefixe}</code></span></footer>
+  </article>`;
+}).join("\n");
+const contact = [CONTACT.telephone && `📞 ${e(CONTACT.telephone)}`, CONTACT.whatsapp && `💬 WhatsApp ${e(CONTACT.whatsapp)}`, CONTACT.email && `✉️ <a href="mailto:${e(CONTACT.email)}">${e(CONTACT.email)}</a>`].filter(Boolean).join(" · ");
+writeFileSync(join(RACINE, "index.html"), `<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Télécharger les logiciels TAMTUI</title>
+<meta name="description" content="Téléchargement officiel des logiciels TAMTUI Sahel : Agriculture, Élevage, Pisciculture et Maraîchage, pour Windows et Mac.">
+<style>
+:root{--vert:#0d6538;--vert-fonce:#073e25;--vert-doux:#e6f4ea;--orange:#a85b13;--gris:#5c6b62;--bord:#d8e4dc;--fond:#f2f6f3}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;color:#17231c;background:var(--fond);line-height:1.55}
+a{color:var(--vert)}.bandeau{background:linear-gradient(125deg,var(--vert-fonce),var(--vert) 65%,#17844c);color:#fff;padding:42px 20px 92px}
+.conteneur{max-width:1150px;margin:0 auto}.marque{display:flex;align-items:center;gap:16px}.marque img{width:72px;height:72px;border-radius:50%;background:#fff;padding:5px;object-fit:contain}
+.marque b{font-size:24px;letter-spacing:.06em;display:block}.marque span{color:#cfeedb;font-size:13px;letter-spacing:.18em}
+h1{font-size:clamp(28px,4vw,42px);margin:34px 0 10px;max-width:760px}.bandeau p{color:#d7f0e0;max-width:720px;font-size:17px;margin:0}
+.atouts{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}.atouts span{background:#ffffff1c;border:1px solid #ffffff33;border-radius:99px;padding:7px 13px;font-size:13px;font-weight:650}
+main{margin-top:-62px;padding:0 20px 50px}.grille{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.carte{background:#fff;border:1px solid var(--bord);border-top:6px solid var(--c);border-radius:20px;padding:24px;box-shadow:0 14px 34px #1d3b2814;display:flex;flex-direction:column}
+.carte header{display:flex;align-items:center;gap:14px}.icone{font-size:34px}.carte h2{margin:0;font-size:21px}.activite{color:var(--c);font-weight:800;font-size:13px;text-transform:uppercase;letter-spacing:.08em}
+.version{margin-left:auto;background:var(--vert-doux);color:var(--vert);font-weight:800;border-radius:99px;padding:5px 11px;font-size:13px}
+.carte p{color:#43524a;flex:1}.boutons{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.bouton{display:block;text-decoration:none;text-align:center;background:var(--c);color:#fff;border-radius:12px;padding:12px 10px;font-weight:800}.bouton:hover{filter:brightness(1.1)}
+.bouton small{display:block;font-weight:600;opacity:.88;font-size:12px}.carte footer{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-top:14px;font-size:13px;color:var(--gris)}
+code{background:#eef3ef;border-radius:5px;padding:1px 6px;font-weight:700}
+section.infos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-top:30px}
+.info{background:#fff;border:1px solid var(--bord);border-radius:18px;padding:22px}.info h3{margin:0 0 10px;font-size:17px;color:var(--vert)}.info ol,.info ul{margin:0;padding-left:20px}.info li{margin:6px 0}
+.note{background:#fff8ec;border:1px solid #ecd3a8;border-radius:16px;padding:16px 20px;margin-top:24px;color:#6b4710;font-size:14px}
+footer.pied{text-align:center;color:var(--gris);font-size:13px;padding:30px 20px 40px}
+@media(max-width:860px){.grille,section.infos{grid-template-columns:1fr}.boutons{grid-template-columns:1fr}}
+</style></head><body>
+<div class="bandeau"><div class="conteneur">
+  <div class="marque">${logo ? '<img src="logo.png" alt="TAMTUI">' : ""}<div><b>TAMTUI</b><span>SAHEL</span></div></div>
+  <h1>Téléchargez votre logiciel de gestion agro-pastorale</h1>
+  <p>Logiciels professionnels hors connexion pour les producteurs, coopératives, ONG et services techniques : agriculture, élevage, pisciculture et maraîchage.</p>
+  <div class="atouts"><span>✓ Fonctionne sans Internet</span><span>✓ Windows et Mac</span><span>✓ Essai gratuit 14 jours</span><span>✓ Mises à jour automatiques</span><span>✓ Sauvegarde quotidienne</span></div>
+</div></div>
+<main class="conteneur">
+  <div class="grille">${cartes}</div>
+  <section class="infos">
+    <div class="info"><h3>1 · Installer</h3><ol><li><b>Windows</b> : lancez le fichier <code>.exe</code>. Si Windows affiche un avertissement : <i>Informations complémentaires › Exécuter quand même</i>.</li><li><b>Mac</b> : ouvrez le <code>.dmg</code>, glissez l'application dans <i>Applications</i>, puis au premier lancement : clic droit › <i>Ouvrir</i>.</li></ol></div>
+    <div class="info"><h3>2 · Essayer puis activer</h3><ol><li>Cliquez sur <i>Essayer START pendant 14 jours</i>.</li><li>Pour la version complète : <i>Copier le code</i> de l'ordinateur et envoyez-le à votre fournisseur TAMTUI.</li><li>Importez le fichier de licence reçu : le logiciel est activé définitivement.</li></ol></div>
+    <div class="info"><h3>Configuration conseillée</h3><ul><li>Windows 10 ou 11, ou macOS 11 et plus récent (Intel ou Apple)</li><li>4 Go de mémoire, 500 Mo d'espace disque</li><li>Écran de 1280 × 800 au minimum</li><li>Internet uniquement pour la météo et les mises à jour</li></ul></div>
+  </section>
+  <div class="note"><b>Déjà client ?</b> Votre logiciel se met à jour tout seul : au démarrage, il propose les nouvelles versions (« Nouvelle version disponible › Installer maintenant »). Vos données et votre licence sont conservées, et une sauvegarde est faite avant chaque mise à jour.</div>
+</main>
+<footer class="pied">TAMTUI Sahel · Société experte fournisseur · Plateforme nationale du bien-être agro-pastoral${contact ? `<br>${contact}` : ""}<br>Téléchargements officiels — ne téléchargez les logiciels TAMTUI que depuis cette page.</footer>
+</body></html>
+`);
+writeFileSync(fichierEtat, JSON.stringify(etat, null, 2) + "\n");
+console.log("Page index.html régénérée.");
+if (!SIMULATION && change) {
+  const git = (...a) => execFileSync("git", ["-C", RACINE, ...a], { stdio: "inherit" });
+  git("add", "-A"); git("commit", "-m", "Publication des nouvelles versions"); git("push", "origin", "main");
+}
