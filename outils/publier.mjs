@@ -87,6 +87,20 @@ const cartes = PRODUITS.filter(p => etat[p.id]).map(p => {
     <footer>${guide ? `<a href="guides/${e(guide)}">📘 Guide de l'utilisateur (PDF)</a>` : ""}<span>Publié le ${dateFr(s.date)} · code ordinateur <code>${p.prefixe}</code></span></footer>
   </article>`;
 }).join("\n");
+// Composant Microsoft WebView2 hors connexion (publié par le workflow « Composant Windows hors connexion »).
+let composant = null;
+try {
+  const a = JSON.parse(gh("api", `repos/${PUBLIC}/releases/tags/composant-webview2`)).assets.find(x => x.name.endsWith(".exe"));
+  if (a) composant = { url: a.browser_download_url, taille: taille(a.size) };
+} catch { /* pas encore publié */ }
+const blocHorsConnexion = composant ? `<section class="horsConnexion">
+    <div><h3>🔌 Ordinateur Windows sans Internet ?</h3>
+    <p>Windows 11 et les Windows 10 à jour sont prêts. Sur un Windows 10 <b>jamais mis à jour</b> et <b>sans Internet</b>, l'installation a besoin d'un composant de Microsoft (WebView2) : apportez-le avec le logiciel sur une clé USB.</p>
+    <ol><li>Là où il y a Internet, téléchargez l'installateur Windows du logiciel <b>et</b> le composant ci-contre, puis copiez les deux sur une clé USB.</li>
+    <li>Sur l'ordinateur sans Internet, lancez d'abord le <b>composant Microsoft</b> (une seule fois par ordinateur, pour tous les logiciels TAMTUI).</li>
+    <li>Lancez ensuite l'installateur TAMTUI : il s'installe sans Internet.</li></ol></div>
+    <a class="bouton composant" href="${e(composant.url)}">⊞ Composant Microsoft WebView2<small>${e(composant.taille)} · officiel, signé par Microsoft · Windows 10/11 64 bits</small></a>
+  </section>` : "";
 const contact = [CONTACT.telephone && `📞 ${e(CONTACT.telephone)}`, CONTACT.whatsapp && `💬 WhatsApp ${e(CONTACT.whatsapp)}`, CONTACT.email && `✉️ <a href="mailto:${e(CONTACT.email)}">${e(CONTACT.email)}</a>`].filter(Boolean).join(" · ");
 writeFileSync(join(RACINE, "index.html"), `<!doctype html>
 <html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
@@ -110,6 +124,10 @@ main{margin-top:-62px;padding:0 20px 50px}.grille{display:grid;grid-template-col
 code{background:#eef3ef;border-radius:5px;padding:1px 6px;font-weight:700}
 section.infos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-top:30px}
 .info{background:#fff;border:1px solid var(--bord);border-radius:18px;padding:22px}.info h3{margin:0 0 10px;font-size:17px;color:var(--vert)}.info ol,.info ul{margin:0;padding-left:20px}.info li{margin:6px 0}
+.horsConnexion{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:24px;align-items:center;background:#fff;border:1px solid var(--bord);border-left:6px solid #1f6fa8;border-radius:18px;padding:22px;margin-top:24px}
+.horsConnexion h3{margin:0 0 8px;color:#1f6fa8;font-size:17px}.horsConnexion p{margin:0 0 8px;color:#43524a}.horsConnexion ol{margin:0;padding-left:20px}.horsConnexion li{margin:5px 0}
+.bouton.composant{background:#1f6fa8}
+@media(max-width:860px){.horsConnexion{grid-template-columns:1fr}}
 .note{background:#fff8ec;border:1px solid #ecd3a8;border-radius:16px;padding:16px 20px;margin-top:24px;color:#6b4710;font-size:14px}
 footer.pied{text-align:center;color:var(--gris);font-size:13px;padding:30px 20px 40px}
 @media(max-width:860px){.grille,section.infos{grid-template-columns:1fr}.boutons{grid-template-columns:1fr}}
@@ -125,8 +143,9 @@ footer.pied{text-align:center;color:var(--gris);font-size:13px;padding:30px 20px
   <section class="infos">
     <div class="info"><h3>1 · Installer</h3><ol><li><b>Windows</b> : lancez le fichier <code>.exe</code>. Si Windows affiche un avertissement : <i>Informations complémentaires › Exécuter quand même</i>.</li><li><b>Mac</b> : ouvrez le <code>.dmg</code>, glissez l'application dans <i>Applications</i>, puis au premier lancement : clic droit › <i>Ouvrir</i>.</li></ol></div>
     <div class="info"><h3>2 · Essayer puis activer</h3><ol><li>Cliquez sur <i>Essayer START pendant 14 jours</i>.</li><li>Pour la version complète : <i>Copier le code</i> de l'ordinateur et envoyez-le à votre fournisseur TAMTUI.</li><li>Importez le fichier de licence reçu : le logiciel est activé définitivement.</li></ol></div>
-    <div class="info"><h3>Configuration conseillée</h3><ul><li>Windows 10 ou 11, ou macOS 11 et plus récent (Intel ou Apple)</li><li>4 Go de mémoire, 500 Mo d'espace disque</li><li>Écran de 1280 × 800 au minimum</li><li>Internet uniquement pour la météo et les mises à jour</li></ul></div>
+    <div class="info"><h3>Configuration conseillée</h3><ul><li><b>Windows 10 ou 11 (64 bits)</b> — Windows 7 et 8 ne sont pas pris en charge</li><li>macOS 11 et plus récent (Intel ou Apple)</li><li>4 Go de mémoire, 500 Mo d'espace disque</li><li>Écran de 1280 × 800 au minimum</li><li>Internet uniquement pour la météo et les mises à jour</li></ul></div>
   </section>
+  ${blocHorsConnexion}
   <div class="note"><b>Déjà client ?</b> Votre logiciel se met à jour tout seul : au démarrage, il propose les nouvelles versions (« Nouvelle version disponible › Installer maintenant »). Vos données et votre licence sont conservées, et une sauvegarde est faite avant chaque mise à jour.</div>
 </main>
 <footer class="pied">TAMTUI Sahel · Société experte fournisseur · Plateforme nationale du bien-être agro-pastoral${contact ? `<br>${contact}` : ""}<br>Téléchargements officiels — ne téléchargez les logiciels TAMTUI que depuis cette page.</footer>
