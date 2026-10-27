@@ -1,6 +1,6 @@
 name: Publier
 # Bouton « Publier » (onglet Actions) : copie sur la page de téléchargement les dernières versions
-# fabriquées des 4 logiciels, et active leur mise à jour automatique.
+# fabriquées des logiciels TAMTUI (les 4 logiciels et TAMTUI SAHEL 360), et active leur mise à jour automatique.
 # Ce dépôt est public : ses minutes de fabrication GitHub sont gratuites et illimitées.
 on:
   workflow_dispatch:
@@ -34,6 +34,10 @@ jobs:
               exit 1
             fi
           done
+          # TAMTUI SAHEL 360 : facultatif tant que la clé d'accès ne couvre pas encore ce dépôt (les 4 autres sont publiés quand même).
+          if ! gh api "repos/Tamtui/TAMTUI-SAHEL-360" --jq .name >/dev/null 2>&1; then
+            echo "::warning::La clé d'accès LECTURE_DEPOTS_PRIVES ne peut pas lire TAMTUI-SAHEL-360 : TAMTUI SAHEL 360 n'est pas publié. Ajoutez ce dépôt à la clé d'accès (voir le guide)."
+          fi
           git config user.name "TAMTUI"
           git config user.email "tamtui@users.noreply.github.com"
           node outils/publier.mjs

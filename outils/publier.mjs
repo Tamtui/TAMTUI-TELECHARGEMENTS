@@ -18,6 +18,9 @@ const SIMULATION = process.argv.includes("--simulation");
 const CONTACT = { telephone: "", whatsapp: "", email: "" };
 
 const PRODUITS = [
+  { id: "sahel360", nom: "TAMTUI SAHEL 360", activite: "Toutes vos activités dans un seul logiciel", depot: "Tamtui/TAMTUI-SAHEL-360", base: "TAMTUI-SAHEL-360", prefixe: "TMS-", couleur: "#6b3fa0", icone: "🌍", vedette: true,
+    texte: "Composez votre logiciel : cultures, élevage, pisciculture et maraîchage, au choix, avec un socle commun (producteurs, stocks, ventes, finances), les liens entre activités (fumier, fanes, eau des bassins…) et le bilan de rentabilité de chaque activité. Reprend les données des 4 logiciels TAMTUI.",
+    activites: ["🌾 Cultures", "🐄 Élevage", "🐟 Pisciculture", "🥬 Maraîchage"] },
   { id: "agriculture", nom: "TAMTUI Suite Pro", activite: "Agriculture", depot: "Tamtui/TAMTUI-AGRICULTURE-PRO-13", base: "TAMTUI-Suite-Pro", prefixe: "TMT-", couleur: "#2f7d32", icone: "🌾",
     texte: "Producteurs, exploitations, parcelles géolocalisées, cultures par campagne, récoltes, intrants, stocks, ventes et finances." },
   { id: "elevage", nom: "TAMTUI Élevage Pro", activite: "Élevage", depot: "Tamtui/TAMTUI-ELEVAGE-PRO", base: "TAMTUI-Elevage-Pro", prefixe: "TME-", couleur: "#8a5a14", icone: "🐄",
@@ -35,7 +38,10 @@ const taille = o => o >= 1048576 ? `${(o / 1048576).toFixed(1).replace(".", ",")
 let change = false;
 
 for (const p of PRODUITS) {
-  const rel = JSON.parse(gh("api", `repos/${p.depot}/releases/latest`));
+  // Un logiciel sans version publiée (ou un dépôt illisible) est ignoré : il ne bloque pas les autres.
+  let rel;
+  try { rel = JSON.parse(gh("api", `repos/${p.depot}/releases/latest`)); }
+  catch { console.log(`⚠ ${p.nom} : aucune version publiée pour l'instant (ou dépôt non lisible), ignoré.`); continue; }
   const version = rel.tag_name.replace(/^v/, "");
   const actifs = Object.fromEntries(rel.assets.map(a => [a.name, a]));
   const nomExe = `${p.base}-${version}-Windows-installateur.exe`, nomDmg = `${p.base}-${version}-Mac-tous-modeles.dmg`, nomTar = `${p.base}-${version}-Mac.app.tar.gz`;
@@ -77,9 +83,9 @@ const guides = existsSync(join(RACINE, "guides")) ? readdirSync(join(RACINE, "gu
 const logo = existsSync(join(RACINE, "logo.png"));
 const cartes = PRODUITS.filter(p => etat[p.id]).map(p => {
   const s = etat[p.id], guide = guides.find(g => g.includes(p.base));
-  return `<article class="carte" style="--c:${p.couleur}">
+  return `<article class="carte${p.vedette ? " vedette" : ""}" style="--c:${p.couleur}">${p.vedette ? '<span class="nouveau">NOUVEAU</span>' : ""}
     <header><span class="icone">${p.icone}</span><div><h2>${e(p.nom)}</h2><span class="activite">${e(p.activite)}</span></div><span class="version">v${e(s.version)}</span></header>
-    <p>${e(p.texte)}</p>
+    <p>${e(p.texte)}</p>${p.activites ? `<div class="puces">${p.activites.map(a => `<span>${e(a)}</span>`).join("")}</div>` : ""}
     <div class="boutons">
       <a class="bouton" href="${e(s.windows.url)}">⊞ Windows <small>${e(s.windows.taille)} · .exe</small></a>
       <a class="bouton" href="${e(s.mac.url)}">🍎 Mac <small>${e(s.mac.taille)} · Intel et Apple</small></a>
@@ -105,7 +111,7 @@ const contact = [CONTACT.telephone && `📞 ${e(CONTACT.telephone)}`, CONTACT.wh
 writeFileSync(join(RACINE, "index.html"), `<!doctype html>
 <html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Télécharger les logiciels TAMTUI</title>
-<meta name="description" content="Téléchargement officiel des logiciels TAMTUI Sahel : Agriculture, Élevage, Pisciculture et Maraîchage, pour Windows et Mac.">
+<meta name="description" content="Téléchargement officiel des logiciels TAMTUI : TAMTUI SAHEL 360 (toutes les activités), Agriculture, Élevage, Pisciculture et Maraîchage, pour Windows et Mac.">
 <style>
 :root{--vert:#0d6538;--vert-fonce:#073e25;--vert-doux:#e6f4ea;--orange:#a85b13;--gris:#5c6b62;--bord:#d8e4dc;--fond:#f2f6f3}
 *{box-sizing:border-box}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;color:#17231c;background:var(--fond);line-height:1.55}
@@ -118,7 +124,7 @@ main{margin-top:-62px;padding:0 20px 50px}.grille{display:grid;grid-template-col
 .carte{background:#fff;border:1px solid var(--bord);border-top:6px solid var(--c);border-radius:20px;padding:24px;box-shadow:0 14px 34px #1d3b2814;display:flex;flex-direction:column}
 .carte header{display:flex;align-items:center;gap:14px}.icone{font-size:34px}.carte h2{margin:0;font-size:21px}.activite{color:var(--c);font-weight:800;font-size:13px;text-transform:uppercase;letter-spacing:.08em}
 .version{margin-left:auto;background:var(--vert-doux);color:var(--vert);font-weight:800;border-radius:99px;padding:5px 11px;font-size:13px}
-.carte p{color:#43524a;flex:1}.boutons{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.carte p{color:#43524a;flex:1}.carte.vedette{grid-column:1/-1;position:relative;border-top-width:8px}.nouveau{position:absolute;top:-14px;right:22px;background:var(--c);color:#fff;font-weight:800;font-size:12px;letter-spacing:.1em;border-radius:99px;padding:5px 12px}.puces{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 16px}.puces span{background:#f1ecf8;color:var(--c);border-radius:99px;padding:5px 11px;font-weight:700;font-size:13px}.boutons{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .bouton{display:block;text-decoration:none;text-align:center;background:var(--c);color:#fff;border-radius:12px;padding:12px 10px;font-weight:800}.bouton:hover{filter:brightness(1.1)}
 .bouton small{display:block;font-weight:600;opacity:.88;font-size:12px}.carte footer{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-top:14px;font-size:13px;color:var(--gris)}
 code{background:#eef3ef;border-radius:5px;padding:1px 6px;font-weight:700}
