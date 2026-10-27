@@ -15,7 +15,7 @@ const SITE = "https://tamtui.github.io/TAMTUI-TELECHARGEMENTS";
 const RACINE = new URL("..", import.meta.url).pathname;
 const SIMULATION = process.argv.includes("--simulation");
 // Coordonnées affichées sur la page (laisser vide pour ne pas afficher la ligne).
-const CONTACT = { telephone: "", whatsapp: "", email: "" };
+const CONTACT = { telephone: "+227 96 96 18 49", whatsapp: "", email: "" };
 // Prix validés par l'éditeur le 27 octobre 2026 (FCFA HT, licence perpétuelle payée une seule fois, par ordinateur).
 // Les 4 logiciels métier ont les mêmes prix ; TAMTUI SAHEL 360 = logiciels séparés + 15 %, arrondi aux 5 000 FCFA,
 // à partir de GESTION et de 2 activités.
@@ -183,7 +183,7 @@ footer.pied{text-align:center;color:var(--gris);font-size:13px;padding:30px 20px
   ${blocHorsConnexion}
   <div class="note"><b>Déjà client ?</b> Votre logiciel se met à jour tout seul : au démarrage, il propose les nouvelles versions (« Nouvelle version disponible › Installer maintenant »). Vos données et votre licence sont conservées, et une sauvegarde est faite avant chaque mise à jour.</div>
 </main>
-<footer class="pied">TAMTUI Sahel · Société experte fournisseur · Plateforme nationale du bien-être agro-pastoral${contact ? `<br>${contact}` : ""}<br>Téléchargements officiels — ne téléchargez les logiciels TAMTUI que depuis cette page.</footer>
+<footer class="pied">TAMTUI SAHEL · Société experte fournisseur · Plateforme nationale du bien-être agro-pastoral${contact ? `<br>${contact}` : ""}<br>Téléchargements officiels — ne téléchargez les logiciels TAMTUI que depuis cette page.</footer>
 </body></html>
 `);
 writeFileSync(fichierEtat, JSON.stringify(etat, null, 2) + "\n");
