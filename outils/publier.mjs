@@ -16,6 +16,13 @@ const RACINE = new URL("..", import.meta.url).pathname;
 const SIMULATION = process.argv.includes("--simulation");
 // Coordonnées affichées sur la page (laisser vide pour ne pas afficher la ligne).
 const CONTACT = { telephone: "", whatsapp: "", email: "" };
+// Prix validés par l'éditeur le 27 octobre 2026 (FCFA HT, licence perpétuelle payée une seule fois, par ordinateur).
+// Les 4 logiciels métier ont les mêmes prix ; TAMTUI SAHEL 360 = logiciels séparés + 15 %, arrondi aux 5 000 FCFA,
+// à partir de GESTION et de 2 activités.
+const EDITIONS = ["START", "GESTION", "PRODUCTION", "INTELLIGENCE", "ENTERPRISE"];
+const PRIX = { START: 65000, GESTION: 100000, PRODUCTION: 190000, INTELLIGENCE: 310000, ENTERPRISE: 460000 };
+const prix360 = (ed, n) => Math.round(PRIX[ed] * n * 1.15 / 5000) * 5000;
+const fcfa = n => n.toLocaleString("fr-FR").replace(/\u202f/g, " ");
 
 const PRODUITS = [
   { id: "sahel360", nom: "TAMTUI SAHEL 360", activite: "Toutes vos activités dans un seul logiciel", depot: "Tamtui/TAMTUI-SAHEL-360", base: "TAMTUI-SAHEL-360", prefixe: "TMS-", couleur: "#6b3fa0", icone: "🌍", vedette: true,
@@ -90,6 +97,7 @@ const cartes = PRODUITS.filter(p => etat[p.id]).map(p => {
       <a class="bouton" href="${e(s.windows.url)}">⊞ Windows <small>${e(s.windows.taille)} · .exe</small></a>
       <a class="bouton" href="${e(s.mac.url)}">🍎 Mac <small>${e(s.mac.taille)} · Intel et Apple</small></a>
     </div>
+    <p class="aPartir">${p.vedette ? `À partir de <b>${fcfa(prix360("GESTION", 2))} FCFA</b> (GESTION, 2 activités)` : `À partir de <b>${fcfa(PRIX.START)} FCFA</b> (START)`} · licence payée une seule fois · <a href="#tarifs">voir les tarifs</a></p>
     <footer>${guide ? `<a href="guides/${e(guide)}">📘 Guide de l'utilisateur (PDF)</a>` : ""}<span>Publié le ${dateFr(s.date)} · code ordinateur <code>${p.prefixe}</code></span></footer>
   </article>`;
 }).join("\n");
@@ -107,6 +115,23 @@ const blocHorsConnexion = composant ? `<section class="horsConnexion">
     <li>Lancez ensuite l'installateur TAMTUI : il s'installe sans Internet.</li></ol></div>
     <a class="bouton composant" href="${e(composant.url)}">⊞ Composant Microsoft WebView2<small>${e(composant.taille)} · officiel, signé par Microsoft · Windows 10/11 64 bits</small></a>
   </section>` : "";
+const blocTarifs = `<section class="tarifs" id="tarifs">
+    <h2>Tarifs</h2>
+    <p class="sousTitre">Licence <b>perpétuelle</b>, payée <b>une seule fois</b>, par ordinateur. Prix hors taxes, en FCFA. Pas d'abonnement : les mises à jour sont gratuites.</p>
+    <h3>Logiciels métier : TAMTUI Agriculture, Élevage, Pisciculture, Maraîchage <small>(les mêmes prix pour les quatre)</small></h3>
+    <div class="tableau"><table><tr>${EDITIONS.map(ed => `<th>${ed}</th>`).join("")}</tr><tr>${EDITIONS.map(ed => `<td>${fcfa(PRIX[ed])}</td>`).join("")}</tr></table></div>
+    <h3 class="violet">TAMTUI SAHEL 360 <small>(plusieurs activités connectées, à partir de GESTION)</small></h3>
+    <div class="tableau"><table><tr><th>Édition</th><th>2 activités</th><th>3 activités</th><th>4 activités</th></tr>${EDITIONS.slice(1).map(ed => `<tr><td><b>${ed}</b></td>${[2, 3, 4].map(n => `<td>${fcfa(prix360(ed, n))}</td>`).join("")}</tr>`).join("")}</table></div>
+    <p class="petit">Le prix de TAMTUI SAHEL 360 correspond aux logiciels séparés + 15 % : vos activités sont connectées dans une seule base (liens entre activités, Bilan 360°, carte et rapports communs). Pour une seule activité, choisissez le logiciel métier.</p>
+    <ul class="conditions">
+      <li><b>Ordinateur supplémentaire</b> : −20 % sur le prix de la licence.</li>
+      <li><b>Formation</b> (facultative, conseillée) : une seule fois, 30 % du prix de la licence.</li>
+      <li><b>Changement d'ordinateur</b> (panne, vol, remplacement) : nouvelle licence à 40 % du prix.</li>
+      <li><b>Activité ou édition en plus</b> plus tard : vous payez seulement la différence, vos données sont conservées.</li>
+      <li><b>Déjà client d'un logiciel TAMTUI ?</b> Pour passer à TAMTUI SAHEL 360, votre licence est déduite et vos données sont reprises.</li>
+      <li><b>Projets, ONG, services de l'État</b> : licence projet, régionale ou nationale sur devis.</li>
+    </ul>
+  </section>`;
 const contact = [CONTACT.telephone && `📞 ${e(CONTACT.telephone)}`, CONTACT.whatsapp && `💬 WhatsApp ${e(CONTACT.whatsapp)}`, CONTACT.email && `✉️ <a href="mailto:${e(CONTACT.email)}">${e(CONTACT.email)}</a>`].filter(Boolean).join(" · ");
 writeFileSync(join(RACINE, "index.html"), `<!doctype html>
 <html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
@@ -124,7 +149,7 @@ main{margin-top:-62px;padding:0 20px 50px}.grille{display:grid;grid-template-col
 .carte{background:#fff;border:1px solid var(--bord);border-top:6px solid var(--c);border-radius:20px;padding:24px;box-shadow:0 14px 34px #1d3b2814;display:flex;flex-direction:column}
 .carte header{display:flex;align-items:center;gap:14px}.icone{font-size:34px}.carte h2{margin:0;font-size:21px}.activite{color:var(--c);font-weight:800;font-size:13px;text-transform:uppercase;letter-spacing:.08em}
 .version{margin-left:auto;background:var(--vert-doux);color:var(--vert);font-weight:800;border-radius:99px;padding:5px 11px;font-size:13px}
-.carte p{color:#43524a;flex:1}.carte.vedette{grid-column:1/-1;position:relative;border-top-width:8px}.nouveau{position:absolute;top:-14px;right:22px;background:var(--c);color:#fff;font-weight:800;font-size:12px;letter-spacing:.1em;border-radius:99px;padding:5px 12px}.puces{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 16px}.puces span{background:#f1ecf8;color:var(--c);border-radius:99px;padding:5px 11px;font-weight:700;font-size:13px}.boutons{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.carte p{color:#43524a;flex:1}.carte p.aPartir{flex:0;font-size:14px;margin:0 0 12px;color:#2c3a32}.carte p.aPartir a{color:var(--c)}.carte.vedette{grid-column:1/-1;position:relative;border-top-width:8px}.nouveau{position:absolute;top:-14px;right:22px;background:var(--c);color:#fff;font-weight:800;font-size:12px;letter-spacing:.1em;border-radius:99px;padding:5px 12px}.puces{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 16px}.puces span{background:#f1ecf8;color:var(--c);border-radius:99px;padding:5px 11px;font-weight:700;font-size:13px}.boutons{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .bouton{display:block;text-decoration:none;text-align:center;background:var(--c);color:#fff;border-radius:12px;padding:12px 10px;font-weight:800}.bouton:hover{filter:brightness(1.1)}
 .bouton small{display:block;font-weight:600;opacity:.88;font-size:12px}.carte footer{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-top:14px;font-size:13px;color:var(--gris)}
 code{background:#eef3ef;border-radius:5px;padding:1px 6px;font-weight:700}
@@ -134,6 +159,9 @@ section.infos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20p
 .horsConnexion h3{margin:0 0 8px;color:#1f6fa8;font-size:17px}.horsConnexion p{margin:0 0 8px;color:#43524a}.horsConnexion ol{margin:0;padding-left:20px}.horsConnexion li{margin:5px 0}
 .bouton.composant{background:#1f6fa8}
 @media(max-width:860px){.horsConnexion{grid-template-columns:1fr}}
+.tarifs{background:#fff;border:1px solid var(--bord);border-radius:18px;padding:22px;margin-top:24px}.tarifs h2{margin:0 0 6px;color:var(--vert)}.tarifs h3{margin:18px 0 8px;font-size:16px;color:var(--vert)}.tarifs h3.violet{color:#6b3fa0}.tarifs h3 small{font-weight:500;color:var(--gris);font-size:13px}
+.sousTitre{color:#43524a;margin:0}.tableau{overflow-x:auto}.tarifs table{width:100%;border-collapse:collapse;font-size:14px;min-width:420px}.tarifs th{background:var(--vert);color:#fff;padding:8px;text-align:center}.tarifs h3.violet + .tableau th{background:#6b3fa0}.tarifs td{border:1px solid var(--bord);padding:8px;text-align:center;font-weight:700}.tarifs td:first-child b{font-weight:800}
+.conditions{margin:12px 0 0;padding-left:20px;color:#43524a}.conditions li{margin:5px 0}.petit{font-size:13px;color:var(--gris)}
 .note{background:#fff8ec;border:1px solid #ecd3a8;border-radius:16px;padding:16px 20px;margin-top:24px;color:#6b4710;font-size:14px}
 footer.pied{text-align:center;color:var(--gris);font-size:13px;padding:30px 20px 40px}
 @media(max-width:860px){.grille,section.infos{grid-template-columns:1fr}.boutons{grid-template-columns:1fr}}
@@ -148,9 +176,10 @@ footer.pied{text-align:center;color:var(--gris);font-size:13px;padding:30px 20px
   <div class="grille">${cartes}</div>
   <section class="infos">
     <div class="info"><h3>1 · Installer</h3><ol><li><b>Windows</b> : lancez le fichier <code>.exe</code>. Si Windows affiche un avertissement : <i>Informations complémentaires › Exécuter quand même</i>.</li><li><b>Mac</b> : ouvrez le <code>.dmg</code>, glissez l'application dans <i>Applications</i>, puis au premier lancement : clic droit › <i>Ouvrir</i>.</li></ol></div>
-    <div class="info"><h3>2 · Essayer puis activer</h3><ol><li>Cliquez sur <i>Essayer START pendant 14 jours</i>.</li><li>Pour la version complète : <i>Copier le code</i> de l'ordinateur et envoyez-le à votre fournisseur TAMTUI.</li><li>Importez le fichier de licence reçu : le logiciel est activé définitivement.</li></ol></div>
+    <div class="info"><h3>2 · Essayer puis activer</h3><ol><li>Cliquez sur <i>Essayer … pendant 14 jours</i> (START pour les logiciels métier, GESTION pour TAMTUI SAHEL 360).</li><li>Pour la version complète : <i>Copier le code</i> de l'ordinateur et envoyez-le à votre fournisseur TAMTUI.</li><li>Importez le fichier de licence reçu : le logiciel est activé définitivement.</li></ol></div>
     <div class="info"><h3>Configuration conseillée</h3><ul><li><b>Windows 10 ou 11 (64 bits)</b> — Windows 7 et 8 ne sont pas pris en charge</li><li>macOS 11 et plus récent (Intel ou Apple)</li><li>4 Go de mémoire, 500 Mo d'espace disque</li><li>Écran de 1280 × 800 au minimum</li><li>Internet uniquement pour la météo et les mises à jour</li></ul></div>
   </section>
+  ${blocTarifs}
   ${blocHorsConnexion}
   <div class="note"><b>Déjà client ?</b> Votre logiciel se met à jour tout seul : au démarrage, il propose les nouvelles versions (« Nouvelle version disponible › Installer maintenant »). Vos données et votre licence sont conservées, et une sauvegarde est faite avant chaque mise à jour.</div>
 </main>
