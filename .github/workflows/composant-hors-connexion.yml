@@ -1,0 +1,31 @@
+name: Composant Windows hors connexion
+# Récupère chez Microsoft l'installateur autonome de WebView2 (composant d'affichage utilisé par les
+# logiciels TAMTUI sur Windows) et le met à disposition sur la page de téléchargement, pour installer
+# TAMTUI sur un ordinateur Windows 10 sans Internet. À relancer de temps en temps pour avoir la dernière version.
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  composant:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Télécharger et vérifier le composant Microsoft
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          F=MicrosoftEdgeWebView2RuntimeInstallerX64.exe
+          curl -fsSL --retry 3 -o "$F" "https://go.microsoft.com/fwlink/?linkid=2124701"
+          TAILLE=$(stat -c %s "$F")
+          echo "Taille : $TAILLE octets"
+          [ "$(head -c 2 "$F")" = "MZ" ] || { echo "::error::Le fichier reçu n'est pas un programme Windows."; exit 1; }
+          [ "$TAILLE" -gt 50000000 ] || { echo "::error::Fichier trop petit : ce n'est pas l'installateur autonome."; exit 1; }
+          sudo apt-get install -y -qq osslsigncode >/dev/null
+          osslsigncode verify -in "$F" > verification.txt 2>&1 || true
+          grep -E "Subject:|Signature verification" verification.txt | head -6
+          grep -q "O=Microsoft Corporation" verification.txt || { echo "::error::Signature Microsoft absente."; exit 1; }
+          gh release view composant-webview2 -R "$GITHUB_REPOSITORY" >/dev/null 2>&1 || gh release create composant-webview2 -R "$GITHUB_REPOSITORY" \
+            --title "Composant Windows hors connexion (Microsoft WebView2)" \
+            --notes "Installateur autonome officiel de Microsoft WebView2 (x64), signé par Microsoft. À installer avant TAMTUI sur un ordinateur Windows 10 sans Internet. Inutile sur Windows 11 et sur Windows 10 à jour."
+          gh release upload composant-webview2 "$F" --clobber -R "$GITHUB_REPOSITORY"
+          echo "::notice::Composant publié ($TAILLE octets)."
