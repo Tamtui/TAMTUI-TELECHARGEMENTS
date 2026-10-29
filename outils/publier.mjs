@@ -15,7 +15,7 @@ const SITE = "https://tamtui.github.io/TAMTUI-TELECHARGEMENTS";
 const RACINE = new URL("..", import.meta.url).pathname;
 const SIMULATION = process.argv.includes("--simulation");
 // Coordonnées affichées sur la page (laisser vide pour ne pas afficher la ligne).
-const CONTACT = { telephone: "+227 96 96 18 49", whatsapp: "", email: "" };
+const CONTACT = { telephone: "+227 82 46 54 40 / +227 81 35 53 48", whatsapp: "", email: "" };
 // Prix validés par l'éditeur le 27 octobre 2026 (FCFA HT, licence perpétuelle payée une seule fois, par ordinateur).
 // Les 4 logiciels métier ont les mêmes prix ; TAMTUI SAHEL 360 = logiciels séparés + 15 %, arrondi aux 5 000 FCFA,
 // à partir de GESTION et de 2 activités.
@@ -88,6 +88,7 @@ const e = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&l
 const dateFr = d => new Date(d + "T12:00:00").toLocaleDateString("fr-FR", { day: "numeric", month: "long", year: "numeric" });
 const guides = existsSync(join(RACINE, "guides")) ? readdirSync(join(RACINE, "guides")) : [];
 const logo = existsSync(join(RACINE, "logo.png"));
+const logoComplet = existsSync(join(RACINE, "logo-complet.png"));
 const cartes = PRODUITS.filter(p => etat[p.id]).map(p => {
   const s = etat[p.id], guide = guides.find(g => g.includes(p.base));
   return `<article class="carte${p.vedette ? " vedette" : ""}" style="--c:${p.couleur}">${p.vedette ? '<span class="nouveau">NOUVEAU</span>' : ""}
@@ -142,7 +143,7 @@ writeFileSync(join(RACINE, "index.html"), `<!doctype html>
 *{box-sizing:border-box}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;color:#17231c;background:var(--fond);line-height:1.55}
 a{color:var(--vert)}.bandeau{background:linear-gradient(125deg,var(--vert-fonce),var(--vert) 65%,#17844c);color:#fff;padding:42px 20px 92px}
 .conteneur{max-width:1150px;margin:0 auto}.marque{display:flex;align-items:center;gap:16px}.marque img{width:72px;height:72px;border-radius:50%;background:#fff;padding:5px;object-fit:contain}
-.marque b{font-size:24px;letter-spacing:.06em;display:block}.marque span{color:#cfeedb;font-size:13px;letter-spacing:.18em}
+.marque img.complet{width:auto;height:74px;border-radius:14px;padding:7px 14px}.marque b{font-size:24px;letter-spacing:.06em;display:block}.marque span{color:#cfeedb;font-size:13px;letter-spacing:.18em}
 h1{font-size:clamp(28px,4vw,42px);margin:34px 0 10px;max-width:760px}.bandeau p{color:#d7f0e0;max-width:720px;font-size:17px;margin:0}
 .atouts{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}.atouts span{background:#ffffff1c;border:1px solid #ffffff33;border-radius:99px;padding:7px 13px;font-size:13px;font-weight:650}
 main{margin-top:-62px;padding:0 20px 50px}.grille{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
@@ -167,7 +168,7 @@ footer.pied{text-align:center;color:var(--gris);font-size:13px;padding:30px 20px
 @media(max-width:860px){.grille,section.infos{grid-template-columns:1fr}.boutons{grid-template-columns:1fr}}
 </style></head><body>
 <div class="bandeau"><div class="conteneur">
-  <div class="marque">${logo ? '<img src="logo.png" alt="TAMTUI">' : ""}<div><b>TAMTUI</b><span>SAHEL</span></div></div>
+  <div class="marque">${logoComplet ? '<img class="complet" src="logo-complet.png" alt="TAMTUI Sahel">' : `${logo ? '<img src="logo.png" alt="TAMTUI">' : ""}<div><b>TAMTUI</b><span>SAHEL</span></div>`}</div>
   <h1>Téléchargez votre logiciel de gestion agro-pastorale</h1>
   <p>Logiciels professionnels hors connexion pour les producteurs, coopératives, ONG et services techniques : agriculture, élevage, pisciculture et maraîchage.</p>
   <div class="atouts"><span>✓ Fonctionne sans Internet</span><span>✓ Windows et Mac</span><span>✓ Essai gratuit 14 jours</span><span>✓ Mises à jour automatiques</span><span>✓ Sauvegarde quotidienne</span></div>
