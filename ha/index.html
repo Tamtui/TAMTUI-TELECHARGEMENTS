@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="ha"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sauke manhajojin TAMTUI</title>
+<meta name="description" content="Saukewar hukuma ta manhajojin TAMTUI: TAMTUI SAHEL 360 (dukan ayyuka), Noma, Kiwo, Kiwon kifi da Lambu, don Windows da Mac."><link rel="alternate" hreflang="fr" href="https://tamtui.github.io/TAMTUI-TELECHARGEMENTS/"><link rel="alternate" hreflang="en" href="https://tamtui.github.io/TAMTUI-TELECHARGEMENTS/en/"><link rel="alternate" hreflang="ha" href="https://tamtui.github.io/TAMTUI-TELECHARGEMENTS/ha/">
+<style>
+:root{--vert:#0d6538;--vert-fonce:#073e25;--vert-doux:#e6f4ea;--orange:#a85b13;--gris:#5c6b62;--bord:#d8e4dc;--fond:#f2f6f3}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;color:#17231c;background:var(--fond);line-height:1.55}
+a{color:var(--vert)}.bandeau{background:linear-gradient(125deg,var(--vert-fonce),var(--vert) 65%,#17844c);color:#fff;padding:42px 20px 92px}
+.conteneur{max-width:1150px;margin:0 auto}.marque{display:flex;align-items:center;gap:16px}.marque img{width:72px;height:72px;border-radius:50%;background:#fff;padding:5px;object-fit:contain}
+.marque img.complet{width:auto;height:74px;border-radius:14px;padding:7px 14px}.marque b{font-size:24px;letter-spacing:.06em;display:block}.marque span{color:#cfeedb;font-size:13px;letter-spacing:.18em}
+h1{font-size:clamp(28px,4vw,42px);margin:34px 0 10px;max-width:760px}.bandeau p{color:#d7f0e0;max-width:720px;font-size:17px;margin:0}
+.atouts{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}.atouts span{background:#ffffff1c;border:1px solid #ffffff33;border-radius:99px;padding:7px 13px;font-size:13px;font-weight:650}
+main{margin-top:-62px;padding:0 20px 50px}.grille{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.carte{background:#fff;border:1px solid var(--bord);border-top:6px solid var(--c);border-radius:20px;padding:24px;box-shadow:0 14px 34px #1d3b2814;display:flex;flex-direction:column}
+.carte header{display:flex;align-items:center;gap:14px}.icone{font-size:34px}.carte h2{margin:0;font-size:21px}.activite{color:var(--c);font-weight:800;font-size:13px;text-transform:uppercase;letter-spacing:.08em}
+.version{margin-left:auto;background:var(--vert-doux);color:var(--vert);font-weight:800;border-radius:99px;padding:5px 11px;font-size:13px}
+.carte p{color:#43524a;flex:1}.carte p.aPartir{flex:0;font-size:14px;margin:0 0 12px;color:#2c3a32}.carte p.aPartir a{color:var(--c)}.carte.vedette{grid-column:1/-1;position:relative;border-top-width:8px}.nouveau{position:absolute;top:-14px;right:22px;background:var(--c);color:#fff;font-weight:800;font-size:12px;letter-spacing:.1em;border-radius:99px;padding:5px 12px}.puces{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 16px}.puces span{background:#f1ecf8;color:var(--c);border-radius:99px;padding:5px 11px;font-weight:700;font-size:13px}.boutons{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.bouton{display:block;text-decoration:none;text-align:center;background:var(--c);color:#fff;border-radius:12px;padding:12px 10px;font-weight:800}.bouton:hover{filter:brightness(1.1)}
+.bouton small{display:block;font-weight:600;opacity:.88;font-size:12px}.carte footer{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-top:14px;font-size:13px;color:var(--gris)}
+code{background:#eef3ef;border-radius:5px;padding:1px 6px;font-weight:700}
+section.infos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-top:30px}
+.info{background:#fff;border:1px solid var(--bord);border-radius:18px;padding:22px}.info h3{margin:0 0 10px;font-size:17px;color:var(--vert)}.info ol,.info ul{margin:0;padding-left:20px}.info li{margin:6px 0}
+.horsConnexion{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:24px;align-items:center;background:#fff;border:1px solid var(--bord);border-left:6px solid #1f6fa8;border-radius:18px;padding:22px;margin-top:24px}
+.horsConnexion h3{margin:0 0 8px;color:#1f6fa8;font-size:17px}.horsConnexion p{margin:0 0 8px;color:#43524a}.horsConnexion ol{margin:0;padding-left:20px}.horsConnexion li{margin:5px 0}
+.bouton.composant{background:#1f6fa8}
+@media(max-width:860px){.horsConnexion{grid-template-columns:1fr}}
+.tarifs{background:#fff;border:1px solid var(--bord);border-radius:18px;padding:22px;margin-top:24px}.tarifs h2{margin:0 0 6px;color:var(--vert)}.tarifs h3{margin:18px 0 8px;font-size:16px;color:var(--vert)}.tarifs h3.violet{color:#6b3fa0}.tarifs h3 small{font-weight:500;color:var(--gris);font-size:13px}
+.sousTitre{color:#43524a;margin:0}.tableau{overflow-x:auto}.tarifs table{width:100%;border-collapse:collapse;font-size:14px;min-width:420px}.tarifs th{background:var(--vert);color:#fff;padding:8px;text-align:center}.tarifs h3.violet + .tableau th{background:#6b3fa0}.tarifs td{border:1px solid var(--bord);padding:8px;text-align:center;font-weight:700}.tarifs td:first-child b{font-weight:800}
+.conditions{margin:12px 0 0;padding-left:20px;color:#43524a}.conditions li{margin:5px 0}.petit{font-size:13px;color:var(--gris)}
+.note{background:#fff8ec;border:1px solid #ecd3a8;border-radius:16px;padding:16px 20px;margin-top:24px;color:#6b4710;font-size:14px}
+footer.pied{text-align:center;color:var(--gris);font-size:13px;padding:30px 20px 40px}
+@media(max-width:860px){.grille,section.infos{grid-template-columns:1fr}.boutons{grid-template-columns:1fr}}
+.langues{position:absolute;top:18px;right:20px;display:flex;gap:6px}.langues a{color:#fff;text-decoration:none;font-weight:800;font-size:13px;border:1px solid #ffffff55;border-radius:99px;padding:5px 11px}.langues a.actif{background:#fff;color:var(--vert)}.bandeau{position:relative}
+</style></head><body>
+<div class="bandeau"><div class="conteneur">
+  <nav class="langues" aria-label="Langue / Language / Harshe"><a href="../" hreflang="fr">FR</a><a href="../en/" hreflang="en">EN</a><a href="../ha/" hreflang="ha" class="actif" aria-current="page">HA</a></nav>
+  <div class="marque"><img class="complet" src="../logo-complet.png" alt="TAMTUI Sahel"></div>
+  <h1>Sauke manhajarka ta gudanar da noma da kiwo</h1>
+  <p>Manhajojin ƙwararru da ke aiki ba tare da intanet ba ga manoma, ƙungiyoyin haɗin gwiwa, ƙungiyoyi masu zaman kansu da hukumomin fasaha: noma, kiwo, kiwon kifi da lambu.</p>
+  <div class="atouts"><span>✓ Yana aiki ba tare da intanet ba</span><span>✓ Windows da Mac</span><span>✓ Faransanci, Turanci, Hausa</span><span>✓ Gwaji kyauta na kwanaki 14</span><span>✓ Sabuntawa ta atomatik</span><span>✓ Ajiya ta yau da kullum</span></div>
+</div></div>
+<main class="conteneur">
+  <div class="grille"><article class="carte vedette" style="--c:#6b3fa0"><span class="nouveau">SABO</span>
+    <header><span class="icone">🌍</span><div><h2>TAMTUI SAHEL 360</h2><span class="activite">Dukan ayyukanka a manhaja ɗaya</span></div><span class="version">v1.1.1</span></header>
+    <p>Haɗa manhajarka: noma, kiwo, kiwon kifi da lambu, yadda ka zaɓa, tare da tushe ɗaya (manoma, ma'aji, sayarwa, kuɗaɗe), alaƙa tsakanin ayyuka (taki, harawa, ruwan tafki…) da ribar kowane aiki. Yana ɗauko bayanan manhajojin TAMTUI 4.</p><div class="puces"><span>🌾 Noma</span><span>🐄 Kiwo</span><span>🐟 Kiwon kifi</span><span>🥬 Lambu</span></div>
+    <div class="boutons">
+      <a class="bouton" href="https://tamtui.github.io/TAMTUI-TELECHARGEMENTS/fichiers/sahel360/TAMTUI-SAHEL-360-1.1.1-Windows-installateur.exe">⊞ Windows <small>3,8 Mo · .exe</small></a>
+      <a class="bouton" href="https://tamtui.github.io/TAMTUI-TELECHARGEMENTS/fichiers/sahel360/TAMTUI-SAHEL-360-1.1.1-Mac-tous-modeles.dmg">🍎 Mac <small>10,8 Mo · Intel da Apple</small></a>
+    </div>
+    <p class="aPartir">Daga <b>FCFA 230 000</b> (GESTION, ayyuka 2) · lasisi da ake biya sau ɗaya kawai · <a href="#tarifs">duba farashi</a></p>
+    <footer><a href="../guides/Guide-utilisateur-TAMTUI-SAHEL-360.pdf">📘 Jagorar mai amfani (PDF, da Faransanci)</a><span>An wallafa ranar 01/11/2026 · lambar kwamfuta <code>TMS-</code></span></footer>
+  </article>
+<article class="carte" style="--c:#2f7d32">
+    <header><span class="icone">🌾</span><div><h2>TAMTUI Suite Pro</h2><span class="activite">Noma</span></div><span class="version">v2.1.8</span></header>
+    <p>Manoma, gonaki, filaye masu GPS, amfanin gona bisa lokacin noma, girbi, kayan noma, ma'aji, sayarwa da kuɗaɗe.</p>
+    <div class="boutons">
+      <a class="bouton" href="https://tamtui.github.io/TAMTUI-TELECHARGEMENTS/fichiers/agriculture/TAMTUI-Suite-Pro-2.1.8-Windows-installateur.exe">⊞ Windows <small>3,6 Mo · .exe</small></a>
+      <a class="bouton" href="https://tamtui.github.io/TAMTUI-TELECHARGEMENTS/fichiers/agriculture/TAMTUI-Suite-Pro-2.1.8-Mac-tous-modeles.dmg">🍎 Mac <small>10,4 Mo · Intel da Apple</small></a>
+    </div>
+    <p class="aPartir">Daga <b>FCFA 65 000</b> (START) · lasisi da ake biya sau ɗaya kawai · <a href="#tarifs">duba farashi</a></p>
+    <footer><a href="../guides/Guide-utilisateur-TAMTUI-Suite-Pro.pdf">📘 Jagorar mai amfani (PDF, da Faransanci)</a><span>An wallafa ranar 01/11/2026 · lambar kwamfuta <code>TMT-</code></span></footer>
+  </article>
+<article class="carte" style="--c:#8a5a14">
+    <header><span class="icone">🐄</span><div><h2>TAMTUI Élevage Pro</h2><span class="activite">Kiwo</span></div><span class="version">v1.0.9</span></header>
+    <p>Makiyaya, garkuna da dabbobi, lafiya da alluran rigakafi, haihuwa, auna nauyi, ciyarwa, makiyaya da samarwa.</p>
+    <div class="boutons">
+      <a class="bouton" href="https://tamtui.github.io/TAMTUI-TELECHARGEMENTS/fichiers/elevage/TAMTUI-Elevage-Pro-1.0.9-Windows-installateur.exe">⊞ Windows <small>3,7 Mo · .exe</small></a>
+      <a class="bouton" href="https://tamtui.github.io/TAMTUI-TELECHARGEMENTS/fichiers/elevage/TAMTUI-Elevage-Pro-1.0.9-Mac-tous-modeles.dmg">🍎 Mac <small>10,6 Mo · Intel da Apple</small></a>
+    </div>
+    <p class="aPartir">Daga <b>FCFA 65 000</b> (START) · lasisi da ake biya sau ɗaya kawai · <a href="#tarifs">duba farashi</a></p>
+    <footer><a href="../guides/Guide-utilisateur-TAMTUI-Elevage-Pro.pdf">📘 Jagorar mai amfani (PDF, da Faransanci)</a><span>An wallafa ranar 01/11/2026 · lambar kwamfuta <code>TME-</code></span></footer>
+  </article>
+<article class="carte" style="--c:#1f6fa8">
+    <header><span class="icone">🐟</span><div><h2>TAMTUI Pisciculture Pro</h2><span class="activite">Kiwon kifi</span></div><span class="version">v1.0.7</span></header>
+    <p>Tafkuna da keji, rukunin kifaye, ingancin ruwa, lafiya, ƙyanƙyashe, girma, ciyarwa da girbi.</p>
+    <div class="boutons">
+      <a class="bouton" href="https://tamtui.github.io/TAMTUI-TELECHARGEMENTS/fichiers/pisciculture/TAMTUI-Pisciculture-Pro-1.0.7-Windows-installateur.exe">⊞ Windows <small>3,7 Mo · .exe</small></a>
+      <a class="bouton" href="https://tamtui.github.io/TAMTUI-TELECHARGEMENTS/fichiers/pisciculture/TAMTUI-Pisciculture-Pro-1.0.7-Mac-tous-modeles.dmg">🍎 Mac <small>10,6 Mo · Intel da Apple</small></a>
+    </div>
+    <p class="aPartir">Daga <b>FCFA 65 000</b> (START) · lasisi da ake biya sau ɗaya kawai · <a href="#tarifs">duba farashi</a></p>
+    <footer><a href="../guides/Guide-utilisateur-TAMTUI-Pisciculture-Pro.pdf">📘 Jagorar mai amfani (PDF, da Faransanci)</a><span>An wallafa ranar 01/11/2026 · lambar kwamfuta <code>TMP-</code></span></footer>
+  </article>
+<article class="carte" style="--c:#c2561b">
+    <header><span class="icone">🥬</span><div><h2>TAMTUI Maraîchage Pro</h2><span class="activite">Lambu</span></div><span class="version">v1.0.7</span></header>
+    <p>Filaye da kunyoyi, iri da renon shuka, amfanin gona, kariya, ban ruwa, taki da girbi a jere.</p>
+    <div class="boutons">
+      <a class="bouton" href="https://tamtui.github.io/TAMTUI-TELECHARGEMENTS/fichiers/maraichage/TAMTUI-Maraichage-Pro-1.0.7-Windows-installateur.exe">⊞ Windows <small>3,7 Mo · .exe</small></a>
+      <a class="bouton" href="https://tamtui.github.io/TAMTUI-TELECHARGEMENTS/fichiers/maraichage/TAMTUI-Maraichage-Pro-1.0.7-Mac-tous-modeles.dmg">🍎 Mac <small>10,6 Mo · Intel da Apple</small></a>
+    </div>
+    <p class="aPartir">Daga <b>FCFA 65 000</b> (START) · lasisi da ake biya sau ɗaya kawai · <a href="#tarifs">duba farashi</a></p>
+    <footer><a href="../guides/Guide-utilisateur-TAMTUI-Maraichage-Pro.pdf">📘 Jagorar mai amfani (PDF, da Faransanci)</a><span>An wallafa ranar 01/11/2026 · lambar kwamfuta <code>TMM-</code></span></footer>
+  </article></div>
+  <section class="infos">
+    <div class="info"><h3>1 · Saka</h3><ol><li><b>Windows</b>: buɗe fayil ɗin <code>.exe</code>. Idan Windows ya nuna gargaɗi: <i>Ƙarin bayani › Gudanar duk da haka</i>.</li><li><b>Mac</b>: buɗe <code>.dmg</code>, ja manhajar cikin <i>Applications</i>, sannan a farkon buɗewa: danna dama › <i>Buɗe</i>.</li><li><b>Harshe</b>: zaɓi Français, English ko Hausa a saman allon kunnawa (ko a Saituna).</li></ol></div>
+    <div class="info"><h3>2 · Gwada sannan ka kunna</h3><ol><li>Danna <i>Gwada … na kwanaki 14</i> (START ga manhajojin fanni ɗaya, GESTION ga TAMTUI SAHEL 360).</li><li>Don cikakkiyar siga: <i>Kwafi lambar</i> kwamfutar ka aika wa mai ba ka TAMTUI.</li><li>Shigo da fayil ɗin lasisin da ka karɓa: manhajar za ta kunna har abada.</li></ol></div>
+    <div class="info"><h3>Saitin da aka ba da shawara</h3><ul><li><b>Windows 10 ko 11 (64 bits)</b> — ba a tallafa wa Windows 7 da 8 ba</li><li>macOS 11 ko sabo (Intel ko Apple)</li><li>Ƙwaƙwalwa Go 4, wurin ajiya Mo 500</li><li>Allo aƙalla 1280 × 800</li><li>Intanet don yanayi da sabuntawa kawai</li></ul></div>
+  </section>
+  <section class="tarifs" id="tarifs">
+    <h2>Farashi</h2>
+    <p class="sousTitre">Lasisin <b>dindindin</b>, ana biya <b>sau ɗaya kawai</b>, ga kowace kwamfuta. Farashi ba tare da haraji ba, a FCFA. Babu biyan wata-wata: sabuntawa kyauta ne.</p>
+    <h3>Manhajojin fanni ɗaya: TAMTUI Noma, Kiwo, Kiwon kifi, Lambu <small>(farashi ɗaya ga duka huɗun)</small></h3>
+    <div class="tableau"><table><tr><th>START</th><th>GESTION</th><th>PRODUCTION</th><th>INTELLIGENCE</th><th>ENTERPRISE</th></tr><tr><td>65 000</td><td>100 000</td><td>190 000</td><td>310 000</td><td>460 000</td></tr></table></div>
+    <h3 class="violet">TAMTUI SAHEL 360 <small>(ayyuka da yawa a haɗe, daga GESTION)</small></h3>
+    <div class="tableau"><table><tr><th>Siga</th><th>Ayyuka 2</th><th>Ayyuka 3</th><th>Ayyuka 4</th></tr><tr><td><b>GESTION</b></td><td>230 000</td><td>345 000</td><td>460 000</td></tr><tr><td><b>PRODUCTION</b></td><td>435 000</td><td>655 000</td><td>875 000</td></tr><tr><td><b>INTELLIGENCE</b></td><td>715 000</td><td>1 070 000</td><td>1 425 000</td></tr><tr><td><b>ENTERPRISE</b></td><td>1 060 000</td><td>1 585 000</td><td>2 115 000</td></tr></table></div>
+    <p class="petit">Farashin TAMTUI SAHEL 360 shi ne na manhajojin daban-daban + 15 %: ayyukanka suna haɗe a tushe ɗaya (alaƙa tsakanin ayyuka, Bita 360°, taswira da rahotanni na tare). Don aiki ɗaya kawai, zaɓi manhajar fanni ɗaya.</p>
+    <ul class="conditions"><li><b>Ƙarin kwamfuta</b>: ragi −20 % a farashin lasisi.</li><li><b>Horo</b> (ba dole ba, ana ba da shawara): sau ɗaya, 30 % na farashin lasisi.</li><li><b>Canza kwamfuta</b> (lalacewa, sata, maye gurbi): sabon lasisi a 40 % na farashi.</li><li><b>Ƙarin aiki ko siga</b> daga baya: za ka biya bambancin kawai, bayananka suna nan.</li><li><b>Kana amfani da manhajar TAMTUI tuni?</b> Don komawa TAMTUI SAHEL 360, za a cire kuɗin lasisinka kuma a ɗauko bayananka.</li><li><b>Ayyuka, ƙungiyoyi, hukumomin gwamnati</b>: lasisin aiki, na yanki ko na ƙasa bisa ƙiyasin farashi.</li></ul>
+  </section>
+  <section class="horsConnexion">
+    <div><h3>🔌 Kwamfutar Windows ba tare da intanet ba?</h3><p>Windows 11 da Windows 10 da aka sabunta suna shirye. A kan Windows 10 da <b>ba a taɓa sabuntawa ba</b> kuma <b>babu intanet</b>, sakawa tana buƙatar wani abu na Microsoft (WebView2): kawo shi tare da manhajar a filasha.</p><ol><li>Inda akwai intanet, sauke mai saka manhajar na Windows <b>da</b> abin da ke gefe, sannan ka kwafe su biyun a filasha.</li><li>A kan kwamfutar da babu intanet, da farko ka buɗe <b>abin na Microsoft</b> (sau ɗaya ga kowace kwamfuta, don dukan manhajojin TAMTUI).</li><li>Sannan ka buɗe mai saka TAMTUI: zai saku ba tare da intanet ba.</li></ol></div>
+    <a class="bouton composant" href="https://github.com/Tamtui/TAMTUI-TELECHARGEMENTS/releases/download/composant-webview2/MicrosoftEdgeWebView2RuntimeInstallerX64.exe">⊞ Abin Microsoft WebView2<small>204,9 Mo · na hukuma, Microsoft ya sa hannu · Windows 10/11 64 bits</small></a>
+  </section>
+  <div class="note"><b>Kana amfani tuni?</b> Manhajarka tana sabunta kanta: lokacin farawa, tana ba da sababbin sigogi (« Akwai sabuwar siga › Saka yanzu »). Bayananka da lasisinka suna nan, kuma ana yin ajiya kafin kowace sabuntawa.</div>
+</main>
+<footer class="pied">TAMTUI SAHEL · Kamfani ƙwararre mai samar da kayayyaki · Dandalin ƙasa na jin daɗin noma da kiwo<br>📞 +227 82 46 54 40 / +227 81 35 53 48<br>Saukewar hukuma — ka sauke manhajojin TAMTUI daga wannan shafi kawai.</footer>
+</body></html>
