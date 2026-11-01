@@ -1,19 +1,19 @@
 {
-  "version": "1.0.4",
-  "notes": "TAMTUI Pisciculture Pro 1.0.4 : améliorations et corrections. Vos données et votre licence sont conservées.",
-  "pub_date": "2026-10-26T17:46:08.103Z",
+  "version": "1.0.5",
+  "notes": "Version d'essai protégée et améliorations. Vos données et votre licence sont conservées.",
+  "pub_date": "2026-11-01T13:44:23.653Z",
   "platforms": {
     "darwin-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTSjYyKy85eHIrNkVCWEx0MGVLR000K0VyNzM3MFpZUlR4OEpwWm1xN2JpVHZyUzBLSE1zYlplcGVvOW9vQTdKN1RVTDRBME95MVYxQ01GZm1EL3d6ckloRXhWK1ZmUndNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzMDM2NTc4CWZpbGU6VEFNVFVJIFBpc2NpY3VsdHVyZSBQcm8uYXBwLnRhci5negpoajZJMitTYWNIZHNXN2hSV1RpdlhyTU5Ic3lOcW1zeWIvNk5sdTlwQ25hMUQwOXErTXU4L2JEQ2FxYXhjUHJ6QU12cThhTEs1NTNhNWVHdXVrNmxCdz09Cg==",
-      "url": "https://tamtui.github.io/TAMTUI-TELECHARGEMENTS/fichiers/pisciculture/TAMTUI-Pisciculture-Pro-1.0.4-Mac.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTSjYyKy85eHIrNkRkUjFhNkVtU0lha3QzT1YwbmJ5eDdUUFNBRnY2cEd6am0xZ1BKemJRNTV4NWtSTWQrYlFSU01ud01Id2Njd01RZWZLVEoxQjI4cEhPSlRCU0RFZXdnPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzNTM5NzU0CWZpbGU6VEFNVFVJIFBpc2NpY3VsdHVyZSBQcm8uYXBwLnRhci5negozWDh1Y2NFRlB5ckZURmUxWEE2dHhmNGczYkExTEVTSUFTNlJodldxby93dkRSTzIwWVhWdC84c1M0U2ZiNnB0VjZrS1BZbDRGc3MrZmRJWkRTeWxCQT09Cg==",
+      "url": "https://tamtui.github.io/TAMTUI-TELECHARGEMENTS/fichiers/pisciculture/TAMTUI-Pisciculture-Pro-1.0.5-Mac.app.tar.gz"
     },
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTSjYyKy85eHIrNkVCWEx0MGVLR000K0VyNzM3MFpZUlR4OEpwWm1xN2JpVHZyUzBLSE1zYlplcGVvOW9vQTdKN1RVTDRBME95MVYxQ01GZm1EL3d6ckloRXhWK1ZmUndNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzMDM2NTc4CWZpbGU6VEFNVFVJIFBpc2NpY3VsdHVyZSBQcm8uYXBwLnRhci5negpoajZJMitTYWNIZHNXN2hSV1RpdlhyTU5Ic3lOcW1zeWIvNk5sdTlwQ25hMUQwOXErTXU4L2JEQ2FxYXhjUHJ6QU12cThhTEs1NTNhNWVHdXVrNmxCdz09Cg==",
-      "url": "https://tamtui.github.io/TAMTUI-TELECHARGEMENTS/fichiers/pisciculture/TAMTUI-Pisciculture-Pro-1.0.4-Mac.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTSjYyKy85eHIrNkRkUjFhNkVtU0lha3QzT1YwbmJ5eDdUUFNBRnY2cEd6am0xZ1BKemJRNTV4NWtSTWQrYlFSU01ud01Id2Njd01RZWZLVEoxQjI4cEhPSlRCU0RFZXdnPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzNTM5NzU0CWZpbGU6VEFNVFVJIFBpc2NpY3VsdHVyZSBQcm8uYXBwLnRhci5negozWDh1Y2NFRlB5ckZURmUxWEE2dHhmNGczYkExTEVTSUFTNlJodldxby93dkRSTzIwWVhWdC84c1M0U2ZiNnB0VjZrS1BZbDRGc3MrZmRJWkRTeWxCQT09Cg==",
+      "url": "https://tamtui.github.io/TAMTUI-TELECHARGEMENTS/fichiers/pisciculture/TAMTUI-Pisciculture-Pro-1.0.5-Mac.app.tar.gz"
     },
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTSjYyKy85eHIrNlB3ejV3dHQxZUR2YUcxaXVCbWdYNEJ1allvMlJWcEVTL0Vsb1dsRXE3VXRMMmpzM3dZRU1EUjdlbVZaQzV3clJPV1JmQ1h5SGZZSlNMYUVaT2hteWdBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzMDM2Mjk4CWZpbGU6VEFNVFVJIFBpc2NpY3VsdHVyZSBQcm9fMS4wLjRfeDY0LXNldHVwLmV4ZQpiNmh3TUNJM1dJTGxiV3JWUkhRbDFuT1ZHWDE1d1gxdURsdDFRRHJTNlZ3VDBpR2J0Z3g5MHBRTFEzTHdjMTZ4M3pOSktFcHZYb1BPSkttN2RITkZDdz09Cg==",
-      "url": "https://tamtui.github.io/TAMTUI-TELECHARGEMENTS/fichiers/pisciculture/TAMTUI-Pisciculture-Pro-1.0.4-Windows-installateur.exe"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTSjYyKy85eHIrNk9tL0Q5VGN4SWdoTFpPQnFIOHY0TEoxNGdlT000dHY2a3VkWGdTVVNncDY3RDM1aFZORjl5cjhCVldWZUNPWjkweFN4VGZtdWNtRWYvODBhc3pZbVFJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzNTM5ODE4CWZpbGU6VEFNVFVJIFBpc2NpY3VsdHVyZSBQcm9fMS4wLjVfeDY0LXNldHVwLmV4ZQpqaVQva1hicW5mUVhKS3ovbVNxVUNrYlM5anN2L3pzYnc0d1puNG5mMXlMMGFqUFdzYVk5akx6ZFhJRUNkbEh6ekJFR3ppbWNiR2hzS0ZrUnVwR0NEQT09Cg==",
+      "url": "https://tamtui.github.io/TAMTUI-TELECHARGEMENTS/fichiers/pisciculture/TAMTUI-Pisciculture-Pro-1.0.5-Windows-installateur.exe"
     }
   }
 }

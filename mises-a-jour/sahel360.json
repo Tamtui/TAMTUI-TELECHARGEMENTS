@@ -1,0 +1,19 @@
+{
+  "version": "1.0.0",
+  "notes": "Version d'essai protégée et améliorations. Vos données et votre licence sont conservées.",
+  "pub_date": "2026-11-01T13:44:13.326Z",
+  "platforms": {
+    "darwin-x86_64": {
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTSjYyKy85eHIrNkFwTStIU1c4ZSs0MHRZUkdLQitLVTZuU1hqSE84dG9hQmY2N1JpK1Q2ZE5ZaWpYTUdsamF6L1JVaWNiRU9DRm9pZWgvRitYclFxMlo3dytxejhsbXdnPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzNTQwMTUzCWZpbGU6VEFNVFVJIFNBSEVMIDM2MC5hcHAudGFyLmd6ClJmeTZlYVkwS2x5NkdHcHZvQ0pGakcvVmh5Sk1GRTYzK3VHa2xoaGxHWEt1NHZ1VUN4NjFOZWF0d1NJN1FvVlpqR2dPT3BwRGJwRE9QOXN3cjF1bUNRPT0K",
+      "url": "https://tamtui.github.io/TAMTUI-TELECHARGEMENTS/fichiers/sahel360/TAMTUI-SAHEL-360-1.0.0-Mac.app.tar.gz"
+    },
+    "darwin-aarch64": {
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTSjYyKy85eHIrNkFwTStIU1c4ZSs0MHRZUkdLQitLVTZuU1hqSE84dG9hQmY2N1JpK1Q2ZE5ZaWpYTUdsamF6L1JVaWNiRU9DRm9pZWgvRitYclFxMlo3dytxejhsbXdnPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzNTQwMTUzCWZpbGU6VEFNVFVJIFNBSEVMIDM2MC5hcHAudGFyLmd6ClJmeTZlYVkwS2x5NkdHcHZvQ0pGakcvVmh5Sk1GRTYzK3VHa2xoaGxHWEt1NHZ1VUN4NjFOZWF0d1NJN1FvVlpqR2dPT3BwRGJwRE9QOXN3cjF1bUNRPT0K",
+      "url": "https://tamtui.github.io/TAMTUI-TELECHARGEMENTS/fichiers/sahel360/TAMTUI-SAHEL-360-1.0.0-Mac.app.tar.gz"
+    },
+    "windows-x86_64": {
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTSjYyKy85eHIrNkNqSmRoNVRNVjBsQWNTSUpSUmNPbS9tTHdQc1dZS1hMdzFCVzdTYlh2YVF0SHNRcm5NblBFUmplTkpuNVhXcVpkdGJTTmQ2VHdPaENJSFQ3V2lHWWdVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzNTM5ODIxCWZpbGU6VEFNVFVJIFNBSEVMIDM2MF8xLjAuMF94NjQtc2V0dXAuZXhlCmYrY0tHcjRja2l1aXI5NXJWdCs4VTBtNSswLzhlN2lJWXpXbGZaUFZ3ZkJrakhRNVNxWjh6Z0p5Zy9Hclc3WnhIZTEvNFFiQTlYWldGd1M4Q2I0WEFRPT0K",
+      "url": "https://tamtui.github.io/TAMTUI-TELECHARGEMENTS/fichiers/sahel360/TAMTUI-SAHEL-360-1.0.0-Windows-installateur.exe"
+    }
+  }
+}
