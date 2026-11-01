@@ -1,19 +1,19 @@
 {
-  "version": "1.0.5",
-  "notes": "Version d'essai protégée et améliorations. Vos données et votre licence sont conservées.",
-  "pub_date": "2026-11-01T13:44:27.149Z",
+  "version": "1.0.7",
+  "notes": "Nouveau logo et logiciel disponible en français, anglais et haoussa (Paramètres › Langue). Vos données et votre licence sont conservées.",
+  "pub_date": "2026-11-01T20:16:28.288Z",
   "platforms": {
     "darwin-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTSjYyKy85eHIrNlBub0lFd0k1RzlwaCtKaUdRT0F6Y1ZNQStoTSs0U1NybktDUHcxdDFhT05FT252eERyT2tWall1OUxuRGJKYzVuTVEwMzZ5RlU3Y2tiS2JubmhlOXc4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzNTM5NzI5CWZpbGU6VEFNVFVJIE1hcmHDrmNoYWdlIFByby5hcHAudGFyLmd6CkxJT0xVTUIrVWtVT1hzeGpQZzE2RTR5VzlnejVKSEdpejBoM3kyNVN3K1M2K2t2aS9mUU9YZlB3QjU5R0tkajFZdExNUVZRdzY4WlNoV0tqUmNRVUFBPT0K",
-      "url": "https://tamtui.github.io/TAMTUI-TELECHARGEMENTS/fichiers/maraichage/TAMTUI-Maraichage-Pro-1.0.5-Mac.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTSjYyKy85eHIrNkYvTUo3MmpTellPL1VmYmg1eGx5dGt0UHdKdlU1dnNuaVVSL2todXpjZ3JxWG90TmJ1TG1lRjJSTnlxWCtjSElWckNXT0xiZmxidUEvR0M0TDFXR3c4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzNTQ5MDE2CWZpbGU6VEFNVFVJIE1hcmHDrmNoYWdlIFByby5hcHAudGFyLmd6CndXbEVkdU1PVTJGeDlMRlhvcGttakVTOEJTSEIwWWNGZk1peUJjRDU0ZE01R2NHMkVKdzdpWDluUldsNDlDczBIYi9xS09tT2x5T2hOQmU5VVgvb0NRPT0K",
+      "url": "https://tamtui.github.io/TAMTUI-TELECHARGEMENTS/fichiers/maraichage/TAMTUI-Maraichage-Pro-1.0.7-Mac.app.tar.gz"
     },
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTSjYyKy85eHIrNlBub0lFd0k1RzlwaCtKaUdRT0F6Y1ZNQStoTSs0U1NybktDUHcxdDFhT05FT252eERyT2tWall1OUxuRGJKYzVuTVEwMzZ5RlU3Y2tiS2JubmhlOXc4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzNTM5NzI5CWZpbGU6VEFNVFVJIE1hcmHDrmNoYWdlIFByby5hcHAudGFyLmd6CkxJT0xVTUIrVWtVT1hzeGpQZzE2RTR5VzlnejVKSEdpejBoM3kyNVN3K1M2K2t2aS9mUU9YZlB3QjU5R0tkajFZdExNUVZRdzY4WlNoV0tqUmNRVUFBPT0K",
-      "url": "https://tamtui.github.io/TAMTUI-TELECHARGEMENTS/fichiers/maraichage/TAMTUI-Maraichage-Pro-1.0.5-Mac.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTSjYyKy85eHIrNkYvTUo3MmpTellPL1VmYmg1eGx5dGt0UHdKdlU1dnNuaVVSL2todXpjZ3JxWG90TmJ1TG1lRjJSTnlxWCtjSElWckNXT0xiZmxidUEvR0M0TDFXR3c4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzNTQ5MDE2CWZpbGU6VEFNVFVJIE1hcmHDrmNoYWdlIFByby5hcHAudGFyLmd6CndXbEVkdU1PVTJGeDlMRlhvcGttakVTOEJTSEIwWWNGZk1peUJjRDU0ZE01R2NHMkVKdzdpWDluUldsNDlDczBIYi9xS09tT2x5T2hOQmU5VVgvb0NRPT0K",
+      "url": "https://tamtui.github.io/TAMTUI-TELECHARGEMENTS/fichiers/maraichage/TAMTUI-Maraichage-Pro-1.0.7-Mac.app.tar.gz"
     },
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTSjYyKy85eHIrNk1jaXQrcG44OE56dXRpSUFmcDlFaUQwbmlPaUtUM0hWZlBRYzRxYno0UjZ0NVhma0Z0cy9wYlRFcEFETGptTDhta3oxZWN2a2p2b3AySE85M1E1UmdFPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzNTM5ODAyCWZpbGU6VEFNVFVJIE1hcmHDrmNoYWdlIFByb18xLjAuNV94NjQtc2V0dXAuZXhlClFwRnF0WjBNSElpNHFGaHIyb1pXeXVXNHNPT0pZZ0xyckt4bzRwVEY4dm92RG1kWUM4Vm9jLzQ1OVZ1YTNqSzVQWFIwVmhVcVhkckxFL0tvZG1vV0RRPT0K",
-      "url": "https://tamtui.github.io/TAMTUI-TELECHARGEMENTS/fichiers/maraichage/TAMTUI-Maraichage-Pro-1.0.5-Windows-installateur.exe"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTSjYyKy85eHIrNkc3UXdzTitGRUFPbkpFSWYvQWJKNEhkbTY2NzhoMzhOWXVZZGdNT2c2NlYyRTVRMlpOeUE4NHhTUDQ0MkZlT20vUDVyZ0ZJSFRDYmNEQVg0c3ZYUndBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzNTQ4OTQ4CWZpbGU6VEFNVFVJIE1hcmHDrmNoYWdlIFByb18xLjAuN194NjQtc2V0dXAuZXhlCkhUVUtsZWlTcFBOUjhhdTZOV1FBQ1I5QjRXU3p0aWxxZjgvU2RzYkNnS3p2QTZmWUJoSGlvaGw0WVBjWHNVWkFrRUkwWHZUNmxCd1VMYUZJd2VuTkNRPT0K",
+      "url": "https://tamtui.github.io/TAMTUI-TELECHARGEMENTS/fichiers/maraichage/TAMTUI-Maraichage-Pro-1.0.7-Windows-installateur.exe"
     }
   }
 }
