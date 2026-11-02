@@ -15,7 +15,7 @@ const SITE = "https://tamtui.github.io/TAMTUI-TELECHARGEMENTS";
 const RACINE = new URL("..", import.meta.url).pathname;
 const SIMULATION = process.argv.includes("--simulation");
 // Coordonnées affichées sur la page (laisser vide pour ne pas afficher la ligne).
-const CONTACT = { telephone: "+227 82 46 54 40 / +227 81 35 53 48", whatsapp: "", email: "" };
+const CONTACT = { telephone: "+227 82 46 54 40 / +227 81 35 53 48", whatsapp: "", email: "contact@tamtui.com" };
 // Prix validés par l'éditeur le 27 octobre 2026 (FCFA HT, licence perpétuelle payée une seule fois, par ordinateur).
 // Les 4 logiciels métier ont les mêmes prix ; TAMTUI SAHEL 360 = logiciels séparés + 15 %, arrondi aux 5 000 FCFA,
 // à partir de GESTION et de 2 activités.
