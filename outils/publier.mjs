@@ -211,17 +211,17 @@ function page(L) {
     <header><span class="icone">${p.icone}</span><div><h2>${e(p.nom)}</h2><span class="activite">${e(tr.activite)}</span></div><span class="version">v${e(s.version)}</span></header>
     <p>${e(tr.texte)}</p>${tr.activites ? `<div class="puces">${tr.activites.map(a => `<span>${e(a)}</span>`).join("")}</div>` : ""}
     <div class="boutons">
-      <a class="bouton" href="${e(s.windows.url)}">⊞ Windows <small>${e(s.windows.taille)} · .exe</small></a>
-      <a class="bouton" href="${e(s.mac.url)}">🍎 Mac <small>${e(s.mac.taille)} · ${t.intelApple}</small></a>
+      <a class="bouton" href="${e(s.windows.url)}" data-umami-event="telechargement" data-umami-event-logiciel="${e(p.nom)}" data-umami-event-systeme="Windows" data-umami-event-langue="${L.code}">⊞ Windows <small>${e(s.windows.taille)} · .exe</small></a>
+      <a class="bouton" href="${e(s.mac.url)}" data-umami-event="telechargement" data-umami-event-logiciel="${e(p.nom)}" data-umami-event-systeme="Mac" data-umami-event-langue="${L.code}">🍎 Mac <small>${e(s.mac.taille)} · ${t.intelApple}</small></a>
     </div>
     <p class="aPartir">${p.vedette ? t.aPartir360(fcfa(prix360("GESTION", 2))) : t.aPartir(fcfa(PRIX.START))} · ${t.unePaye} · <a href="#tarifs">${t.voirTarifs}</a></p>
-    <footer>${guide ? `<a href="${r}guides/${e(guide)}">${t.guide}</a>` : ""}<span>${t.publie(dateLangue(s.date, L.code), p.prefixe)}</span></footer>
+    <footer>${guide ? `<a href="${r}guides/${e(guide)}" data-umami-event="guide" data-umami-event-logiciel="${e(p.nom)}">${t.guide}</a>` : ""}<span>${t.publie(dateLangue(s.date, L.code), p.prefixe)}</span></footer>
   </article>`;
   }).join("\n");
   const liste = (tag, l) => `<${tag}>${l.map(x => `<li>${x}</li>`).join("")}</${tag}>`;
   const blocHorsConnexion = composant ? `<section class="horsConnexion">
     <div><h3>${t.hcTitre}</h3><p>${t.hcTexte}</p>${liste("ol", t.hcListe)}</div>
-    <a class="bouton composant" href="${e(composant.url)}">⊞ ${t.hcBouton}<small>${e(composant.taille)} · ${t.hcDetail}</small></a>
+    <a class="bouton composant" href="${e(composant.url)}" data-umami-event="composant-microsoft">⊞ ${t.hcBouton}<small>${e(composant.taille)} · ${t.hcDetail}</small></a>
   </section>` : "";
   const blocTarifs = `<section class="tarifs" id="tarifs">
     <h2>${t.tarifs}</h2>
@@ -239,7 +239,8 @@ function page(L) {
 <html lang="${L.code}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>${t.titre}</title>
 <meta name="description" content="${e(t.description)}">${alternates}
-${STYLE}</head><body>
+${STYLE}
+<script defer src="https://cloud.umami.is/script.js" data-website-id="c5e464d4-0178-4b07-b062-bbfcd5ac9f43"></script></head><body>
 <div class="bandeau"><div class="conteneur">
   ${langues}
   <div class="marque">${logoComplet ? `<img class="complet" src="${r}logo-complet.png" alt="TAMTUI Sahel">` : `${logo ? `<img src="${r}logo.png" alt="TAMTUI">` : ""}<div><b>TAMTUI</b><span>SAHEL</span></div>`}</div>
