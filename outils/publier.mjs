@@ -22,6 +22,19 @@ const CONTACT = { telephone: "+227 82 46 54 40 / +227 81 35 53 48", whatsapp: ""
 const EDITIONS = ["START", "GESTION", "PRODUCTION", "INTELLIGENCE", "ENTERPRISE"];
 const PRIX = { START: 65000, GESTION: 100000, PRODUCTION: 190000, INTELLIGENCE: 310000, ENTERPRISE: 460000 };
 const prix360 = (ed, n) => Math.round(PRIX[ed] * n * 1.15 / 5000) * 5000;
+
+// Tarifs non publiés : les prix sont donnés sur devis (décision de l'éditeur, 10 novembre 2026).
+const DEVIS = {
+  fr: { carte: "Tarif sur devis", lien: "demander un devis", titre: "Tarifs : sur devis", intro: "Chaque structure est différente. Le prix dépend du logiciel, du nombre d'ordinateurs et d'activités, et de la formation souhaitée. Dites-nous votre besoin : nous vous envoyons un <b>devis personnalisé sous 48 heures</b>, gratuit et sans engagement.",
+    inclus: ["<b>Licence à vie</b>, payée une seule fois, par ordinateur.", "<b>Mises à jour gratuites</b>, sans abonnement.", "<b>Essai gratuit de 14 jours</b>, sans engagement.", "Installation et formation sur place, si vous le souhaitez.", "Conditions adaptées pour les projets, les ONG et l'État, et pour plusieurs ordinateurs."],
+    bouton: "✉️ Demander un devis", sujet: "Demande de devis – logiciels TAMTUI" },
+  en: { carte: "Price on quotation", lien: "request a quote", titre: "Pricing: on quotation", intro: "Every organisation is different. The price depends on the software, the number of computers and activities, and the training you need. Tell us what you need: we will send you a <b>personalised quote within 48 hours</b>, free and with no obligation.",
+    inclus: ["<b>Lifetime licence</b>, paid once, per computer.", "<b>Free updates</b>, no subscription.", "<b>14-day free trial</b>, no obligation.", "On-site installation and training, if you wish.", "Tailored terms for projects, NGOs and government, and for several computers."],
+    bouton: "✉️ Request a quote", sujet: "Quote request – TAMTUI software" },
+  ha: { carte: "Farashi bisa ƙiyasi", lien: "nemi ƙiyasin farashi", titre: "Farashi: bisa ƙiyasi", intro: "Kowace ƙungiya da irin tata. Farashin ya dogara da manhajar, yawan kwamfutoci da ayyuka, da horon da kuke so. Faɗa mana buƙatarku: za mu aiko muku da <b>ƙiyasin farashi na musamman cikin awa 48</b>, kyauta kuma babu alƙawari.",
+    inclus: ["<b>Lasisin dindindin</b>, ana biya sau ɗaya, ga kowace kwamfuta.", "<b>Sabuntawa kyauta</b>, babu biyan wata-wata.", "<b>Gwaji kyauta na kwana 14</b>, babu alƙawari.", "Shigarwa da horo a wurinku, idan kuna so.", "Sharuɗɗa na musamman ga ayyuka, NGO da gwamnati, da kwamfutoci da yawa."],
+    bouton: "✉️ Nemi ƙiyasin farashi", sujet: "Neman ƙiyasin farashi – manhajojin TAMTUI" },
+};
 const fcfa = n => n.toLocaleString("fr-FR").replace(/\u202f/g, " ");
 
 const PRODUITS = [
@@ -196,7 +209,7 @@ section.infos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20p
 .bouton.composant{background:#1f6fa8}
 @media(max-width:860px){.horsConnexion{grid-template-columns:1fr}}
 .tarifs{background:#fff;border:1px solid var(--bord);border-radius:18px;padding:22px;margin-top:24px}.tarifs h2{margin:0 0 6px;color:var(--vert)}.tarifs h3{margin:18px 0 8px;font-size:16px;color:var(--vert)}.tarifs h3.violet{color:#6b3fa0}.tarifs h3 small{font-weight:500;color:var(--gris);font-size:13px}
-.sousTitre{color:#43524a;margin:0}.tableau{overflow-x:auto}.tarifs table{width:100%;border-collapse:collapse;font-size:14px;min-width:420px}.tarifs th{background:var(--vert);color:#fff;padding:8px;text-align:center}.tarifs h3.violet + .tableau th{background:#6b3fa0}.tarifs td{border:1px solid var(--bord);padding:8px;text-align:center;font-weight:700}.tarifs td:first-child b{font-weight:800}
+.sousTitre{color:#43524a;margin:0}.bouton.devis{display:inline-block;margin-top:10px;padding:12px 20px;background:var(--vert);color:#fff;border-radius:12px;text-decoration:none;font-weight:800}.tableau{overflow-x:auto}.tarifs table{width:100%;border-collapse:collapse;font-size:14px;min-width:420px}.tarifs th{background:var(--vert);color:#fff;padding:8px;text-align:center}.tarifs h3.violet + .tableau th{background:#6b3fa0}.tarifs td{border:1px solid var(--bord);padding:8px;text-align:center;font-weight:700}.tarifs td:first-child b{font-weight:800}
 .conditions{margin:12px 0 0;padding-left:20px;color:#43524a}.conditions li{margin:5px 0}.petit{font-size:13px;color:var(--gris)}
 .note{background:#fff8ec;border:1px solid #ecd3a8;border-radius:16px;padding:16px 20px;margin-top:24px;color:#6b4710;font-size:14px}
 footer.pied{text-align:center;color:var(--gris);font-size:13px;padding:30px 20px 40px}
@@ -214,7 +227,7 @@ function page(L) {
       <a class="bouton" href="${e(s.windows.url)}" data-umami-event="telechargement" data-umami-event-logiciel="${e(p.nom)}" data-umami-event-systeme="Windows" data-umami-event-langue="${L.code}">⊞ Windows <small>${e(s.windows.taille)} · .exe</small></a>
       <a class="bouton" href="${e(s.mac.url)}" data-umami-event="telechargement" data-umami-event-logiciel="${e(p.nom)}" data-umami-event-systeme="Mac" data-umami-event-langue="${L.code}">🍎 Mac <small>${e(s.mac.taille)} · ${t.intelApple}</small></a>
     </div>
-    <p class="aPartir">${p.vedette ? t.aPartir360(fcfa(prix360("GESTION", 2))) : t.aPartir(fcfa(PRIX.START))} · ${t.unePaye} · <a href="#tarifs">${t.voirTarifs}</a></p>
+    <p class="aPartir">${DEVIS[L.code].carte} · ${t.unePaye} · <a href="#tarifs">${DEVIS[L.code].lien}</a></p>
     <footer>${guide ? `<a href="${r}guides/${e(guide)}" data-umami-event="guide" data-umami-event-logiciel="${e(p.nom)}">${t.guide}</a>` : ""}<span>${t.publie(dateLangue(s.date, L.code), p.prefixe)}</span></footer>
   </article>`;
   }).join("\n");
@@ -223,15 +236,12 @@ function page(L) {
     <div><h3>${t.hcTitre}</h3><p>${t.hcTexte}</p>${liste("ol", t.hcListe)}</div>
     <a class="bouton composant" href="${e(composant.url)}" data-umami-event="composant-microsoft">⊞ ${t.hcBouton}<small>${e(composant.taille)} · ${t.hcDetail}</small></a>
   </section>` : "";
+  const D = DEVIS[L.code];
   const blocTarifs = `<section class="tarifs" id="tarifs">
-    <h2>${t.tarifs}</h2>
-    <p class="sousTitre">${t.tarifsIntro}</p>
-    <h3>${t.metier} <small>${t.memesPrix}</small></h3>
-    <div class="tableau"><table><tr>${EDITIONS.map(ed => `<th>${ed}</th>`).join("")}</tr><tr>${EDITIONS.map(ed => `<td>${fcfa(PRIX[ed])}</td>`).join("")}</tr></table></div>
-    <h3 class="violet">TAMTUI SAHEL 360 <small>${t.s360}</small></h3>
-    <div class="tableau"><table><tr><th>${t.edition}</th>${[2, 3, 4].map(n => `<th>${t.activitesN(n)}</th>`).join("")}</tr>${EDITIONS.slice(1).map(ed => `<tr><td><b>${ed}</b></td>${[2, 3, 4].map(n => `<td>${fcfa(prix360(ed, n))}</td>`).join("")}</tr>`).join("")}</table></div>
-    <p class="petit">${t.note360}</p>
-    ${liste("ul class=\"conditions\"", t.conditions).replace("</ul class=\"conditions\">", "</ul>")}
+    <h2>${D.titre}</h2>
+    <p class="sousTitre">${D.intro}</p>
+    ${liste("ul class=\"conditions\"", D.inclus).replace("</ul class=\"conditions\">", "</ul>")}
+    <p><a class="bouton devis" href="mailto:${e(CONTACT.email)}?subject=${encodeURIComponent(D.sujet)}" data-umami-event="devis" data-umami-event-langue="${L.code}">${D.bouton}</a> <span class="petit">📞 ${e(CONTACT.telephone)}</span></p>
   </section>`;
   const langues = `<nav class="langues" aria-label="Langue / Language / Harshe">${LANGUES.map(x => `<a href="${r}${x.dossier}" hreflang="${x.code}"${x.code === L.code ? ' class="actif" aria-current="page"' : ""}>${x.nom}</a>`).join("")}</nav>`;
   const alternates = LANGUES.map(x => `<link rel="alternate" hreflang="${x.code}" href="${SITE}/${x.dossier}">`).join("");
