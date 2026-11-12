@@ -1,19 +1,19 @@
 {
-  "version": "1.0.10",
-  "notes": "Nouvelle icône avec le logo complet TAMTUI Sahel. Vos données et votre licence sont conservées.",
-  "pub_date": "2026-11-01T21:56:24.251Z",
+  "version": "1.0.11",
+  "notes": "Nouveauté : licences de test et gestion des licences. Vos données et votre licence sont conservées.",
+  "pub_date": "2026-11-12T14:13:33.482Z",
   "platforms": {
     "darwin-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTSjYyKy85eHIrNk10ZVRGWVdGdVhKSjg5QTA0ZVppYThNVXdmMTA0Y25wQVZtUWFidWhFY2R0SzBGVlhRSHdYMkNSSkNhQTI5M3duT0pMYkdPek4yQ2hlM1BCYTUxSlFNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzNTY3MDcyCWZpbGU6VEFNVFVJIMOJbGV2YWdlIFByby5hcHAudGFyLmd6CkM4MUJsdWVraHE2d3BHSFlCNXlZUFlmeFdPVTgrWVluM0dKU1RnOWFVZWlUSmVaMXVaclNJL2hnZldvcTBVMkpmNWkxdzFZTzJlVjBCRmZ6bkUzTUJnPT0K",
-      "url": "https://tamtui.github.io/TAMTUI-TELECHARGEMENTS/fichiers/elevage/TAMTUI-Elevage-Pro-1.0.10-Mac.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTSjYyKy85eHIrNkFZYnQrQmZ1bjkwby90dDdLTE9ZbURoSDdZbXdxSzdRUnpLMGlRb2xLTzFobGplZWQrNUp4TEI3ZmZCWmNpemkzQWJZaDdNOUZIZ3hOY3Fya1BRQ0FzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0NDkwNzc3CWZpbGU6VEFNVFVJIMOJbGV2YWdlIFByby5hcHAudGFyLmd6ClRVZk9mck4rRitaa3RnK2lOSnhPSWFldVJHU2RNM0Z2VkdaSS9PcWFxTmhnSDVjNmZpaXF1VWRaQWU5N1hIQTM4Mi9pWC9HcVNYSlluRUdJQVUvK0F3PT0K",
+      "url": "https://tamtui.github.io/TAMTUI-TELECHARGEMENTS/fichiers/elevage/TAMTUI-Elevage-Pro-1.0.11-Mac.app.tar.gz"
     },
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTSjYyKy85eHIrNk10ZVRGWVdGdVhKSjg5QTA0ZVppYThNVXdmMTA0Y25wQVZtUWFidWhFY2R0SzBGVlhRSHdYMkNSSkNhQTI5M3duT0pMYkdPek4yQ2hlM1BCYTUxSlFNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzNTY3MDcyCWZpbGU6VEFNVFVJIMOJbGV2YWdlIFByby5hcHAudGFyLmd6CkM4MUJsdWVraHE2d3BHSFlCNXlZUFlmeFdPVTgrWVluM0dKU1RnOWFVZWlUSmVaMXVaclNJL2hnZldvcTBVMkpmNWkxdzFZTzJlVjBCRmZ6bkUzTUJnPT0K",
-      "url": "https://tamtui.github.io/TAMTUI-TELECHARGEMENTS/fichiers/elevage/TAMTUI-Elevage-Pro-1.0.10-Mac.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTSjYyKy85eHIrNkFZYnQrQmZ1bjkwby90dDdLTE9ZbURoSDdZbXdxSzdRUnpLMGlRb2xLTzFobGplZWQrNUp4TEI3ZmZCWmNpemkzQWJZaDdNOUZIZ3hOY3Fya1BRQ0FzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0NDkwNzc3CWZpbGU6VEFNVFVJIMOJbGV2YWdlIFByby5hcHAudGFyLmd6ClRVZk9mck4rRitaa3RnK2lOSnhPSWFldVJHU2RNM0Z2VkdaSS9PcWFxTmhnSDVjNmZpaXF1VWRaQWU5N1hIQTM4Mi9pWC9HcVNYSlluRUdJQVUvK0F3PT0K",
+      "url": "https://tamtui.github.io/TAMTUI-TELECHARGEMENTS/fichiers/elevage/TAMTUI-Elevage-Pro-1.0.11-Mac.app.tar.gz"
     },
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTSjYyKy85eHIrNkJHajZldVpJcllIWmNxTFkxMDl1NmV3WjhFR2poc3ZYTWR5NGZlVDBiTDVHWXlIeER1MUpBcU9Wa04vNVFJU0I5YjNlL0pnU0FDN2x2N285MmFYUVE0PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzNTY2NjAxCWZpbGU6VEFNVFVJIMOJbGV2YWdlIFByb18xLjAuMTBfeDY0LXNldHVwLmV4ZQpETjBTMmtqZGw5ZktibkJlMi96M2NlNnhYTHpOc3lXYlJKaUoxQ3ZZU05yaElFSW1OMU9FRENORmR6c1FmNkt2ejdiRVFpeEx3QVJQakxKbkpSdzdBQT09Cg==",
-      "url": "https://tamtui.github.io/TAMTUI-TELECHARGEMENTS/fichiers/elevage/TAMTUI-Elevage-Pro-1.0.10-Windows-installateur.exe"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTSjYyKy85eHIrNkJmaUFHMy9WbXlvdmFpWDQvN3BaMGNCREV3RmJiak4yMUJPV3FNZ1NFcFluWlh4ZUpMcU91ems1bXRuQy91c00zMzQrY21VMDRRZ0RWN01EeHRUQ2dRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0NDkwNzM2CWZpbGU6VEFNVFVJIMOJbGV2YWdlIFByb18xLjAuMTFfeDY0LXNldHVwLmV4ZQpndkxSdEY1cG1QRERoVHA5WTlTQkRLc3lWWkVycGpuRThIUWhVRTkyU2NGK0xjV09md2dFb0JLOFJKZEd4UHBhOWdQTDlqOU5yQ3BzQ25mKytEZzREUT09Cg==",
+      "url": "https://tamtui.github.io/TAMTUI-TELECHARGEMENTS/fichiers/elevage/TAMTUI-Elevage-Pro-1.0.11-Windows-installateur.exe"
     }
   }
 }
