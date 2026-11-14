@@ -101,7 +101,7 @@ const e = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&l
 
 // Visiteurs sur téléphone (11/2026 : la plupart arrivent par WhatsApp sur Android) : les logiciels s'installent sur
 // ordinateur. On le leur dit, et on leur propose de s'envoyer le lien, d'être rappelés ou de voir l'application mobile.
-const NUMERO_RAPPEL = "22782465440"; // WhatsApp de TAMTUI SAHEL (sans + ni espaces)
+const NUMEROS_RAPPEL = [["22782465440", "82 46 54 40"], ["22781355348", "81 35 53 48"]]; // WhatsApp et téléphone de TAMTUI SAHEL
 const MOBILE = {
   fr: { titre: "📱 Vous êtes sur téléphone", texte: "Les logiciels TAMTUI s'installent sur un <b>ordinateur Windows ou Mac</b>. Le fichier ne s'ouvrira pas sur ce téléphone.",
     envoyer: "📨 M'envoyer le lien pour mon ordinateur", rappel: "💬 Être rappelé pour une démonstration", appeler: "📞 Appeler", appli: "📲 Découvrir l'application mobile", quandMeme: "Télécharger quand même",
@@ -232,7 +232,8 @@ footer.pied{text-align:center;color:var(--gris);font-size:13px;padding:30px 20px
 .langues{position:absolute;top:18px;right:20px;display:flex;gap:6px}.langues a{color:#fff;text-decoration:none;font-weight:800;font-size:13px;border:1px solid #ffffff55;border-radius:99px;padding:5px 11px}.langues a.actif{background:#fff;color:var(--vert)}.bandeau{position:relative}
 .mobile{background:#fff8e6;border:2px solid #e9b44c;border-radius:16px;padding:18px 20px;margin:20px 0}.mobile h2,.mobBoite h2{margin:0 0 6px;font-size:20px;color:#7a4a00}.mobile p,.mobBoite p{margin:0 0 14px;color:#3d3328}
 .mobBoutons{display:grid;gap:10px}.mobB{display:block;text-align:center;text-decoration:none;font-weight:800;padding:13px 14px;border-radius:12px;border:1.5px solid var(--vert);color:var(--vert);background:#fff}.mobB.principal{background:var(--vert);color:#fff}
-.mobFond{position:fixed;inset:0;background:#0009;display:flex;align-items:center;justify-content:center;padding:16px;z-index:50}.mobFond[hidden]{display:none}.mobBoite{background:#fff;border-radius:18px;padding:20px;max-width:420px;width:100%}
+.mobT{margin:6px 0 0!important;font-weight:800;color:#3d3328}.mobDeux{display:grid;grid-template-columns:1fr 1fr;gap:10px}.mobDeux small{font-weight:600}.mobDeux .mobB{white-space:nowrap;padding:12px 6px}
+.mobFond{position:fixed;inset:0;background:#0009;display:flex;align-items:center;justify-content:center;padding:16px;z-index:50}.mobFond[hidden]{display:none}.mobBoite{background:#fff;border-radius:18px;padding:20px;max-width:420px;width:100%;max-height:92vh;overflow:auto}
 .mobQuandMeme{display:block;text-align:center;margin-top:14px;color:#6b756f;font-size:14px}
 </style>`
 function page(L) {
@@ -266,8 +267,8 @@ function page(L) {
   const appli = `https://tamtui.com/${L.dossier}application.html`;
   const boutonsMobile = `<div class="mobBoutons">
       <a class="mobB principal" href="#" data-envoyer data-umami-event="mobile-lien-envoye" data-umami-event-langue="${L.code}">${M.envoyer}</a>
-      <a class="mobB" href="https://wa.me/${NUMERO_RAPPEL}?text=${encodeURIComponent(M.demande)}" target="_blank" rel="noopener" data-umami-event="mobile-rappel-demande" data-umami-event-langue="${L.code}">${M.rappel}</a>
-      <a class="mobB" href="tel:+${NUMERO_RAPPEL}" data-umami-event="mobile-appel">${M.appeler}</a>
+      <p class="mobT">${M.rappel}</p><div class="mobDeux">${NUMEROS_RAPPEL.map(([n, aff]) => `<a class="mobB" href="https://wa.me/${n}?text=${encodeURIComponent(M.demande)}" target="_blank" rel="noopener" data-umami-event="mobile-rappel-demande" data-umami-event-numero="${aff}" data-umami-event-langue="${L.code}">WhatsApp<br><small>${aff}</small></a>`).join("")}</div>
+      <p class="mobT">${M.appeler}</p><div class="mobDeux">${NUMEROS_RAPPEL.map(([n, aff]) => `<a class="mobB" href="tel:+${n}" data-umami-event="mobile-appel" data-umami-event-numero="${aff}">${aff}</a>`).join("")}</div>
       <a class="mobB" href="${appli}" data-umami-event="mobile-vers-application">${M.appli}</a></div>`;
   const blocMobile = `<section class="mobile" id="mobile" hidden><h2>${M.titre}</h2><p>${M.texte}</p>${boutonsMobile}</section>
   <div class="mobFond" id="mobFond" hidden><div class="mobBoite" role="dialog" aria-modal="true"><h2>${M.titre}</h2><p>${M.texte}</p>${boutonsMobile}<a href="#" class="mobQuandMeme" id="mobQuandMeme">${M.quandMeme}</a></div></div>
