@@ -31,6 +31,10 @@ section.infos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20p
 footer.pied{text-align:center;color:var(--gris);font-size:13px;padding:30px 20px 40px}
 @media(max-width:860px){.grille,section.infos{grid-template-columns:1fr}.boutons{grid-template-columns:1fr}}
 .langues{position:absolute;top:18px;right:20px;display:flex;gap:6px}.langues a{color:#fff;text-decoration:none;font-weight:800;font-size:13px;border:1px solid #ffffff55;border-radius:99px;padding:5px 11px}.langues a.actif{background:#fff;color:var(--vert)}.bandeau{position:relative}
+.mobile{background:#fff8e6;border:2px solid #e9b44c;border-radius:16px;padding:18px 20px;margin:20px 0}.mobile h2,.mobBoite h2{margin:0 0 6px;font-size:20px;color:#7a4a00}.mobile p,.mobBoite p{margin:0 0 14px;color:#3d3328}
+.mobBoutons{display:grid;gap:10px}.mobB{display:block;text-align:center;text-decoration:none;font-weight:800;padding:13px 14px;border-radius:12px;border:1.5px solid var(--vert);color:var(--vert);background:#fff}.mobB.principal{background:var(--vert);color:#fff}
+.mobFond{position:fixed;inset:0;background:#0009;display:flex;align-items:center;justify-content:center;padding:16px;z-index:50}.mobFond[hidden]{display:none}.mobBoite{background:#fff;border-radius:18px;padding:20px;max-width:420px;width:100%}
+.mobQuandMeme{display:block;text-align:center;margin-top:14px;color:#6b756f;font-size:14px}
 </style>
 <script defer src="https://cloud.umami.is/script.js" data-website-id="c5e464d4-0178-4b07-b062-bbfcd5ac9f43"></script></head><body>
 <div class="bandeau"><div class="conteneur">
@@ -41,6 +45,33 @@ footer.pied{text-align:center;color:var(--gris);font-size:13px;padding:30px 20px
   <div class="atouts"><span>✓ Works without Internet</span><span>✓ Windows and Mac</span><span>✓ French, English, Hausa</span><span>✓ 14-day free trial</span><span>✓ Automatic updates</span><span>✓ Daily backup</span></div>
 </div></div>
 <main class="conteneur">
+  <section class="mobile" id="mobile" hidden><h2>📱 You are on a phone</h2><p>TAMTUI software installs on a <b>Windows or Mac computer</b>. The file will not open on this phone.</p><div class="mobBoutons">
+      <a class="mobB principal" href="#" data-envoyer data-umami-event="mobile-lien-envoye" data-umami-event-langue="en">📨 Send me the link for my computer</a>
+      <a class="mobB" href="https://wa.me/22782465440?text=Hello%20TAMTUI%20SAHEL%2C%20I%20would%20like%20a%20demonstration%20of%20your%20software.%0AMy%20name%3A%20%0AMy%20organisation%3A%20%0AMy%20city%3A%20%0ASoftware%20I%20am%20interested%20in%3A%20" target="_blank" rel="noopener" data-umami-event="mobile-rappel-demande" data-umami-event-langue="en">💬 Get a call back for a demonstration</a>
+      <a class="mobB" href="tel:+22782465440" data-umami-event="mobile-appel">📞 Call</a>
+      <a class="mobB" href="https://tamtui.com/en/application.html" data-umami-event="mobile-vers-application">📲 Discover the mobile app</a></div></section>
+  <div class="mobFond" id="mobFond" hidden><div class="mobBoite" role="dialog" aria-modal="true"><h2>📱 You are on a phone</h2><p>TAMTUI software installs on a <b>Windows or Mac computer</b>. The file will not open on this phone.</p><div class="mobBoutons">
+      <a class="mobB principal" href="#" data-envoyer data-umami-event="mobile-lien-envoye" data-umami-event-langue="en">📨 Send me the link for my computer</a>
+      <a class="mobB" href="https://wa.me/22782465440?text=Hello%20TAMTUI%20SAHEL%2C%20I%20would%20like%20a%20demonstration%20of%20your%20software.%0AMy%20name%3A%20%0AMy%20organisation%3A%20%0AMy%20city%3A%20%0ASoftware%20I%20am%20interested%20in%3A%20" target="_blank" rel="noopener" data-umami-event="mobile-rappel-demande" data-umami-event-langue="en">💬 Get a call back for a demonstration</a>
+      <a class="mobB" href="tel:+22782465440" data-umami-event="mobile-appel">📞 Call</a>
+      <a class="mobB" href="https://tamtui.com/en/application.html" data-umami-event="mobile-vers-application">📲 Discover the mobile app</a></div><a href="#" class="mobQuandMeme" id="mobQuandMeme">Download anyway</a></div></div>
+  <script>
+  (function(){
+    var mobile=/Android|iPhone|iPad|iPod|Mobile|Silk|Opera Mini/i.test(navigator.userAgent)||(navigator.maxTouchPoints>1&&/Macintosh/.test(navigator.userAgent)&&screen.width<1100);
+    if(!mobile)return;
+    var page=location.href.split("#")[0],texte="Link to install TAMTUI software on my computer: "+page;
+    document.getElementById("mobile").hidden=false;
+    document.addEventListener("click",function(ev){
+      var envoyer=ev.target.closest("[data-envoyer]");
+      if(envoyer){ev.preventDefault();if(navigator.share){navigator.share({title:"TAMTUI",text:texte,url:page}).catch(function(){});}else{location.href="https://wa.me/?text="+encodeURIComponent(texte);}return;}
+      var dl=ev.target.closest(".carte .boutons a.bouton, a.bouton.composant");
+      if(dl&&!dl.dataset.confirme){ev.preventDefault();var fond=document.getElementById("mobFond");fond.hidden=false;
+        document.getElementById("mobQuandMeme").onclick=function(e){e.preventDefault();fond.hidden=true;if(window.umami)umami.track("mobile-telechargement-quand-meme");location.href=dl.href;};
+        if(window.umami)umami.track("mobile-telechargement-intercepte");}
+      if(ev.target.id==="mobFond")ev.target.hidden=true;
+    });
+  })();
+  </script>
   <div class="grille"><article class="carte vedette" style="--c:#6b3fa0"><span class="nouveau">NEW</span>
     <header><span class="icone">🌍</span><div><h2>TAMTUI SAHEL 360</h2><span class="activite">All your activities in one software</span></div><span class="version">v1.1.3</span></header>
     <p>Build your own software: crops, livestock, fish farming and market gardening, as you choose, with a shared base (farmers, stocks, sales, finances), links between activities (manure, crop residues, pond water…) and the profitability of each activity. Takes over the data of the 4 TAMTUI software products.</p><div class="puces"><span>🌾 Crops</span><span>🐄 Livestock</span><span>🐟 Fish farming</span><span>🥬 Market gardening</span></div>

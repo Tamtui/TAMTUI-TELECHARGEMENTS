@@ -98,6 +98,21 @@ for (const p of PRODUITS) {
 
 // ---------- Page de téléchargement (français à la racine, anglais dans en/, haoussa dans ha/) ----------
 const e = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+
+// Visiteurs sur téléphone (11/2026 : la plupart arrivent par WhatsApp sur Android) : les logiciels s'installent sur
+// ordinateur. On le leur dit, et on leur propose de s'envoyer le lien, d'être rappelés ou de voir l'application mobile.
+const NUMERO_RAPPEL = "22782465440"; // WhatsApp de TAMTUI SAHEL (sans + ni espaces)
+const MOBILE = {
+  fr: { titre: "📱 Vous êtes sur téléphone", texte: "Les logiciels TAMTUI s'installent sur un <b>ordinateur Windows ou Mac</b>. Le fichier ne s'ouvrira pas sur ce téléphone.",
+    envoyer: "📨 M'envoyer le lien pour mon ordinateur", rappel: "💬 Être rappelé pour une démonstration", appeler: "📞 Appeler", appli: "📲 Découvrir l'application mobile", quandMeme: "Télécharger quand même",
+    partage: "Lien pour installer les logiciels TAMTUI sur mon ordinateur : ", demande: "Bonjour TAMTUI SAHEL, je souhaite une démonstration de vos logiciels.\nMon nom : \nMa structure : \nMa ville : \nLogiciel qui m'intéresse : " },
+  en: { titre: "📱 You are on a phone", texte: "TAMTUI software installs on a <b>Windows or Mac computer</b>. The file will not open on this phone.",
+    envoyer: "📨 Send me the link for my computer", rappel: "💬 Get a call back for a demonstration", appeler: "📞 Call", appli: "📲 Discover the mobile app", quandMeme: "Download anyway",
+    partage: "Link to install TAMTUI software on my computer: ", demande: "Hello TAMTUI SAHEL, I would like a demonstration of your software.\nMy name: \nMy organisation: \nMy city: \nSoftware I am interested in: " },
+  ha: { titre: "📱 Kuna kan waya", texte: "Ana shigar da manhajojin TAMTUI a <b>kwamfuta ta Windows ko Mac</b>. Fayil ɗin ba zai buɗe a wannan wayar ba.",
+    envoyer: "📨 Aiko mini da hanyar don kwamfutata", rappel: "💬 A kira ni don nuni", appeler: "📞 Kira", appli: "📲 Gano manhajar waya", quandMeme: "Sauke duk da haka",
+    partage: "Hanyar shigar da manhajojin TAMTUI a kwamfutata: ", demande: "Sannu TAMTUI SAHEL, ina son nuni na manhajojinku.\nSunana: \nƘungiyata: \nGaribina: \nManhajar da nake so: " },
+};
 const LANGUES = [{ code: "fr", nom: "FR", dossier: "" }, { code: "en", nom: "EN", dossier: "en/" }, { code: "ha", nom: "HA", dossier: "ha/" }];
 const dateLangue = (d, l) => new Date(d + "T12:00:00").toLocaleDateString(l === "en" ? "en-GB" : "fr-FR", l === "ha" ? undefined : { day: "numeric", month: "long", year: "numeric" });
 // Textes des cartes de logiciels dans chaque langue (le français est dans PRODUITS).
@@ -215,7 +230,11 @@ section.infos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20p
 footer.pied{text-align:center;color:var(--gris);font-size:13px;padding:30px 20px 40px}
 @media(max-width:860px){.grille,section.infos{grid-template-columns:1fr}.boutons{grid-template-columns:1fr}}
 .langues{position:absolute;top:18px;right:20px;display:flex;gap:6px}.langues a{color:#fff;text-decoration:none;font-weight:800;font-size:13px;border:1px solid #ffffff55;border-radius:99px;padding:5px 11px}.langues a.actif{background:#fff;color:var(--vert)}.bandeau{position:relative}
-</style>`;
+.mobile{background:#fff8e6;border:2px solid #e9b44c;border-radius:16px;padding:18px 20px;margin:20px 0}.mobile h2,.mobBoite h2{margin:0 0 6px;font-size:20px;color:#7a4a00}.mobile p,.mobBoite p{margin:0 0 14px;color:#3d3328}
+.mobBoutons{display:grid;gap:10px}.mobB{display:block;text-align:center;text-decoration:none;font-weight:800;padding:13px 14px;border-radius:12px;border:1.5px solid var(--vert);color:var(--vert);background:#fff}.mobB.principal{background:var(--vert);color:#fff}
+.mobFond{position:fixed;inset:0;background:#0009;display:flex;align-items:center;justify-content:center;padding:16px;z-index:50}.mobFond[hidden]{display:none}.mobBoite{background:#fff;border-radius:18px;padding:20px;max-width:420px;width:100%}
+.mobQuandMeme{display:block;text-align:center;margin-top:14px;color:#6b756f;font-size:14px}
+</style>`
 function page(L) {
   const t = T[L.code], r = L.dossier ? "../" : "";
   const cartes = PRODUITS.filter(p => etat[p.id]).map(p => {
@@ -243,6 +262,32 @@ function page(L) {
     ${liste("ul class=\"conditions\"", D.inclus).replace("</ul class=\"conditions\">", "</ul>")}
     <p><a class="bouton devis" href="mailto:${e(CONTACT.email)}?subject=${encodeURIComponent(D.sujet)}" data-umami-event="devis" data-umami-event-langue="${L.code}">${D.bouton}</a> <span class="petit">📞 ${e(CONTACT.telephone)}</span></p>
   </section>`;
+  const M = MOBILE[L.code];
+  const appli = `https://tamtui.com/${L.dossier}application.html`;
+  const boutonsMobile = `<div class="mobBoutons">
+      <a class="mobB principal" href="#" data-envoyer data-umami-event="mobile-lien-envoye" data-umami-event-langue="${L.code}">${M.envoyer}</a>
+      <a class="mobB" href="https://wa.me/${NUMERO_RAPPEL}?text=${encodeURIComponent(M.demande)}" target="_blank" rel="noopener" data-umami-event="mobile-rappel-demande" data-umami-event-langue="${L.code}">${M.rappel}</a>
+      <a class="mobB" href="tel:+${NUMERO_RAPPEL}" data-umami-event="mobile-appel">${M.appeler}</a>
+      <a class="mobB" href="${appli}" data-umami-event="mobile-vers-application">${M.appli}</a></div>`;
+  const blocMobile = `<section class="mobile" id="mobile" hidden><h2>${M.titre}</h2><p>${M.texte}</p>${boutonsMobile}</section>
+  <div class="mobFond" id="mobFond" hidden><div class="mobBoite" role="dialog" aria-modal="true"><h2>${M.titre}</h2><p>${M.texte}</p>${boutonsMobile}<a href="#" class="mobQuandMeme" id="mobQuandMeme">${M.quandMeme}</a></div></div>
+  <script>
+  (function(){
+    var mobile=/Android|iPhone|iPad|iPod|Mobile|Silk|Opera Mini/i.test(navigator.userAgent)||(navigator.maxTouchPoints>1&&/Macintosh/.test(navigator.userAgent)&&screen.width<1100);
+    if(!mobile)return;
+    var page=location.href.split("#")[0],texte=${JSON.stringify(M.partage)}+page;
+    document.getElementById("mobile").hidden=false;
+    document.addEventListener("click",function(ev){
+      var envoyer=ev.target.closest("[data-envoyer]");
+      if(envoyer){ev.preventDefault();if(navigator.share){navigator.share({title:"TAMTUI",text:texte,url:page}).catch(function(){});}else{location.href="https://wa.me/?text="+encodeURIComponent(texte);}return;}
+      var dl=ev.target.closest(".carte .boutons a.bouton, a.bouton.composant");
+      if(dl&&!dl.dataset.confirme){ev.preventDefault();var fond=document.getElementById("mobFond");fond.hidden=false;
+        document.getElementById("mobQuandMeme").onclick=function(e){e.preventDefault();fond.hidden=true;if(window.umami)umami.track("mobile-telechargement-quand-meme");location.href=dl.href;};
+        if(window.umami)umami.track("mobile-telechargement-intercepte");}
+      if(ev.target.id==="mobFond")ev.target.hidden=true;
+    });
+  })();
+  </script>`;
   const langues = `<nav class="langues" aria-label="Langue / Language / Harshe">${LANGUES.map(x => `<a href="${r}${x.dossier}" hreflang="${x.code}"${x.code === L.code ? ' class="actif" aria-current="page"' : ""}>${x.nom}</a>`).join("")}</nav>`;
   const alternates = LANGUES.map(x => `<link rel="alternate" hreflang="${x.code}" href="${SITE}/${x.dossier}">`).join("");
   return `<!doctype html>
@@ -259,6 +304,7 @@ ${STYLE}
   <div class="atouts">${t.atouts.map(a => `<span>${a}</span>`).join("")}</div>
 </div></div>
 <main class="conteneur">
+  ${blocMobile}
   <div class="grille">${cartes}</div>
   <section class="infos">
     <div class="info"><h3>${t.installer}</h3>${liste("ol", t.installerListe)}</div>
