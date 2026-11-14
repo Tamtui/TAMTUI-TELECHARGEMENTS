@@ -295,6 +295,7 @@ function page(L) {
 <html lang="${L.code}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>${t.titre}</title>
 <meta name="description" content="${e(t.description)}">${alternates}
+<link rel="icon" type="image/png" href="${r}favicon.png"><link rel="apple-touch-icon" href="${r}apple-touch-icon.png">
 ${STYLE}
 <script defer src="https://cloud.umami.is/script.js" data-website-id="c5e464d4-0178-4b07-b062-bbfcd5ac9f43"></script></head><body>
 <div class="bandeau"><div class="conteneur">
