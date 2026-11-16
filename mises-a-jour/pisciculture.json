@@ -1,19 +1,19 @@
 {
-  "version": "1.0.9",
-  "notes": "Nouveauté : licences de test et gestion des licences. Vos données et votre licence sont conservées.",
-  "pub_date": "2026-11-12T14:13:37.276Z",
+  "version": "1.0.10",
+  "notes": "Nouveauté : choix du pays (12 pays d'Afrique de l'Ouest et du Centre), monnaie, météo et régions adaptées. Vos données et votre licence sont conservées.",
+  "pub_date": "2026-11-16T12:53:40.576Z",
   "platforms": {
     "darwin-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTSjYyKy85eHIrNktpTFZWUGtacDdYTzV1Yzg2TXRkWDI1aktHMVRvRFNXb3J6aVNOZGovRHF2c1hHdHBKZnpaaWNLMTJwN0x2TkZJdXg1WDNWckVHWDluZ01mb3lkMWdBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0NDkwODMxCWZpbGU6VEFNVFVJIFBpc2NpY3VsdHVyZSBQcm8uYXBwLnRhci5negozbVdKb0pBcVJITm1scUNpTTQ0dzAvWnV2b2EvUVJEVzlnY1lyS2JQV2Q3cEFwcTJ6SXJLN1o5MTBvWjgxaVlkQTBwQWFIcTFzcUlrN0E1RE9kL3NCdz09Cg==",
-      "url": "https://tamtui.github.io/TAMTUI-TELECHARGEMENTS/fichiers/pisciculture/TAMTUI-Pisciculture-Pro-1.0.9-Mac.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTSjYyKy85eHIrNkU5VkZFTXM5RWs1SWEyb0RheDk2SHlFTXdsanF5N05QOG1uY2ZQZUVKWUUwUWNvbE9BLy81NmpSVDN0alVwRTQxdjYzZEUvSE1SUWFrY2NEaHdWTVFBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0ODE4NzkyCWZpbGU6VEFNVFVJIFBpc2NpY3VsdHVyZSBQcm8uYXBwLnRhci5negp4OTU4VGJ2UE12N0hsTDZzVkYyS2xFTDRvYytCeEpmbnphYVBtU0ZkTnJwb3lvWG05Y1hXYTJPb2FFUEpTVGpFaTdPK1ZOTnViVUw5MDk1K2dhenNDQT09Cg==",
+      "url": "https://tamtui.github.io/TAMTUI-TELECHARGEMENTS/fichiers/pisciculture/TAMTUI-Pisciculture-Pro-1.0.10-Mac.app.tar.gz"
     },
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTSjYyKy85eHIrNktpTFZWUGtacDdYTzV1Yzg2TXRkWDI1aktHMVRvRFNXb3J6aVNOZGovRHF2c1hHdHBKZnpaaWNLMTJwN0x2TkZJdXg1WDNWckVHWDluZ01mb3lkMWdBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0NDkwODMxCWZpbGU6VEFNVFVJIFBpc2NpY3VsdHVyZSBQcm8uYXBwLnRhci5negozbVdKb0pBcVJITm1scUNpTTQ0dzAvWnV2b2EvUVJEVzlnY1lyS2JQV2Q3cEFwcTJ6SXJLN1o5MTBvWjgxaVlkQTBwQWFIcTFzcUlrN0E1RE9kL3NCdz09Cg==",
-      "url": "https://tamtui.github.io/TAMTUI-TELECHARGEMENTS/fichiers/pisciculture/TAMTUI-Pisciculture-Pro-1.0.9-Mac.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTSjYyKy85eHIrNkU5VkZFTXM5RWs1SWEyb0RheDk2SHlFTXdsanF5N05QOG1uY2ZQZUVKWUUwUWNvbE9BLy81NmpSVDN0alVwRTQxdjYzZEUvSE1SUWFrY2NEaHdWTVFBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0ODE4NzkyCWZpbGU6VEFNVFVJIFBpc2NpY3VsdHVyZSBQcm8uYXBwLnRhci5negp4OTU4VGJ2UE12N0hsTDZzVkYyS2xFTDRvYytCeEpmbnphYVBtU0ZkTnJwb3lvWG05Y1hXYTJPb2FFUEpTVGpFaTdPK1ZOTnViVUw5MDk1K2dhenNDQT09Cg==",
+      "url": "https://tamtui.github.io/TAMTUI-TELECHARGEMENTS/fichiers/pisciculture/TAMTUI-Pisciculture-Pro-1.0.10-Mac.app.tar.gz"
     },
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTSjYyKy85eHIrNkZoeDJzWTM2SllJZmppSkFYWnhpNFN2UWFWNzYwT1cxNWJpazZxekREaG85UGEvZWIwS2NxcnVXSW9Ob1ZKMVIvNHZ0c0gweEExR1ROK2NpYlF4OVFJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0NDkwNzMzCWZpbGU6VEFNVFVJIFBpc2NpY3VsdHVyZSBQcm9fMS4wLjlfeDY0LXNldHVwLmV4ZQpGRktYb2Q3bWxBMnVya0ZDWVdMYmtobXQ4MXQwWUxuUVp5c2pON0ZUcjlXMTBUb2pVRTVvMmd1QkpocC9JY25yRmd0ZDErYStOWFRadEk0M3hMNjdBdz09Cg==",
-      "url": "https://tamtui.github.io/TAMTUI-TELECHARGEMENTS/fichiers/pisciculture/TAMTUI-Pisciculture-Pro-1.0.9-Windows-installateur.exe"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTSjYyKy85eHIrNktTb2lwQ0Fad215UDEwd1ljRjVFa3VneDJiYjZLZ2wwdHpsQ2ZCODg2TVVBZmNxemlOMDc1ajN5S0ZpNUFMQVBJMEF2TTJ5U21WY0JCaTNKbGR3Y0F3PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0ODE4MjkyCWZpbGU6VEFNVFVJIFBpc2NpY3VsdHVyZSBQcm9fMS4wLjEwX3g2NC1zZXR1cC5leGUKeTRGbmNDbkVCTkhCU01OMlRDMGRjMzhQdlRsMGJwSVE4L1h3NlNvbFJSTUNxSTJISGhpWTZHL05KS1dObnczcmtibFAvUFp2ck90VkZjbURNRGZ2Q0E9PQo=",
+      "url": "https://tamtui.github.io/TAMTUI-TELECHARGEMENTS/fichiers/pisciculture/TAMTUI-Pisciculture-Pro-1.0.10-Windows-installateur.exe"
     }
   }
 }

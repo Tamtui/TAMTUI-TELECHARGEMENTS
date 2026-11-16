@@ -1,19 +1,19 @@
 {
-  "version": "1.1.3",
-  "notes": "Nouveauté : licences de test et gestion des licences. Vos données et votre licence sont conservées.",
-  "pub_date": "2026-11-12T14:13:25.488Z",
+  "version": "1.1.4",
+  "notes": "Nouveauté : choix du pays (12 pays d'Afrique de l'Ouest et du Centre), monnaie, météo et régions adaptées. Vos données et votre licence sont conservées.",
+  "pub_date": "2026-11-16T12:53:27.127Z",
   "platforms": {
     "darwin-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTSjYyKy85eHIrNk9XVXp4VDRwVUtqRDh5ZjhhMEZWVis4S0Evc040dHBGU2E5YTNFM2hOZUNVODhIWVFXZkd6ekNidDJlUzJNeGNWejFnU0MyR3l1RXViekpvOHdsdUE4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0NDkyMjA1CWZpbGU6VEFNVFVJIFNBSEVMIDM2MC5hcHAudGFyLmd6CkVUWXhHYWl2bU1ScGxYcHVDQzhyOXlhd3YvR3dvZ2crN3ZWNXZRMlNXTWJscHA5a0Q1TURScTUvaDROaGVHTStLbVZUaFlza2I2dFYwSlVWMlJqV0RnPT0K",
-      "url": "https://tamtui.github.io/TAMTUI-TELECHARGEMENTS/fichiers/sahel360/TAMTUI-SAHEL-360-1.1.3-Mac.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTSjYyKy85eHIrNkpTS3FtOFp2UkNZNGFxcU1DSGVNUnZrN3J0NitmTEdNZFR6anJySGhSVXdjTFQvUGtyWDUyMjUvQmVSRjQwbEptT2RsSzRSRWdKOVpkRkZXcnA4NEFnPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0ODE4NzIzCWZpbGU6VEFNVFVJIFNBSEVMIDM2MC5hcHAudGFyLmd6Cll3b0JlNlREczdELzJqZGg3bGtUT1BkZ2xoNG13NmZxOGt6Z083QUdKdTk2MytERkR6ZzhtYTJQUEVyZ0lJMG96Qkdtem40Mk5CeEdjLzRxMjZ6MEN3PT0K",
+      "url": "https://tamtui.github.io/TAMTUI-TELECHARGEMENTS/fichiers/sahel360/TAMTUI-SAHEL-360-1.1.4-Mac.app.tar.gz"
     },
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTSjYyKy85eHIrNk9XVXp4VDRwVUtqRDh5ZjhhMEZWVis4S0Evc040dHBGU2E5YTNFM2hOZUNVODhIWVFXZkd6ekNidDJlUzJNeGNWejFnU0MyR3l1RXViekpvOHdsdUE4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0NDkyMjA1CWZpbGU6VEFNVFVJIFNBSEVMIDM2MC5hcHAudGFyLmd6CkVUWXhHYWl2bU1ScGxYcHVDQzhyOXlhd3YvR3dvZ2crN3ZWNXZRMlNXTWJscHA5a0Q1TURScTUvaDROaGVHTStLbVZUaFlza2I2dFYwSlVWMlJqV0RnPT0K",
-      "url": "https://tamtui.github.io/TAMTUI-TELECHARGEMENTS/fichiers/sahel360/TAMTUI-SAHEL-360-1.1.3-Mac.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTSjYyKy85eHIrNkpTS3FtOFp2UkNZNGFxcU1DSGVNUnZrN3J0NitmTEdNZFR6anJySGhSVXdjTFQvUGtyWDUyMjUvQmVSRjQwbEptT2RsSzRSRWdKOVpkRkZXcnA4NEFnPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0ODE4NzIzCWZpbGU6VEFNVFVJIFNBSEVMIDM2MC5hcHAudGFyLmd6Cll3b0JlNlREczdELzJqZGg3bGtUT1BkZ2xoNG13NmZxOGt6Z083QUdKdTk2MytERkR6ZzhtYTJQUEVyZ0lJMG96Qkdtem40Mk5CeEdjLzRxMjZ6MEN3PT0K",
+      "url": "https://tamtui.github.io/TAMTUI-TELECHARGEMENTS/fichiers/sahel360/TAMTUI-SAHEL-360-1.1.4-Mac.app.tar.gz"
     },
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTSjYyKy85eHIrNktybHRVSDI5eWlGUGxROUFlRGNJOUdFaVM3M29sdDYzcERCRDE1S3pybmE4cXpxYndINmxHamFuNlVuUDE3UTZFanBjTS93T1VqU2dzVWZqSmtUZ1FnPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0NDkwNzgzCWZpbGU6VEFNVFVJIFNBSEVMIDM2MF8xLjEuM194NjQtc2V0dXAuZXhlCitwRWh6UU9aVE5KR0JzcEQxb2t5ZW4yV0ZSR1p2dGZEcncwU3ZGSW1yZzU1WDl3MWVNdUdHZHhkTVVjMndtR3RRZ1Y4SHRvYm9ybElGUEQ4L2doWkF3PT0K",
-      "url": "https://tamtui.github.io/TAMTUI-TELECHARGEMENTS/fichiers/sahel360/TAMTUI-SAHEL-360-1.1.3-Windows-installateur.exe"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTSjYyKy85eHIrNkpOQno3eDVkZTJxRjlONFlCSTNRV3R3eVJlM0pCeWJyOEI0T1cvVE0xS3ExZXNMZTlhZm9zUVB4RENpOGJJN1VKQ29DQ0w3dGZQckFIck5pZjBFOHdVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0ODE4MTM2CWZpbGU6VEFNVFVJIFNBSEVMIDM2MF8xLjEuNF94NjQtc2V0dXAuZXhlCitJU3ZNRFVVUlJhWEZ5R2ZZaThhTzg1ZzIyeldFQkxQVnUvK1NwTlJnY0NVTGpPMXVkZzhiU1kwcWZxRWJxTVdzQ1lvdWdqeXVhSmEwVm1BS0Rhb0R3PT0K",
+      "url": "https://tamtui.github.io/TAMTUI-TELECHARGEMENTS/fichiers/sahel360/TAMTUI-SAHEL-360-1.1.4-Windows-installateur.exe"
     }
   }
 }

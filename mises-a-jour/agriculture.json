@@ -1,19 +1,19 @@
 {
-  "version": "2.1.10",
-  "notes": "Nouveauté : licences de test et gestion des licences. Vos données et votre licence sont conservées.",
-  "pub_date": "2026-11-12T14:13:29.583Z",
+  "version": "2.1.11",
+  "notes": "Nouveauté : choix du pays (12 pays d'Afrique de l'Ouest et du Centre), monnaie, météo et régions adaptées. Vos données et votre licence sont conservées.",
+  "pub_date": "2026-11-16T12:53:32.124Z",
   "platforms": {
     "darwin-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTSjYyKy85eHIrNkhyOEM1b3hJQzdWU3dhdEdDc2lmV3JFQ2JicUlINmFpM3F0R0lsUEUwQVBmU0RKQW9xNnNIRytDamRINVRhQWE4OE42ZS9EYVd3NXh1THNOelI3RVFJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0NDkxMDYzCWZpbGU6VEFNVFVJIFN1aXRlIFByby5hcHAudGFyLmd6CkdKamVaeDBMYUhzMDhqTGZGaUlLTHNTV3Y4NUhzbitIOFJzMlJObkNNRm1WenJmRWdTcHBpeFVLRG1hNzVQR0RVU3lNeEJHNWhReE5OSXRhZHFzSEJ3PT0K",
-      "url": "https://tamtui.github.io/TAMTUI-TELECHARGEMENTS/fichiers/agriculture/TAMTUI-Suite-Pro-2.1.10-Mac.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTSjYyKy85eHIrNktIYWFJd0lidjB3bWV1NGVtc293R0tia3J3QVBobHcyakk4bVBiLzBIaStYUVFrNStpNzZ5ZjBMMkZFbitZQlAwcisxdThFYnpvS29RdDgrZVVmVWdRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0ODE5MzEyCWZpbGU6VEFNVFVJIFN1aXRlIFByby5hcHAudGFyLmd6CkszZ2cvTm5qVEFmQi9TUmk4VnpPVi9oeTlGa3J6K3M3Y2xBWERhQ2NIQzArcm9pSDBTVGNxd2taMm5OaDk4amd3Y04vTmtGQXRqMkVuK2FLaUI1SUNnPT0K",
+      "url": "https://tamtui.github.io/TAMTUI-TELECHARGEMENTS/fichiers/agriculture/TAMTUI-Suite-Pro-2.1.11-Mac.app.tar.gz"
     },
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTSjYyKy85eHIrNkhyOEM1b3hJQzdWU3dhdEdDc2lmV3JFQ2JicUlINmFpM3F0R0lsUEUwQVBmU0RKQW9xNnNIRytDamRINVRhQWE4OE42ZS9EYVd3NXh1THNOelI3RVFJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0NDkxMDYzCWZpbGU6VEFNVFVJIFN1aXRlIFByby5hcHAudGFyLmd6CkdKamVaeDBMYUhzMDhqTGZGaUlLTHNTV3Y4NUhzbitIOFJzMlJObkNNRm1WenJmRWdTcHBpeFVLRG1hNzVQR0RVU3lNeEJHNWhReE5OSXRhZHFzSEJ3PT0K",
-      "url": "https://tamtui.github.io/TAMTUI-TELECHARGEMENTS/fichiers/agriculture/TAMTUI-Suite-Pro-2.1.10-Mac.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTSjYyKy85eHIrNktIYWFJd0lidjB3bWV1NGVtc293R0tia3J3QVBobHcyakk4bVBiLzBIaStYUVFrNStpNzZ5ZjBMMkZFbitZQlAwcisxdThFYnpvS29RdDgrZVVmVWdRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0ODE5MzEyCWZpbGU6VEFNVFVJIFN1aXRlIFByby5hcHAudGFyLmd6CkszZ2cvTm5qVEFmQi9TUmk4VnpPVi9oeTlGa3J6K3M3Y2xBWERhQ2NIQzArcm9pSDBTVGNxd2taMm5OaDk4amd3Y04vTmtGQXRqMkVuK2FLaUI1SUNnPT0K",
+      "url": "https://tamtui.github.io/TAMTUI-TELECHARGEMENTS/fichiers/agriculture/TAMTUI-Suite-Pro-2.1.11-Mac.app.tar.gz"
     },
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTSjYyKy85eHIrNkxPemhFQUx4NWFwVkljOFVkVWZqTjB1UktoQWczTmlyeExEaHhKcStIcmtkRi85ckYvV3BJcWJsdkNZOExpT2pkZGVWaTNUVmloZmtKcnhOMmc2aVFvPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0NDkwNjY0CWZpbGU6VEFNVFVJIFN1aXRlIFByb18yLjEuMTBfeDY0LXNldHVwLmV4ZQpzYXJVLzNPQnpQY1kyQTRJR254VlFna1VNaVdJUzdhU3p1UWpBbEwwVm9vNENpS2QvV2ZodFZTVlNpWVZPSEtKUmw1YUpZbU02L05SRUszVXp2eDJEZz09Cg==",
-      "url": "https://tamtui.github.io/TAMTUI-TELECHARGEMENTS/fichiers/agriculture/TAMTUI-Suite-Pro-2.1.10-Windows-installateur.exe"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTSjYyKy85eHIrNktjSHgwcGd3VHRuZlFOQy8raWd3eWo1OVk0RWpIbW5mVkVLbFVjNVpKNVYrTmlzZDd4RklSUFBwS2kwZTNqUWRTU005OFBQNlA2TEVSZTQwbmtxemdZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0ODE4NDU4CWZpbGU6VEFNVFVJIFN1aXRlIFByb18yLjEuMTFfeDY0LXNldHVwLmV4ZQp3d2dxaGp1YWx4ZWxCZk83UWtRSTdzZy9TRGYvV0JndGxNNFR2bHNSZVNJbU5OWkxzdGVOVHlCYk1vQ1JkQlFWaGFVK24zcTlWQWd2NGJRVmc2T0RBUT09Cg==",
+      "url": "https://tamtui.github.io/TAMTUI-TELECHARGEMENTS/fichiers/agriculture/TAMTUI-Suite-Pro-2.1.11-Windows-installateur.exe"
     }
   }
 }
