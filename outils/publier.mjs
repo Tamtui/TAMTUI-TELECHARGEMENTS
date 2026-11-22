@@ -15,7 +15,7 @@ const SITE = "https://tamtui.github.io/TAMTUI-TELECHARGEMENTS";
 const RACINE = new URL("..", import.meta.url).pathname;
 const SIMULATION = process.argv.includes("--simulation");
 // Coordonnées affichées sur la page (laisser vide pour ne pas afficher la ligne).
-const CONTACT = { telephone: "+227 82 46 54 40 / +227 81 35 53 48", whatsapp: "", email: "contact@tamtui.com" };
+const CONTACT = { telephone: "+227 82 46 54 40 / +227 81 35 53 48", whatsapp: "", email: "contact@gwanitsari.com" };
 // Prix validés par l'éditeur le 27 octobre 2026 (FCFA HT, licence perpétuelle payée une seule fois, par ordinateur).
 // Les 4 logiciels métier ont les mêmes prix ; TSARI GWANI = logiciels séparés + 15 %, arrondi aux 5 000 FCFA,
 // à partir de GESTION et de 2 activités.
@@ -105,13 +105,13 @@ const NUMEROS_RAPPEL = [["22782465440", "82 46 54 40"], ["22781355348", "81 35 5
 const MOBILE = {
   fr: { titre: "📱 Vous êtes sur téléphone", texte: "Les logiciels TSARI s'installent sur un <b>ordinateur Windows ou Mac</b>. Le fichier ne s'ouvrira pas sur ce téléphone.",
     envoyer: "📨 M'envoyer le lien pour mon ordinateur", rappel: "💬 Être rappelé pour une démonstration", appeler: "📞 Appeler", appli: "📲 Découvrir l'application mobile", quandMeme: "Télécharger quand même",
-    partage: "Lien pour installer les logiciels TSARI sur mon ordinateur : ", demande: "Bonjour TAMTUI SAHEL, je souhaite une démonstration de vos logiciels.\nMon nom : \nMa structure : \nMa ville : \nLogiciel qui m'intéresse : " },
+    partage: "Lien pour installer les logiciels TSARI sur mon ordinateur : ", demande: "Bonjour TSARI, je souhaite une démonstration de vos logiciels.\nMon nom : \nMa structure : \nMa ville : \nLogiciel qui m'intéresse : " },
   en: { titre: "📱 You are on a phone", texte: "TSARI software installs on a <b>Windows or Mac computer</b>. The file will not open on this phone.",
     envoyer: "📨 Send me the link for my computer", rappel: "💬 Get a call back for a demonstration", appeler: "📞 Call", appli: "📲 Discover the mobile app", quandMeme: "Download anyway",
-    partage: "Link to install TSARI software on my computer: ", demande: "Hello TAMTUI SAHEL, I would like a demonstration of your software.\nMy name: \nMy organisation: \nMy city: \nSoftware I am interested in: " },
+    partage: "Link to install TSARI software on my computer: ", demande: "Hello TSARI, I would like a demonstration of your software.\nMy name: \nMy organisation: \nMy city: \nSoftware I am interested in: " },
   ha: { titre: "📱 Kuna kan waya", texte: "Ana shigar da manhajojin TSARI a <b>kwamfuta ta Windows ko Mac</b>. Fayil ɗin ba zai buɗe a wannan wayar ba.",
     envoyer: "📨 Aiko mini da hanyar don kwamfutata", rappel: "💬 A kira ni don nuni", appeler: "📞 Kira", appli: "📲 Gano manhajar waya", quandMeme: "Sauke duk da haka",
-    partage: "Hanyar shigar da manhajojin TSARI a kwamfutata: ", demande: "Sannu TAMTUI SAHEL, ina son nuni na manhajojinku.\nSunana: \nƘungiyata: \nGaribina: \nManhajar da nake so: " },
+    partage: "Hanyar shigar da manhajojin TSARI a kwamfutata: ", demande: "Sannu TSARI, ina son nuni na manhajojinku.\nSunana: \nƘungiyata: \nGaribina: \nManhajar da nake so: " },
 };
 const LANGUES = [{ code: "fr", nom: "FR", dossier: "" }, { code: "en", nom: "EN", dossier: "en/" }, { code: "ha", nom: "HA", dossier: "ha/" }];
 const dateLangue = (d, l) => new Date(d + "T12:00:00").toLocaleDateString(l === "en" ? "en-GB" : "fr-FR", l === "ha" ? undefined : { day: "numeric", month: "long", year: "numeric" });
@@ -150,7 +150,7 @@ const T = {
     hcListe: ["Là où il y a Internet, téléchargez l'installateur Windows du logiciel <b>et</b> le composant ci-contre, puis copiez les deux sur une clé USB.", "Sur l'ordinateur sans Internet, lancez d'abord le <b>composant Microsoft</b> (une seule fois par ordinateur, pour tous les logiciels TSARI).", "Lancez ensuite l'installateur TSARI : il s'installe sans Internet."],
     hcBouton: "Composant Microsoft WebView2", hcDetail: "officiel, signé par Microsoft · Windows 10/11 64 bits",
     client: "<b>Déjà client ?</b> Votre logiciel se met à jour tout seul : au démarrage, il propose les nouvelles versions (« Nouvelle version disponible › Installer maintenant »). Vos données et votre licence sont conservées, et une sauvegarde est faite avant chaque mise à jour.",
-    pied: "TAMTUI SAHEL · Société experte fournisseur · Plateforme nationale du bien-être agro-pastoral", officiel: "Téléchargements officiels — ne téléchargez les logiciels TSARI que depuis cette page.",
+    pied: "TSARI · Logiciels de gestion de la production · <a href=\"https://gwanitsari.com/\">gwanitsari.com</a>", officiel: "Téléchargements officiels — ne téléchargez les logiciels TSARI que depuis cette page.",
   },
   en: {
     titre: "Download TSARI software", description: "Official download of TSARI software: TSARI GWANI (all activities), Agriculture, Livestock, Fish farming and Market gardening, for Windows and Mac.",
@@ -169,7 +169,7 @@ const T = {
     hcListe: ["Where there is Internet, download the software's Windows installer <b>and</b> the component opposite, then copy both onto a USB stick.", "On the computer without Internet, first run the <b>Microsoft component</b> (once per computer, for all TSARI software).", "Then run the TSARI installer: it installs without Internet."],
     hcBouton: "Microsoft WebView2 component", hcDetail: "official, signed by Microsoft · Windows 10/11 64-bit",
     client: "<b>Already a customer?</b> Your software updates itself: at start-up, it offers new versions (“New version available › Install now”). Your data and licence are kept, and a backup is made before each update.",
-    pied: "TAMTUI SAHEL · Expert supplier company · National platform for agro-pastoral well-being", officiel: "Official downloads — only download TSARI software from this page.",
+    pied: "TSARI · Production management software · <a href=\"https://gwanitsari.com/en/\">gwanitsari.com</a>", officiel: "Official downloads — only download TSARI software from this page.",
   },
   ha: {
     titre: "Sauke manhajojin TSARI", description: "Saukewar hukuma ta manhajojin TSARI: TSARI GWANI (dukan ayyuka), Noma, Kiwo, Kiwon kifi da Lambu, don Windows da Mac.",
@@ -188,7 +188,7 @@ const T = {
     hcListe: ["Inda akwai intanet, sauke mai saka manhajar na Windows <b>da</b> abin da ke gefe, sannan ka kwafe su biyun a filasha.", "A kan kwamfutar da babu intanet, da farko ka buɗe <b>abin na Microsoft</b> (sau ɗaya ga kowace kwamfuta, don dukan manhajojin TSARI).", "Sannan ka buɗe mai saka TSARI: zai saku ba tare da intanet ba."],
     hcBouton: "Abin Microsoft WebView2", hcDetail: "na hukuma, Microsoft ya sa hannu · Windows 10/11 64 bits",
     client: "<b>Kana amfani tuni?</b> Manhajarka tana sabunta kanta: lokacin farawa, tana ba da sababbin sigogi (« Akwai sabuwar siga › Saka yanzu »). Bayananka da lasisinka suna nan, kuma ana yin ajiya kafin kowace sabuntawa.",
-    pied: "TAMTUI SAHEL · Kamfani ƙwararre mai samar da kayayyaki · Dandalin ƙasa na jin daɗin noma da kiwo", officiel: "Saukewar hukuma — ka sauke manhajojin TSARI daga wannan shafi kawai.",
+    pied: "TSARI · Manhajojin gudanar da samarwa · <a href=\"https://gwanitsari.com/ha/\">gwanitsari.com</a>", officiel: "Saukewar hukuma — ka sauke manhajojin TSARI daga wannan shafi kawai.",
   },
 };
 const guides = existsSync(join(RACINE, "guides")) ? readdirSync(join(RACINE, "guides")) : [];
