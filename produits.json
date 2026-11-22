@@ -60,18 +60,18 @@
     }
   },
   "sahel360": {
-    "version": "1.1.4",
-    "date": "2026-11-16",
+    "version": "1.2.0",
+    "date": "2026-11-22",
     "majAuto": true,
     "windows": {
-      "nom": "TAMTUI-SAHEL-360-1.1.4-Windows-installateur.exe",
+      "nom": "TAMTUI-SAHEL-360-1.2.0-Windows-installateur.exe",
       "taille": "3,8 Mo",
-      "url": "https://tamtui.github.io/TAMTUI-TELECHARGEMENTS/fichiers/sahel360/TAMTUI-SAHEL-360-1.1.4-Windows-installateur.exe"
+      "url": "https://tamtui.github.io/TAMTUI-TELECHARGEMENTS/fichiers/sahel360/TAMTUI-SAHEL-360-1.2.0-Windows-installateur.exe"
     },
     "mac": {
-      "nom": "TAMTUI-SAHEL-360-1.1.4-Mac-tous-modeles.dmg",
-      "taille": "10,7 Mo",
-      "url": "https://tamtui.github.io/TAMTUI-TELECHARGEMENTS/fichiers/sahel360/TAMTUI-SAHEL-360-1.1.4-Mac-tous-modeles.dmg"
+      "nom": "TAMTUI-SAHEL-360-1.2.0-Mac-tous-modeles.dmg",
+      "taille": "10,4 Mo",
+      "url": "https://tamtui.github.io/TAMTUI-TELECHARGEMENTS/fichiers/sahel360/TAMTUI-SAHEL-360-1.2.0-Mac-tous-modeles.dmg"
     }
   }
 }
