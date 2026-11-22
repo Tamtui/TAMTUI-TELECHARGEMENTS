@@ -38,16 +38,16 @@ const DEVIS = {
 const fcfa = n => n.toLocaleString("fr-FR").replace(/\u202f/g, " ");
 
 const PRODUITS = [
-  { id: "sahel360", nom: "TSARI GWANI", activite: "Toutes vos activités dans un seul logiciel", depot: "Tamtui/TAMTUI-SAHEL-360", base: "TAMTUI-SAHEL-360", prefixe: "TMS-", couleur: "#6b3fa0", icone: "🌍", vedette: true,
+  { id: "sahel360", nom: "TSARI GWANI", activite: "Toutes vos activités dans un seul logiciel", depot: "Tamtui/TAMTUI-SAHEL-360", base: "TAMTUI-SAHEL-360", guide: "Guide-utilisateur-TSARI-GWANI.pdf", prefixe: "TMS-", couleur: "#6b3fa0", icone: "🌍", vedette: true,
     texte: "Composez votre logiciel : cultures, élevage, pisciculture et maraîchage, au choix, avec un socle commun (producteurs, stocks, ventes, finances), les liens entre activités (fumier, fanes, eau des bassins…) et le bilan de rentabilité de chaque activité. Reprend les données des 4 logiciels TSARI.",
     activites: ["🌾 Cultures", "🐄 Élevage", "🐟 Aquaculture", "🥬 Maraîchage"] },
-  { id: "agriculture", nom: "TSARI AGRICULTURE", activite: "Agriculture", depot: "Tamtui/TAMTUI-AGRICULTURE-PRO-13", base: "TAMTUI-Suite-Pro", prefixe: "TMT-", couleur: "#2f7d32", icone: "🌾",
+  { id: "agriculture", nom: "TSARI AGRICULTURE", activite: "Agriculture", depot: "Tamtui/TAMTUI-AGRICULTURE-PRO-13", base: "TAMTUI-Suite-Pro", guide: "Guide-utilisateur-TSARI-AGRICULTURE.pdf", prefixe: "TMT-", couleur: "#2f7d32", icone: "🌾",
     texte: "Producteurs, exploitations, parcelles géolocalisées, cultures par campagne, récoltes, intrants, stocks, ventes et finances." },
-  { id: "elevage", nom: "TSARI ÉLEVAGE", activite: "Élevage", depot: "Tamtui/TAMTUI-ELEVAGE-PRO", base: "TAMTUI-Elevage-Pro", prefixe: "TME-", couleur: "#8a5a14", icone: "🐄",
+  { id: "elevage", nom: "TSARI ÉLEVAGE", activite: "Élevage", depot: "Tamtui/TAMTUI-ELEVAGE-PRO", base: "TAMTUI-Elevage-Pro", guide: "Guide-utilisateur-TSARI-ELEVAGE.pdf", prefixe: "TME-", couleur: "#8a5a14", icone: "🐄",
     texte: "Éleveurs, troupeaux et animaux, santé et vaccinations, reproduction, pesées, alimentation, pâturages et production." },
-  { id: "pisciculture", nom: "TSARI AQUACULTURE", activite: "Aquaculture", depot: "Tamtui/TAMTUI-PISCICULTURE-PRO", base: "TAMTUI-Pisciculture-Pro", prefixe: "TMP-", couleur: "#1f6fa8", icone: "🐟",
+  { id: "pisciculture", nom: "TSARI AQUACULTURE", activite: "Aquaculture", depot: "Tamtui/TAMTUI-PISCICULTURE-PRO", base: "TAMTUI-Pisciculture-Pro", guide: "Guide-utilisateur-TSARI-AQUACULTURE.pdf", prefixe: "TMP-", couleur: "#1f6fa8", icone: "🐟",
     texte: "Bassins et cages, lots de poissons, qualité de l'eau, santé, écloserie, croissance, alimentation et récoltes." },
-  { id: "maraichage", nom: "TSARI MARAÎCHAGE", activite: "Maraîchage", depot: "Tamtui/TAMTUI-MARAICHAGE-PRO", base: "TAMTUI-Maraichage-Pro", prefixe: "TMM-", couleur: "#c2561b", icone: "🥬",
+  { id: "maraichage", nom: "TSARI MARAÎCHAGE", activite: "Maraîchage", depot: "Tamtui/TAMTUI-MARAICHAGE-PRO", base: "TAMTUI-Maraichage-Pro", guide: "Guide-utilisateur-TSARI-MARAICHAGE.pdf", prefixe: "TMM-", couleur: "#c2561b", icone: "🥬",
     texte: "Parcelles et planches, semences et pépinière, cultures, protection, irrigation, fertilisation et récoltes successives." },
 ];
 
@@ -239,7 +239,7 @@ footer.pied{text-align:center;color:var(--gris);font-size:13px;padding:30px 20px
 function page(L) {
   const t = T[L.code], r = L.dossier ? "../" : "";
   const cartes = PRODUITS.filter(p => etat[p.id]).map(p => {
-    const s = etat[p.id], guide = guides.find(g => g.includes(p.base)), tr = { ...p, ...(PRODUITS_TRAD[L.code]?.[p.id] ?? {}) };
+    const s = etat[p.id], guide = guides.includes(p.guide) ? p.guide : guides.find(g => g.includes(p.base)), tr = { ...p, ...(PRODUITS_TRAD[L.code]?.[p.id] ?? {}) };
     return `<article class="carte${p.vedette ? " vedette" : ""}" style="--c:${p.couleur}">${p.vedette ? `<span class="nouveau">${t.nouveau}</span>` : ""}
     <header><span class="icone">${p.icone}</span><div><h2>${e(p.nom)}</h2><span class="activite">${e(tr.activite)}</span></div><span class="version">v${e(s.version)}</span></header>
     <p>${e(tr.texte)}</p>${tr.activites ? `<div class="puces">${tr.activites.map(a => `<span>${e(a)}</span>`).join("")}</div>` : ""}
