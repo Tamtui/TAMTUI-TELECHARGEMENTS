@@ -264,12 +264,10 @@ function page(L) {
     <p><a class="bouton devis" href="mailto:${e(CONTACT.email)}?subject=${encodeURIComponent(D.sujet)}" data-umami-event="devis" data-umami-event-langue="${L.code}">${D.bouton}</a> <span class="petit">📞 ${e(CONTACT.telephone)}</span></p>
   </section>`;
   const M = MOBILE[L.code];
-  const appli = `https://tamtui.com/${L.dossier}application.html`;
   const boutonsMobile = `<div class="mobBoutons">
       <a class="mobB principal" href="#" data-envoyer data-umami-event="mobile-lien-envoye" data-umami-event-langue="${L.code}">${M.envoyer}</a>
       <p class="mobT">${M.rappel}</p><div class="mobDeux">${NUMEROS_RAPPEL.map(([n, aff]) => `<a class="mobB" href="https://wa.me/${n}?text=${encodeURIComponent(M.demande)}" target="_blank" rel="noopener" data-umami-event="mobile-rappel-demande" data-umami-event-numero="${aff}" data-umami-event-langue="${L.code}">WhatsApp<br><small>${aff}</small></a>`).join("")}</div>
-      <p class="mobT">${M.appeler}</p><div class="mobDeux">${NUMEROS_RAPPEL.map(([n, aff]) => `<a class="mobB" href="tel:+${n}" data-umami-event="mobile-appel" data-umami-event-numero="${aff}">${aff}</a>`).join("")}</div>
-      <a class="mobB" href="${appli}" data-umami-event="mobile-vers-application">${M.appli}</a></div>`;
+      <p class="mobT">${M.appeler}</p><div class="mobDeux">${NUMEROS_RAPPEL.map(([n, aff]) => `<a class="mobB" href="tel:+${n}" data-umami-event="mobile-appel" data-umami-event-numero="${aff}">${aff}</a>`).join("")}</div></div>`; // lien vers l'application mobile retiré le 22 nov. 2026 (applications : plus tard)
   const blocMobile = `<section class="mobile" id="mobile" hidden><h2>${M.titre}</h2><p>${M.texte}</p>${boutonsMobile}</section>
   <div class="mobFond" id="mobFond" hidden><div class="mobBoite" role="dialog" aria-modal="true"><h2>${M.titre}</h2><p>${M.texte}</p>${boutonsMobile}<a href="#" class="mobQuandMeme" id="mobQuandMeme">${M.quandMeme}</a></div></div>
   <script>
