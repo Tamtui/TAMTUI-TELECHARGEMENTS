@@ -1,19 +1,19 @@
 {
-  "version": "1.0.10",
-  "notes": "Nouveauté : choix du pays (12 pays d'Afrique de l'Ouest et du Centre), monnaie, météo et régions adaptées. Vos données et votre licence sont conservées.",
-  "pub_date": "2026-11-16T12:53:45.380Z",
+  "version": "1.1.0",
+  "notes": "TAMTUI devient TSARI : nouveau nom, nouveau logo et menus plus clairs. Rien ne change pour vous : vos données, votre licence et vos réglages sont conservés.",
+  "pub_date": "2026-11-22T08:48:17.594Z",
   "platforms": {
     "darwin-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTSjYyKy85eHIrNlB2YmlVenZScU04VGJaeFBieTA2cTdtZlNEb0xBVEw2enRQVGdKUHVYT2V6S2FLRE1pajR0S1YyWC84QUpmVG80M0VHMGR4bHNWRjJQdDEwZlJIWWdRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0ODIwMTU2CWZpbGU6VEFNVFVJIE1hcmHDrmNoYWdlIFByby5hcHAudGFyLmd6CmdZbDdwTDVzaEpKaTdMUlBKV1BLQ1JRcTRKaDFLMkNtY3RDWk56UUl0elRKODFVejZkdG9hc2x0MEdPQTAyZ0VGcDNiazdZdnZvbWExSzl0clJRTUJRPT0K",
-      "url": "https://tamtui.github.io/TAMTUI-TELECHARGEMENTS/fichiers/maraichage/TAMTUI-Maraichage-Pro-1.0.10-Mac.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTSjYyKy85eHIrNkwvejNVVk1UNEtNK2psRDNpbGpHc0tjR1hnZWxCVlZpbG1tOHptMDRVMnhpSjU1Q2taRkhMWU1oTms0NThlWFE3MnZtanNVdXlzVTJPY1ZwT1ZiMGdnPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1MzM2ODA1CWZpbGU6VFNBUkkgTUFSQcOOQ0hBR0UuYXBwLnRhci5negp6R2lGdUtGSlVXdFpPQnhKMmp0NVNuaUNMWEh1N1lTQ1VOZllxVG5uUGNlUlZHZllsMXhXcXloQVpCNHFRbU9CcktnWk82VjQyQmJpUXVWNWtYK09BZz09Cg==",
+      "url": "https://tamtui.github.io/TAMTUI-TELECHARGEMENTS/fichiers/maraichage/TAMTUI-Maraichage-Pro-1.1.0-Mac.app.tar.gz"
     },
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTSjYyKy85eHIrNlB2YmlVenZScU04VGJaeFBieTA2cTdtZlNEb0xBVEw2enRQVGdKUHVYT2V6S2FLRE1pajR0S1YyWC84QUpmVG80M0VHMGR4bHNWRjJQdDEwZlJIWWdRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0ODIwMTU2CWZpbGU6VEFNVFVJIE1hcmHDrmNoYWdlIFByby5hcHAudGFyLmd6CmdZbDdwTDVzaEpKaTdMUlBKV1BLQ1JRcTRKaDFLMkNtY3RDWk56UUl0elRKODFVejZkdG9hc2x0MEdPQTAyZ0VGcDNiazdZdnZvbWExSzl0clJRTUJRPT0K",
-      "url": "https://tamtui.github.io/TAMTUI-TELECHARGEMENTS/fichiers/maraichage/TAMTUI-Maraichage-Pro-1.0.10-Mac.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTSjYyKy85eHIrNkwvejNVVk1UNEtNK2psRDNpbGpHc0tjR1hnZWxCVlZpbG1tOHptMDRVMnhpSjU1Q2taRkhMWU1oTms0NThlWFE3MnZtanNVdXlzVTJPY1ZwT1ZiMGdnPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1MzM2ODA1CWZpbGU6VFNBUkkgTUFSQcOOQ0hBR0UuYXBwLnRhci5negp6R2lGdUtGSlVXdFpPQnhKMmp0NVNuaUNMWEh1N1lTQ1VOZllxVG5uUGNlUlZHZllsMXhXcXloQVpCNHFRbU9CcktnWk82VjQyQmJpUXVWNWtYK09BZz09Cg==",
+      "url": "https://tamtui.github.io/TAMTUI-TELECHARGEMENTS/fichiers/maraichage/TAMTUI-Maraichage-Pro-1.1.0-Mac.app.tar.gz"
     },
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTSjYyKy85eHIrNkpnRHc0WC9lc2xiZ3hENCt6NmJzOWFzSGJJOXFwVEVZYkQyMUtyNDZGNWh4cy9sMng0VTAxRURlKzdnWVU5L1Zlb0FRMGhXaEc4THZrVXN0ZisvVGdNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0ODE4NDUzCWZpbGU6VEFNVFVJIE1hcmHDrmNoYWdlIFByb18xLjAuMTBfeDY0LXNldHVwLmV4ZQpkRFpLdjFjZWE1T29ZbGNCcU5RMFRQNkh4UDR0ejdicGpLTHV3R1FnK1c3azJVeXBHbFdPd3QvK2FYdFBTS1g3bzhDMCtvUmRmQktzeGV3MHNpaitDQT09Cg==",
-      "url": "https://tamtui.github.io/TAMTUI-TELECHARGEMENTS/fichiers/maraichage/TAMTUI-Maraichage-Pro-1.0.10-Windows-installateur.exe"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTSjYyKy85eHIrNk1oKzVMdGM2cVZxVEhBanc0dXJlWXFjS29nQ0FOV3ZYelhocHF4S0JaV2dSU0R6MldJRkorNkJKbmtRN1FZNGxEY1JEZXRNZHNTMzRoc3ZCaVdidXdBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1MzM2ODc5CWZpbGU6VFNBUkkgTUFSQcOOQ0hBR0VfMS4xLjBfeDY0LXNldHVwLmV4ZQpRWVpyMWl3dHBRZXpFUmJGQjlMbUxwK2xRakZjWlV2M0d3MkJ0enBOMFBkVGJHZnFSOWgxZVBNYXZycWFoTlcxZnpjT29nb2JEaCttQ2FZQVQ0M3BBUT09Cg==",
+      "url": "https://tamtui.github.io/TAMTUI-TELECHARGEMENTS/fichiers/maraichage/TAMTUI-Maraichage-Pro-1.1.0-Windows-installateur.exe"
     }
   }
 }
