@@ -1,4 +1,4 @@
-// Publication des logiciels TAMTUI sur la page de téléchargement publique (GitHub Pages).
+// Publication des logiciels TSARI sur la page de téléchargement publique (GitHub Pages).
 // Pour chaque logiciel : lit la dernière version publiée dans son dépôt PRIVÉ, copie les installateurs
 // dans le site (fichiers/<logiciel>/), écrit le fichier de mise à jour automatique
 // (mises-a-jour/<logiciel>.json) et régénère la page index.html.
@@ -17,7 +17,7 @@ const SIMULATION = process.argv.includes("--simulation");
 // Coordonnées affichées sur la page (laisser vide pour ne pas afficher la ligne).
 const CONTACT = { telephone: "+227 82 46 54 40 / +227 81 35 53 48", whatsapp: "", email: "contact@tamtui.com" };
 // Prix validés par l'éditeur le 27 octobre 2026 (FCFA HT, licence perpétuelle payée une seule fois, par ordinateur).
-// Les 4 logiciels métier ont les mêmes prix ; TAMTUI SAHEL 360 = logiciels séparés + 15 %, arrondi aux 5 000 FCFA,
+// Les 4 logiciels métier ont les mêmes prix ; TSARI GWANI = logiciels séparés + 15 %, arrondi aux 5 000 FCFA,
 // à partir de GESTION et de 2 activités.
 const EDITIONS = ["START", "GESTION", "PRODUCTION", "INTELLIGENCE", "ENTERPRISE"];
 const PRIX = { START: 65000, GESTION: 100000, PRODUCTION: 190000, INTELLIGENCE: 310000, ENTERPRISE: 460000 };
@@ -27,27 +27,27 @@ const prix360 = (ed, n) => Math.round(PRIX[ed] * n * 1.15 / 5000) * 5000;
 const DEVIS = {
   fr: { carte: "Tarif sur devis", lien: "demander un devis", titre: "Tarifs : sur devis", intro: "Chaque structure est différente. Le prix dépend du logiciel, du nombre d'ordinateurs et d'activités, et de la formation souhaitée. Dites-nous votre besoin : nous vous envoyons un <b>devis personnalisé sous 48 heures</b>, gratuit et sans engagement.",
     inclus: ["<b>Licence à vie</b>, payée une seule fois, par ordinateur.", "<b>Mises à jour gratuites</b>, sans abonnement.", "<b>Essai gratuit de 14 jours</b>, sans engagement.", "Installation et formation sur place, si vous le souhaitez.", "Conditions adaptées pour les projets, les ONG et l'État, et pour plusieurs ordinateurs."],
-    bouton: "✉️ Demander un devis", sujet: "Demande de devis – logiciels TAMTUI" },
+    bouton: "✉️ Demander un devis", sujet: "Demande de devis – logiciels TSARI" },
   en: { carte: "Price on quotation", lien: "request a quote", titre: "Pricing: on quotation", intro: "Every organisation is different. The price depends on the software, the number of computers and activities, and the training you need. Tell us what you need: we will send you a <b>personalised quote within 48 hours</b>, free and with no obligation.",
     inclus: ["<b>Lifetime licence</b>, paid once, per computer.", "<b>Free updates</b>, no subscription.", "<b>14-day free trial</b>, no obligation.", "On-site installation and training, if you wish.", "Tailored terms for projects, NGOs and government, and for several computers."],
-    bouton: "✉️ Request a quote", sujet: "Quote request – TAMTUI software" },
+    bouton: "✉️ Request a quote", sujet: "Quote request – TSARI software" },
   ha: { carte: "Farashi bisa ƙiyasi", lien: "nemi ƙiyasin farashi", titre: "Farashi: bisa ƙiyasi", intro: "Kowace ƙungiya da irin tata. Farashin ya dogara da manhajar, yawan kwamfutoci da ayyuka, da horon da kuke so. Faɗa mana buƙatarku: za mu aiko muku da <b>ƙiyasin farashi na musamman cikin awa 48</b>, kyauta kuma babu alƙawari.",
     inclus: ["<b>Lasisin dindindin</b>, ana biya sau ɗaya, ga kowace kwamfuta.", "<b>Sabuntawa kyauta</b>, babu biyan wata-wata.", "<b>Gwaji kyauta na kwana 14</b>, babu alƙawari.", "Shigarwa da horo a wurinku, idan kuna so.", "Sharuɗɗa na musamman ga ayyuka, NGO da gwamnati, da kwamfutoci da yawa."],
-    bouton: "✉️ Nemi ƙiyasin farashi", sujet: "Neman ƙiyasin farashi – manhajojin TAMTUI" },
+    bouton: "✉️ Nemi ƙiyasin farashi", sujet: "Neman ƙiyasin farashi – manhajojin TSARI" },
 };
 const fcfa = n => n.toLocaleString("fr-FR").replace(/\u202f/g, " ");
 
 const PRODUITS = [
-  { id: "sahel360", nom: "TAMTUI SAHEL 360", activite: "Toutes vos activités dans un seul logiciel", depot: "Tamtui/TAMTUI-SAHEL-360", base: "TAMTUI-SAHEL-360", prefixe: "TMS-", couleur: "#6b3fa0", icone: "🌍", vedette: true,
-    texte: "Composez votre logiciel : cultures, élevage, pisciculture et maraîchage, au choix, avec un socle commun (producteurs, stocks, ventes, finances), les liens entre activités (fumier, fanes, eau des bassins…) et le bilan de rentabilité de chaque activité. Reprend les données des 4 logiciels TAMTUI.",
-    activites: ["🌾 Cultures", "🐄 Élevage", "🐟 Pisciculture", "🥬 Maraîchage"] },
-  { id: "agriculture", nom: "TAMTUI Suite Pro", activite: "Agriculture", depot: "Tamtui/TAMTUI-AGRICULTURE-PRO-13", base: "TAMTUI-Suite-Pro", prefixe: "TMT-", couleur: "#2f7d32", icone: "🌾",
+  { id: "sahel360", nom: "TSARI GWANI", activite: "Toutes vos activités dans un seul logiciel", depot: "Tamtui/TAMTUI-SAHEL-360", base: "TAMTUI-SAHEL-360", prefixe: "TMS-", couleur: "#6b3fa0", icone: "🌍", vedette: true,
+    texte: "Composez votre logiciel : cultures, élevage, pisciculture et maraîchage, au choix, avec un socle commun (producteurs, stocks, ventes, finances), les liens entre activités (fumier, fanes, eau des bassins…) et le bilan de rentabilité de chaque activité. Reprend les données des 4 logiciels TSARI.",
+    activites: ["🌾 Cultures", "🐄 Élevage", "🐟 Aquaculture", "🥬 Maraîchage"] },
+  { id: "agriculture", nom: "TSARI AGRICULTURE", activite: "Agriculture", depot: "Tamtui/TAMTUI-AGRICULTURE-PRO-13", base: "TAMTUI-Suite-Pro", prefixe: "TMT-", couleur: "#2f7d32", icone: "🌾",
     texte: "Producteurs, exploitations, parcelles géolocalisées, cultures par campagne, récoltes, intrants, stocks, ventes et finances." },
-  { id: "elevage", nom: "TAMTUI Élevage Pro", activite: "Élevage", depot: "Tamtui/TAMTUI-ELEVAGE-PRO", base: "TAMTUI-Elevage-Pro", prefixe: "TME-", couleur: "#8a5a14", icone: "🐄",
+  { id: "elevage", nom: "TSARI ÉLEVAGE", activite: "Élevage", depot: "Tamtui/TAMTUI-ELEVAGE-PRO", base: "TAMTUI-Elevage-Pro", prefixe: "TME-", couleur: "#8a5a14", icone: "🐄",
     texte: "Éleveurs, troupeaux et animaux, santé et vaccinations, reproduction, pesées, alimentation, pâturages et production." },
-  { id: "pisciculture", nom: "TAMTUI Pisciculture Pro", activite: "Pisciculture", depot: "Tamtui/TAMTUI-PISCICULTURE-PRO", base: "TAMTUI-Pisciculture-Pro", prefixe: "TMP-", couleur: "#1f6fa8", icone: "🐟",
+  { id: "pisciculture", nom: "TSARI AQUACULTURE", activite: "Aquaculture", depot: "Tamtui/TAMTUI-PISCICULTURE-PRO", base: "TAMTUI-Pisciculture-Pro", prefixe: "TMP-", couleur: "#1f6fa8", icone: "🐟",
     texte: "Bassins et cages, lots de poissons, qualité de l'eau, santé, écloserie, croissance, alimentation et récoltes." },
-  { id: "maraichage", nom: "TAMTUI Maraîchage Pro", activite: "Maraîchage", depot: "Tamtui/TAMTUI-MARAICHAGE-PRO", base: "TAMTUI-Maraichage-Pro", prefixe: "TMM-", couleur: "#c2561b", icone: "🥬",
+  { id: "maraichage", nom: "TSARI MARAÎCHAGE", activite: "Maraîchage", depot: "Tamtui/TAMTUI-MARAICHAGE-PRO", base: "TAMTUI-Maraichage-Pro", prefixe: "TMM-", couleur: "#c2561b", icone: "🥬",
     texte: "Parcelles et planches, semences et pépinière, cultures, protection, irrigation, fertilisation et récoltes successives." },
 ];
 
@@ -103,29 +103,29 @@ const e = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&l
 // ordinateur. On le leur dit, et on leur propose de s'envoyer le lien, d'être rappelés ou de voir l'application mobile.
 const NUMEROS_RAPPEL = [["22782465440", "82 46 54 40"], ["22781355348", "81 35 53 48"]]; // WhatsApp et téléphone de TAMTUI SAHEL
 const MOBILE = {
-  fr: { titre: "📱 Vous êtes sur téléphone", texte: "Les logiciels TAMTUI s'installent sur un <b>ordinateur Windows ou Mac</b>. Le fichier ne s'ouvrira pas sur ce téléphone.",
+  fr: { titre: "📱 Vous êtes sur téléphone", texte: "Les logiciels TSARI s'installent sur un <b>ordinateur Windows ou Mac</b>. Le fichier ne s'ouvrira pas sur ce téléphone.",
     envoyer: "📨 M'envoyer le lien pour mon ordinateur", rappel: "💬 Être rappelé pour une démonstration", appeler: "📞 Appeler", appli: "📲 Découvrir l'application mobile", quandMeme: "Télécharger quand même",
-    partage: "Lien pour installer les logiciels TAMTUI sur mon ordinateur : ", demande: "Bonjour TAMTUI SAHEL, je souhaite une démonstration de vos logiciels.\nMon nom : \nMa structure : \nMa ville : \nLogiciel qui m'intéresse : " },
-  en: { titre: "📱 You are on a phone", texte: "TAMTUI software installs on a <b>Windows or Mac computer</b>. The file will not open on this phone.",
+    partage: "Lien pour installer les logiciels TSARI sur mon ordinateur : ", demande: "Bonjour TAMTUI SAHEL, je souhaite une démonstration de vos logiciels.\nMon nom : \nMa structure : \nMa ville : \nLogiciel qui m'intéresse : " },
+  en: { titre: "📱 You are on a phone", texte: "TSARI software installs on a <b>Windows or Mac computer</b>. The file will not open on this phone.",
     envoyer: "📨 Send me the link for my computer", rappel: "💬 Get a call back for a demonstration", appeler: "📞 Call", appli: "📲 Discover the mobile app", quandMeme: "Download anyway",
-    partage: "Link to install TAMTUI software on my computer: ", demande: "Hello TAMTUI SAHEL, I would like a demonstration of your software.\nMy name: \nMy organisation: \nMy city: \nSoftware I am interested in: " },
-  ha: { titre: "📱 Kuna kan waya", texte: "Ana shigar da manhajojin TAMTUI a <b>kwamfuta ta Windows ko Mac</b>. Fayil ɗin ba zai buɗe a wannan wayar ba.",
+    partage: "Link to install TSARI software on my computer: ", demande: "Hello TAMTUI SAHEL, I would like a demonstration of your software.\nMy name: \nMy organisation: \nMy city: \nSoftware I am interested in: " },
+  ha: { titre: "📱 Kuna kan waya", texte: "Ana shigar da manhajojin TSARI a <b>kwamfuta ta Windows ko Mac</b>. Fayil ɗin ba zai buɗe a wannan wayar ba.",
     envoyer: "📨 Aiko mini da hanyar don kwamfutata", rappel: "💬 A kira ni don nuni", appeler: "📞 Kira", appli: "📲 Gano manhajar waya", quandMeme: "Sauke duk da haka",
-    partage: "Hanyar shigar da manhajojin TAMTUI a kwamfutata: ", demande: "Sannu TAMTUI SAHEL, ina son nuni na manhajojinku.\nSunana: \nƘungiyata: \nGaribina: \nManhajar da nake so: " },
+    partage: "Hanyar shigar da manhajojin TSARI a kwamfutata: ", demande: "Sannu TAMTUI SAHEL, ina son nuni na manhajojinku.\nSunana: \nƘungiyata: \nGaribina: \nManhajar da nake so: " },
 };
 const LANGUES = [{ code: "fr", nom: "FR", dossier: "" }, { code: "en", nom: "EN", dossier: "en/" }, { code: "ha", nom: "HA", dossier: "ha/" }];
 const dateLangue = (d, l) => new Date(d + "T12:00:00").toLocaleDateString(l === "en" ? "en-GB" : "fr-FR", l === "ha" ? undefined : { day: "numeric", month: "long", year: "numeric" });
 // Textes des cartes de logiciels dans chaque langue (le français est dans PRODUITS).
 const PRODUITS_TRAD = {
   en: {
-    sahel360: { activite: "All your activities in one software", texte: "Build your own software: crops, livestock, fish farming and market gardening, as you choose, with a shared base (farmers, stocks, sales, finances), links between activities (manure, crop residues, pond water…) and the profitability of each activity. Takes over the data of the 4 TAMTUI software products.", activites: ["🌾 Crops", "🐄 Livestock", "🐟 Fish farming", "🥬 Market gardening"] },
+    sahel360: { activite: "All your activities in one software", texte: "Build your own software: crops, livestock, fish farming and market gardening, as you choose, with a shared base (farmers, stocks, sales, finances), links between activities (manure, crop residues, pond water…) and the profitability of each activity. Takes over the data of the 4 TSARI software products.", activites: ["🌾 Crops", "🐄 Livestock", "🐟 Fish farming", "🥬 Market gardening"] },
     agriculture: { activite: "Agriculture", texte: "Farmers, farms, geolocated plots, crops by season, harvests, inputs, stocks, sales and finances." },
     elevage: { activite: "Livestock", texte: "Livestock farmers, herds and animals, health and vaccinations, breeding, weighing, feeding, pastures and production." },
     pisciculture: { activite: "Fish farming", texte: "Ponds and cages, fish batches, water quality, health, hatchery, growth, feeding and harvests." },
     maraichage: { activite: "Market gardening", texte: "Plots and beds, seeds and nursery, crops, protection, irrigation, fertilisation and successive harvests." },
   },
   ha: {
-    sahel360: { activite: "Dukan ayyukanka a manhaja ɗaya", texte: "Haɗa manhajarka: noma, kiwo, kiwon kifi da lambu, yadda ka zaɓa, tare da tushe ɗaya (manoma, ma'aji, sayarwa, kuɗaɗe), alaƙa tsakanin ayyuka (taki, harawa, ruwan tafki…) da ribar kowane aiki. Yana ɗauko bayanan manhajojin TAMTUI 4.", activites: ["🌾 Noma", "🐄 Kiwo", "🐟 Kiwon kifi", "🥬 Lambu"] },
+    sahel360: { activite: "Dukan ayyukanka a manhaja ɗaya", texte: "Haɗa manhajarka: noma, kiwo, kiwon kifi da lambu, yadda ka zaɓa, tare da tushe ɗaya (manoma, ma'aji, sayarwa, kuɗaɗe), alaƙa tsakanin ayyuka (taki, harawa, ruwan tafki…) da ribar kowane aiki. Yana ɗauko bayanan manhajojin TSARI 4.", activites: ["🌾 Noma", "🐄 Kiwo", "🐟 Kiwon kifi", "🥬 Lambu"] },
     agriculture: { activite: "Noma", texte: "Manoma, gonaki, filaye masu GPS, amfanin gona bisa lokacin noma, girbi, kayan noma, ma'aji, sayarwa da kuɗaɗe." },
     elevage: { activite: "Kiwo", texte: "Makiyaya, garkuna da dabbobi, lafiya da alluran rigakafi, haihuwa, auna nauyi, ciyarwa, makiyaya da samarwa." },
     pisciculture: { activite: "Kiwon kifi", texte: "Tafkuna da keji, rukunin kifaye, ingancin ruwa, lafiya, ƙyanƙyashe, girma, ciyarwa da girbi." },
@@ -134,61 +134,61 @@ const PRODUITS_TRAD = {
 };
 const T = {
   fr: {
-    titre: "Télécharger les logiciels TAMTUI", description: "Téléchargement officiel des logiciels TAMTUI : TAMTUI SAHEL 360 (toutes les activités), Agriculture, Élevage, Pisciculture et Maraîchage, pour Windows et Mac.",
+    titre: "Télécharger les logiciels TSARI", description: "Téléchargement officiel des logiciels TSARI : TSARI GWANI (toutes les activités), Agriculture, Élevage, Pisciculture et Maraîchage, pour Windows et Mac.",
     h1: "Téléchargez votre logiciel de gestion agro-pastorale", intro: "Logiciels professionnels hors connexion pour les producteurs, coopératives, ONG et services techniques : agriculture, élevage, pisciculture et maraîchage.",
     atouts: ["✓ Fonctionne sans Internet", "✓ Windows et Mac", "✓ Français, anglais, haoussa", "✓ Essai gratuit 14 jours", "✓ Mises à jour automatiques", "✓ Sauvegarde quotidienne"],
     nouveau: "NOUVEAU", intelApple: "Intel et Apple", aPartir360: x => `À partir de <b>${x} FCFA</b> (GESTION, 2 activités)`, aPartir: x => `À partir de <b>${x} FCFA</b> (START)`,
     unePaye: "licence payée une seule fois", voirTarifs: "voir les tarifs", guide: "📘 Guide de l'utilisateur (PDF)", publie: (d, c) => `Publié le ${d} · code ordinateur <code>${c}</code>`,
     installer: "1 · Installer", installerListe: ["<b>Windows</b> : lancez le fichier <code>.exe</code>. Si Windows affiche un avertissement : <i>Informations complémentaires › Exécuter quand même</i>.", "<b>Mac</b> : ouvrez le <code>.dmg</code>, glissez l'application dans <i>Applications</i>, puis au premier lancement : clic droit › <i>Ouvrir</i>.", "<b>Langue</b> : choisissez Français, English ou Hausa en haut de l'écran d'activation (ou dans Paramètres)."],
-    essayer: "2 · Essayer puis activer", essayerListe: ["Cliquez sur <i>Essayer … pendant 14 jours</i> (START pour les logiciels métier, GESTION pour TAMTUI SAHEL 360).", "Pour la version complète : <i>Copier le code</i> de l'ordinateur et envoyez-le à votre fournisseur TAMTUI.", "Importez le fichier de licence reçu : le logiciel est activé définitivement."],
+    essayer: "2 · Essayer puis activer", essayerListe: ["Cliquez sur <i>Essayer … pendant 14 jours</i> (START pour les logiciels métier, GESTION pour TSARI GWANI).", "Pour la version complète : <i>Copier le code</i> de l'ordinateur et envoyez-le à votre fournisseur TSARI.", "Importez le fichier de licence reçu : le logiciel est activé définitivement."],
     config: "Configuration conseillée", configListe: ["<b>Windows 10 ou 11 (64 bits)</b> — Windows 7 et 8 ne sont pas pris en charge", "macOS 11 et plus récent (Intel ou Apple)", "4 Go de mémoire, 500 Mo d'espace disque", "Écran de 1280 × 800 au minimum", "Internet uniquement pour la météo et les mises à jour"],
     tarifs: "Tarifs", tarifsIntro: "Licence <b>perpétuelle</b>, payée <b>une seule fois</b>, par ordinateur. Prix hors taxes, en FCFA. Pas d'abonnement : les mises à jour sont gratuites.",
-    metier: "Logiciels métier : TAMTUI Agriculture, Élevage, Pisciculture, Maraîchage", memesPrix: "(les mêmes prix pour les quatre)", s360: "(plusieurs activités connectées, à partir de GESTION)",
-    edition: "Édition", activitesN: n => `${n} activités`, note360: "Le prix de TAMTUI SAHEL 360 correspond aux logiciels séparés + 15 % : vos activités sont connectées dans une seule base (liens entre activités, Bilan 360°, carte et rapports communs). Pour une seule activité, choisissez le logiciel métier.",
-    conditions: ["<b>Ordinateur supplémentaire</b> : −20 % sur le prix de la licence.", "<b>Formation</b> (facultative, conseillée) : une seule fois, 30 % du prix de la licence.", "<b>Changement d'ordinateur</b> (panne, vol, remplacement) : nouvelle licence à 40 % du prix.", "<b>Activité ou édition en plus</b> plus tard : vous payez seulement la différence, vos données sont conservées.", "<b>Déjà client d'un logiciel TAMTUI ?</b> Pour passer à TAMTUI SAHEL 360, votre licence est déduite et vos données sont reprises.", "<b>Projets, ONG, services de l'État</b> : licence projet, régionale ou nationale sur devis."],
+    metier: "Logiciels métier : TSARI AGRICULTURE, Élevage, Pisciculture, Maraîchage", memesPrix: "(les mêmes prix pour les quatre)", s360: "(plusieurs activités connectées, à partir de GESTION)",
+    edition: "Édition", activitesN: n => `${n} activités`, note360: "Le prix de TSARI GWANI correspond aux logiciels séparés + 15 % : vos activités sont connectées dans une seule base (liens entre activités, Bilan 360°, carte et rapports communs). Pour une seule activité, choisissez le logiciel métier.",
+    conditions: ["<b>Ordinateur supplémentaire</b> : −20 % sur le prix de la licence.", "<b>Formation</b> (facultative, conseillée) : une seule fois, 30 % du prix de la licence.", "<b>Changement d'ordinateur</b> (panne, vol, remplacement) : nouvelle licence à 40 % du prix.", "<b>Activité ou édition en plus</b> plus tard : vous payez seulement la différence, vos données sont conservées.", "<b>Déjà client d'un logiciel TSARI ?</b> Pour passer à TSARI GWANI, votre licence est déduite et vos données sont reprises.", "<b>Projets, ONG, services de l'État</b> : licence projet, régionale ou nationale sur devis."],
     hcTitre: "🔌 Ordinateur Windows sans Internet ?", hcTexte: "Windows 11 et les Windows 10 à jour sont prêts. Sur un Windows 10 <b>jamais mis à jour</b> et <b>sans Internet</b>, l'installation a besoin d'un composant de Microsoft (WebView2) : apportez-le avec le logiciel sur une clé USB.",
-    hcListe: ["Là où il y a Internet, téléchargez l'installateur Windows du logiciel <b>et</b> le composant ci-contre, puis copiez les deux sur une clé USB.", "Sur l'ordinateur sans Internet, lancez d'abord le <b>composant Microsoft</b> (une seule fois par ordinateur, pour tous les logiciels TAMTUI).", "Lancez ensuite l'installateur TAMTUI : il s'installe sans Internet."],
+    hcListe: ["Là où il y a Internet, téléchargez l'installateur Windows du logiciel <b>et</b> le composant ci-contre, puis copiez les deux sur une clé USB.", "Sur l'ordinateur sans Internet, lancez d'abord le <b>composant Microsoft</b> (une seule fois par ordinateur, pour tous les logiciels TSARI).", "Lancez ensuite l'installateur TSARI : il s'installe sans Internet."],
     hcBouton: "Composant Microsoft WebView2", hcDetail: "officiel, signé par Microsoft · Windows 10/11 64 bits",
     client: "<b>Déjà client ?</b> Votre logiciel se met à jour tout seul : au démarrage, il propose les nouvelles versions (« Nouvelle version disponible › Installer maintenant »). Vos données et votre licence sont conservées, et une sauvegarde est faite avant chaque mise à jour.",
-    pied: "TAMTUI SAHEL · Société experte fournisseur · Plateforme nationale du bien-être agro-pastoral", officiel: "Téléchargements officiels — ne téléchargez les logiciels TAMTUI que depuis cette page.",
+    pied: "TAMTUI SAHEL · Société experte fournisseur · Plateforme nationale du bien-être agro-pastoral", officiel: "Téléchargements officiels — ne téléchargez les logiciels TSARI que depuis cette page.",
   },
   en: {
-    titre: "Download TAMTUI software", description: "Official download of TAMTUI software: TAMTUI SAHEL 360 (all activities), Agriculture, Livestock, Fish farming and Market gardening, for Windows and Mac.",
+    titre: "Download TSARI software", description: "Official download of TSARI software: TSARI GWANI (all activities), Agriculture, Livestock, Fish farming and Market gardening, for Windows and Mac.",
     h1: "Download your agro-pastoral management software", intro: "Professional offline software for farmers, cooperatives, NGOs and technical services: agriculture, livestock, fish farming and market gardening.",
     atouts: ["✓ Works without Internet", "✓ Windows and Mac", "✓ French, English, Hausa", "✓ 14-day free trial", "✓ Automatic updates", "✓ Daily backup"],
     nouveau: "NEW", intelApple: "Intel and Apple", aPartir360: x => `From <b>${x} FCFA</b> (GESTION, 2 activities)`, aPartir: x => `From <b>${x} FCFA</b> (START)`,
     unePaye: "licence paid only once", voirTarifs: "see prices", guide: "📘 User guide (PDF, in French)", publie: (d, c) => `Published on ${d} · computer code <code>${c}</code>`,
     installer: "1 · Install", installerListe: ["<b>Windows</b>: run the <code>.exe</code> file. If Windows shows a warning: <i>More info › Run anyway</i>.", "<b>Mac</b>: open the <code>.dmg</code>, drag the application into <i>Applications</i>, then on first launch: right-click › <i>Open</i>.", "<b>Language</b>: choose Français, English or Hausa at the top of the activation screen (or in Settings)."],
-    essayer: "2 · Try, then activate", essayerListe: ["Click <i>Try … for 14 days</i> (START for the single-activity software, GESTION for TAMTUI SAHEL 360).", "For the full version: <i>Copy the code</i> of the computer and send it to your TAMTUI supplier.", "Import the licence file you receive: the software is permanently activated."],
+    essayer: "2 · Try, then activate", essayerListe: ["Click <i>Try … for 14 days</i> (START for the single-activity software, GESTION for TSARI GWANI).", "For the full version: <i>Copy the code</i> of the computer and send it to your TSARI supplier.", "Import the licence file you receive: the software is permanently activated."],
     config: "Recommended configuration", configListe: ["<b>Windows 10 or 11 (64-bit)</b> — Windows 7 and 8 are not supported", "macOS 11 or later (Intel or Apple)", "4 GB of memory, 500 MB of disk space", "Screen of at least 1280 × 800", "Internet only for weather and updates"],
     tarifs: "Prices", tarifsIntro: "<b>Perpetual</b> licence, paid <b>only once</b>, per computer. Prices excluding tax, in FCFA. No subscription: updates are free.",
-    metier: "Single-activity software: TAMTUI Agriculture, Livestock, Fish farming, Market gardening", memesPrix: "(the same prices for all four)", s360: "(several connected activities, from GESTION)",
-    edition: "Edition", activitesN: n => `${n} activities`, note360: "The price of TAMTUI SAHEL 360 is that of the separate software + 15 %: your activities are connected in a single database (links between activities, 360° review, shared map and reports). For a single activity, choose the single-activity software.",
-    conditions: ["<b>Additional computer</b>: −20 % on the licence price.", "<b>Training</b> (optional, recommended): once only, 30 % of the licence price.", "<b>Change of computer</b> (breakdown, theft, replacement): new licence at 40 % of the price.", "<b>Extra activity or edition</b> later: you only pay the difference, your data is kept.", "<b>Already using TAMTUI software?</b> To move to TAMTUI SAHEL 360, your licence is deducted and your data is carried over.", "<b>Projects, NGOs, government services</b>: project, regional or national licence on quotation."],
+    metier: "Single-activity software: TSARI AGRICULTURE, Livestock, Fish farming, Market gardening", memesPrix: "(the same prices for all four)", s360: "(several connected activities, from GESTION)",
+    edition: "Edition", activitesN: n => `${n} activities`, note360: "The price of TSARI GWANI is that of the separate software + 15 %: your activities are connected in a single database (links between activities, 360° review, shared map and reports). For a single activity, choose the single-activity software.",
+    conditions: ["<b>Additional computer</b>: −20 % on the licence price.", "<b>Training</b> (optional, recommended): once only, 30 % of the licence price.", "<b>Change of computer</b> (breakdown, theft, replacement): new licence at 40 % of the price.", "<b>Extra activity or edition</b> later: you only pay the difference, your data is kept.", "<b>Already using TSARI software?</b> To move to TSARI GWANI, your licence is deducted and your data is carried over.", "<b>Projects, NGOs, government services</b>: project, regional or national licence on quotation."],
     hcTitre: "🔌 Windows computer without Internet?", hcTexte: "Windows 11 and updated Windows 10 are ready. On a Windows 10 that has <b>never been updated</b> and has <b>no Internet</b>, installation needs a Microsoft component (WebView2): bring it with the software on a USB stick.",
-    hcListe: ["Where there is Internet, download the software's Windows installer <b>and</b> the component opposite, then copy both onto a USB stick.", "On the computer without Internet, first run the <b>Microsoft component</b> (once per computer, for all TAMTUI software).", "Then run the TAMTUI installer: it installs without Internet."],
+    hcListe: ["Where there is Internet, download the software's Windows installer <b>and</b> the component opposite, then copy both onto a USB stick.", "On the computer without Internet, first run the <b>Microsoft component</b> (once per computer, for all TSARI software).", "Then run the TSARI installer: it installs without Internet."],
     hcBouton: "Microsoft WebView2 component", hcDetail: "official, signed by Microsoft · Windows 10/11 64-bit",
     client: "<b>Already a customer?</b> Your software updates itself: at start-up, it offers new versions (“New version available › Install now”). Your data and licence are kept, and a backup is made before each update.",
-    pied: "TAMTUI SAHEL · Expert supplier company · National platform for agro-pastoral well-being", officiel: "Official downloads — only download TAMTUI software from this page.",
+    pied: "TAMTUI SAHEL · Expert supplier company · National platform for agro-pastoral well-being", officiel: "Official downloads — only download TSARI software from this page.",
   },
   ha: {
-    titre: "Sauke manhajojin TAMTUI", description: "Saukewar hukuma ta manhajojin TAMTUI: TAMTUI SAHEL 360 (dukan ayyuka), Noma, Kiwo, Kiwon kifi da Lambu, don Windows da Mac.",
+    titre: "Sauke manhajojin TSARI", description: "Saukewar hukuma ta manhajojin TSARI: TSARI GWANI (dukan ayyuka), Noma, Kiwo, Kiwon kifi da Lambu, don Windows da Mac.",
     h1: "Sauke manhajarka ta gudanar da noma da kiwo", intro: "Manhajojin ƙwararru da ke aiki ba tare da intanet ba ga manoma, ƙungiyoyin haɗin gwiwa, ƙungiyoyi masu zaman kansu da hukumomin fasaha: noma, kiwo, kiwon kifi da lambu.",
     atouts: ["✓ Yana aiki ba tare da intanet ba", "✓ Windows da Mac", "✓ Faransanci, Turanci, Hausa", "✓ Gwaji kyauta na kwanaki 14", "✓ Sabuntawa ta atomatik", "✓ Ajiya ta yau da kullum"],
     nouveau: "SABO", intelApple: "Intel da Apple", aPartir360: x => `Daga <b>FCFA ${x}</b> (GESTION, ayyuka 2)`, aPartir: x => `Daga <b>FCFA ${x}</b> (START)`,
     unePaye: "lasisi da ake biya sau ɗaya kawai", voirTarifs: "duba farashi", guide: "📘 Jagorar mai amfani (PDF, da Faransanci)", publie: (d, c) => `An wallafa ranar ${d} · lambar kwamfuta <code>${c}</code>`,
     installer: "1 · Saka", installerListe: ["<b>Windows</b>: buɗe fayil ɗin <code>.exe</code>. Idan Windows ya nuna gargaɗi: <i>Ƙarin bayani › Gudanar duk da haka</i>.", "<b>Mac</b>: buɗe <code>.dmg</code>, ja manhajar cikin <i>Applications</i>, sannan a farkon buɗewa: danna dama › <i>Buɗe</i>.", "<b>Harshe</b>: zaɓi Français, English ko Hausa a saman allon kunnawa (ko a Saituna)."],
-    essayer: "2 · Gwada sannan ka kunna", essayerListe: ["Danna <i>Gwada … na kwanaki 14</i> (START ga manhajojin fanni ɗaya, GESTION ga TAMTUI SAHEL 360).", "Don cikakkiyar siga: <i>Kwafi lambar</i> kwamfutar ka aika wa mai ba ka TAMTUI.", "Shigo da fayil ɗin lasisin da ka karɓa: manhajar za ta kunna har abada."],
+    essayer: "2 · Gwada sannan ka kunna", essayerListe: ["Danna <i>Gwada … na kwanaki 14</i> (START ga manhajojin fanni ɗaya, GESTION ga TSARI GWANI).", "Don cikakkiyar siga: <i>Kwafi lambar</i> kwamfutar ka aika wa mai ba ka TSARI.", "Shigo da fayil ɗin lasisin da ka karɓa: manhajar za ta kunna har abada."],
     config: "Saitin da aka ba da shawara", configListe: ["<b>Windows 10 ko 11 (64 bits)</b> — ba a tallafa wa Windows 7 da 8 ba", "macOS 11 ko sabo (Intel ko Apple)", "Ƙwaƙwalwa Go 4, wurin ajiya Mo 500", "Allo aƙalla 1280 × 800", "Intanet don yanayi da sabuntawa kawai"],
     tarifs: "Farashi", tarifsIntro: "Lasisin <b>dindindin</b>, ana biya <b>sau ɗaya kawai</b>, ga kowace kwamfuta. Farashi ba tare da haraji ba, a FCFA. Babu biyan wata-wata: sabuntawa kyauta ne.",
-    metier: "Manhajojin fanni ɗaya: TAMTUI Noma, Kiwo, Kiwon kifi, Lambu", memesPrix: "(farashi ɗaya ga duka huɗun)", s360: "(ayyuka da yawa a haɗe, daga GESTION)",
-    edition: "Siga", activitesN: n => `Ayyuka ${n}`, note360: "Farashin TAMTUI SAHEL 360 shi ne na manhajojin daban-daban + 15 %: ayyukanka suna haɗe a tushe ɗaya (alaƙa tsakanin ayyuka, Bita 360°, taswira da rahotanni na tare). Don aiki ɗaya kawai, zaɓi manhajar fanni ɗaya.",
-    conditions: ["<b>Ƙarin kwamfuta</b>: ragi −20 % a farashin lasisi.", "<b>Horo</b> (ba dole ba, ana ba da shawara): sau ɗaya, 30 % na farashin lasisi.", "<b>Canza kwamfuta</b> (lalacewa, sata, maye gurbi): sabon lasisi a 40 % na farashi.", "<b>Ƙarin aiki ko siga</b> daga baya: za ka biya bambancin kawai, bayananka suna nan.", "<b>Kana amfani da manhajar TAMTUI tuni?</b> Don komawa TAMTUI SAHEL 360, za a cire kuɗin lasisinka kuma a ɗauko bayananka.", "<b>Ayyuka, ƙungiyoyi, hukumomin gwamnati</b>: lasisin aiki, na yanki ko na ƙasa bisa ƙiyasin farashi."],
+    metier: "Manhajojin fanni ɗaya: TSARI Noma, Kiwo, Kiwon kifi, Lambu", memesPrix: "(farashi ɗaya ga duka huɗun)", s360: "(ayyuka da yawa a haɗe, daga GESTION)",
+    edition: "Siga", activitesN: n => `Ayyuka ${n}`, note360: "Farashin TSARI GWANI shi ne na manhajojin daban-daban + 15 %: ayyukanka suna haɗe a tushe ɗaya (alaƙa tsakanin ayyuka, Bita 360°, taswira da rahotanni na tare). Don aiki ɗaya kawai, zaɓi manhajar fanni ɗaya.",
+    conditions: ["<b>Ƙarin kwamfuta</b>: ragi −20 % a farashin lasisi.", "<b>Horo</b> (ba dole ba, ana ba da shawara): sau ɗaya, 30 % na farashin lasisi.", "<b>Canza kwamfuta</b> (lalacewa, sata, maye gurbi): sabon lasisi a 40 % na farashi.", "<b>Ƙarin aiki ko siga</b> daga baya: za ka biya bambancin kawai, bayananka suna nan.", "<b>Kana amfani da manhajar TSARI tuni?</b> Don komawa TSARI GWANI, za a cire kuɗin lasisinka kuma a ɗauko bayananka.", "<b>Ayyuka, ƙungiyoyi, hukumomin gwamnati</b>: lasisin aiki, na yanki ko na ƙasa bisa ƙiyasin farashi."],
     hcTitre: "🔌 Kwamfutar Windows ba tare da intanet ba?", hcTexte: "Windows 11 da Windows 10 da aka sabunta suna shirye. A kan Windows 10 da <b>ba a taɓa sabuntawa ba</b> kuma <b>babu intanet</b>, sakawa tana buƙatar wani abu na Microsoft (WebView2): kawo shi tare da manhajar a filasha.",
-    hcListe: ["Inda akwai intanet, sauke mai saka manhajar na Windows <b>da</b> abin da ke gefe, sannan ka kwafe su biyun a filasha.", "A kan kwamfutar da babu intanet, da farko ka buɗe <b>abin na Microsoft</b> (sau ɗaya ga kowace kwamfuta, don dukan manhajojin TAMTUI).", "Sannan ka buɗe mai saka TAMTUI: zai saku ba tare da intanet ba."],
+    hcListe: ["Inda akwai intanet, sauke mai saka manhajar na Windows <b>da</b> abin da ke gefe, sannan ka kwafe su biyun a filasha.", "A kan kwamfutar da babu intanet, da farko ka buɗe <b>abin na Microsoft</b> (sau ɗaya ga kowace kwamfuta, don dukan manhajojin TSARI).", "Sannan ka buɗe mai saka TSARI: zai saku ba tare da intanet ba."],
     hcBouton: "Abin Microsoft WebView2", hcDetail: "na hukuma, Microsoft ya sa hannu · Windows 10/11 64 bits",
     client: "<b>Kana amfani tuni?</b> Manhajarka tana sabunta kanta: lokacin farawa, tana ba da sababbin sigogi (« Akwai sabuwar siga › Saka yanzu »). Bayananka da lasisinka suna nan, kuma ana yin ajiya kafin kowace sabuntawa.",
-    pied: "TAMTUI SAHEL · Kamfani ƙwararre mai samar da kayayyaki · Dandalin ƙasa na jin daɗin noma da kiwo", officiel: "Saukewar hukuma — ka sauke manhajojin TAMTUI daga wannan shafi kawai.",
+    pied: "TAMTUI SAHEL · Kamfani ƙwararre mai samar da kayayyaki · Dandalin ƙasa na jin daɗin noma da kiwo", officiel: "Saukewar hukuma — ka sauke manhajojin TSARI daga wannan shafi kawai.",
   },
 };
 const guides = existsSync(join(RACINE, "guides")) ? readdirSync(join(RACINE, "guides")) : [];
@@ -280,7 +280,7 @@ function page(L) {
     document.getElementById("mobile").hidden=false;
     document.addEventListener("click",function(ev){
       var envoyer=ev.target.closest("[data-envoyer]");
-      if(envoyer){ev.preventDefault();if(navigator.share){navigator.share({title:"TAMTUI",text:texte,url:page}).catch(function(){});}else{location.href="https://wa.me/?text="+encodeURIComponent(texte);}return;}
+      if(envoyer){ev.preventDefault();if(navigator.share){navigator.share({title:"TSARI",text:texte,url:page}).catch(function(){});}else{location.href="https://wa.me/?text="+encodeURIComponent(texte);}return;}
       var dl=ev.target.closest(".carte .boutons a.bouton, a.bouton.composant");
       if(dl&&!dl.dataset.confirme){ev.preventDefault();var fond=document.getElementById("mobFond");fond.hidden=false;
         document.getElementById("mobQuandMeme").onclick=function(e){e.preventDefault();fond.hidden=true;if(window.umami)umami.track("mobile-telechargement-quand-meme");location.href=dl.href;};
@@ -300,7 +300,7 @@ ${STYLE}
 <script defer src="https://cloud.umami.is/script.js" data-website-id="c5e464d4-0178-4b07-b062-bbfcd5ac9f43"></script></head><body>
 <div class="bandeau"><div class="conteneur">
   ${langues}
-  <div class="marque">${logoComplet ? `<img class="complet" src="${r}logo-complet.png" alt="TAMTUI Sahel">` : `${logo ? `<img src="${r}logo.png" alt="TAMTUI">` : ""}<div><b>TAMTUI</b><span>SAHEL</span></div>`}</div>
+  <div class="marque">${logoComplet ? `<img class="complet" src="${r}logo-complet.png" alt="TSARI">` : `${logo ? `<img src="${r}logo.png" alt="TSARI">` : ""}<div><b>TSARI</b><span>SAHEL</span></div>`}</div>
   <h1>${t.h1}</h1>
   <p>${t.intro}</p>
   <div class="atouts">${t.atouts.map(a => `<span>${a}</span>`).join("")}</div>
