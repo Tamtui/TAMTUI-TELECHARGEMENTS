@@ -1,19 +1,19 @@
 {
-  "version": "1.2.0",
-  "notes": "TAMTUI SAHEL 360 devient TSARI GWANI : nouveau nom, nouveau logo, menu rangé par espaces et modules aux noms plus clairs. Rien ne change pour vous : vos données, votre licence et vos réglages sont conservés.",
-  "pub_date": "2026-11-22T10:11:49.417Z",
+  "version": "1.3.0",
+  "notes": "Nouveau : « Messages aux membres » (éditions GESTION et supérieures). Préparez des SMS pour vos membres : assemblée, intrants, vente groupée, alertes, reçus de livraison. Le téléphone Android de la coopérative les envoie avec l'application TSARI Relais, sans Internet ; chaque membre les reçoit même sur un téléphone simple. Vos données, votre licence et vos réglages sont conservés.",
+  "pub_date": "2026-11-27T14:25:01.666Z",
   "platforms": {
     "darwin-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTSjYyKy85eHIrNkpZdFhTR2hjSTc3a1UvdU9NNU5PMDhFUFVtM25KR2o1ZUI4OWZCUUFJSDI0eFpFRWxSK0kzdzB0aHFicUlJWEF0THZPR0xxR21BN081YnFBSWxQU0FZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1MzM3MjE5CWZpbGU6VFNBUkkgR1dBTkkuYXBwLnRhci5negpXNUR2RG1aR2RvQzdXYjBVQ1JMWGxsQ1lnb0tWa0N4dUZvdzV1SUNSSmtPLzFIODJieUJvY0xoWFFFbXUzZi9ZMisrQzE0RUdYc0NyU0lTSEJUOE9BUT09Cg==",
-      "url": "https://tamtui.github.io/TAMTUI-TELECHARGEMENTS/fichiers/sahel360/TAMTUI-SAHEL-360-1.2.0-Mac.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTSjYyKy85eHIrNk9XU0N3dFFBT3VQSEJxYno1SEp6MVZCQWt1TXp2Vit1WUtYMWZVbFhYdlRSMm5HZmJmeXNNSnlHZEhiYUpKSXhmZ0FmL21Nc1Z1ZHRXTTdBK3JQV1EwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1Nzg5Mzc1CWZpbGU6VFNBUkkgR1dBTkkuYXBwLnRhci5nego0WlJwNVphUStiaVovWHNsQzNudzlHSndWR1YxbEdZR09nQy90ZlZZMzhlR2Z2eHBmQkdtN1ExeG1aUUUxODZKaTB2MjVSdDYwSXZ1RC9Rd0h3R1hEUT09Cg==",
+      "url": "https://tamtui.github.io/TAMTUI-TELECHARGEMENTS/fichiers/sahel360/TAMTUI-SAHEL-360-1.3.0-Mac.app.tar.gz"
     },
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTSjYyKy85eHIrNkpZdFhTR2hjSTc3a1UvdU9NNU5PMDhFUFVtM25KR2o1ZUI4OWZCUUFJSDI0eFpFRWxSK0kzdzB0aHFicUlJWEF0THZPR0xxR21BN081YnFBSWxQU0FZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1MzM3MjE5CWZpbGU6VFNBUkkgR1dBTkkuYXBwLnRhci5negpXNUR2RG1aR2RvQzdXYjBVQ1JMWGxsQ1lnb0tWa0N4dUZvdzV1SUNSSmtPLzFIODJieUJvY0xoWFFFbXUzZi9ZMisrQzE0RUdYc0NyU0lTSEJUOE9BUT09Cg==",
-      "url": "https://tamtui.github.io/TAMTUI-TELECHARGEMENTS/fichiers/sahel360/TAMTUI-SAHEL-360-1.2.0-Mac.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTSjYyKy85eHIrNk9XU0N3dFFBT3VQSEJxYno1SEp6MVZCQWt1TXp2Vit1WUtYMWZVbFhYdlRSMm5HZmJmeXNNSnlHZEhiYUpKSXhmZ0FmL21Nc1Z1ZHRXTTdBK3JQV1EwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1Nzg5Mzc1CWZpbGU6VFNBUkkgR1dBTkkuYXBwLnRhci5nego0WlJwNVphUStiaVovWHNsQzNudzlHSndWR1YxbEdZR09nQy90ZlZZMzhlR2Z2eHBmQkdtN1ExeG1aUUUxODZKaTB2MjVSdDYwSXZ1RC9Rd0h3R1hEUT09Cg==",
+      "url": "https://tamtui.github.io/TAMTUI-TELECHARGEMENTS/fichiers/sahel360/TAMTUI-SAHEL-360-1.3.0-Mac.app.tar.gz"
     },
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTSjYyKy85eHIrNkZ6ZDNUc0d4SkhGdWhtMmZ0VUg3eGVmR09PSzd1OTY0enA3eEpuVXg0VXE5VVo3a3ByQW1jNnBaR2JZM2ZiSEdsUFVvWEZLaEZ3WTI5Y0c2NzQyNndJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1MzM2ODg0CWZpbGU6VFNBUkkgR1dBTklfMS4yLjBfeDY0LXNldHVwLmV4ZQprVnRhS1lXcE5nMC9CeGxuZHlCcVBGT3o5d2ZvSzJLQk93K2taaXZrUE1udzA0WUJoeFRnU1lkUnlXVUJUQ092Y2llQzRGVzhvdjl4bVg1NjFlVHlBdz09Cg==",
-      "url": "https://tamtui.github.io/TAMTUI-TELECHARGEMENTS/fichiers/sahel360/TAMTUI-SAHEL-360-1.2.0-Windows-installateur.exe"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTSjYyKy85eHIrNkJjbENIV1VqYnAxbHdSRU4xemZCTHZpRlVlTEROb0NUMVVjd2UzWmxJWm5FUnQvdStRbzFNWkxzU1BQNUtYaFdzUkNWclM2TUM1WXRGck1jMS9FWEFjPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1Nzg4NDA0CWZpbGU6VFNBUkkgR1dBTklfMS4zLjBfeDY0LXNldHVwLmV4ZQpKa3lLUUp0VWJSQ2pFOS9xRnJ1WTBJTGpVR1VMbUtCU293alFvaGgyb1cyZ2ZYT05sWXNsZWZvUEF5Y0lBblVLcFpPUm5sYU1lTU5hOGluZnlBZ21Cdz09Cg==",
+      "url": "https://tamtui.github.io/TAMTUI-TELECHARGEMENTS/fichiers/sahel360/TAMTUI-SAHEL-360-1.3.0-Windows-installateur.exe"
     }
   }
 }

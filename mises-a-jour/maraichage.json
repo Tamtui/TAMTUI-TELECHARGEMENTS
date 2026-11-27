@@ -1,19 +1,19 @@
 {
-  "version": "1.1.0",
-  "notes": "TAMTUI devient TSARI : nouveau nom, nouveau logo et menus plus clairs. Rien ne change pour vous : vos données, votre licence et vos réglages sont conservés.",
-  "pub_date": "2026-11-22T08:48:17.594Z",
+  "version": "1.2.0",
+  "notes": "Nouveau : « Messages aux membres » (éditions GESTION et supérieures). Préparez des SMS pour vos membres : assemblée, intrants, vente groupée, alertes, reçus de livraison. Le téléphone Android de la coopérative les envoie avec l'application TSARI Relais, sans Internet ; chaque membre les reçoit même sur un téléphone simple. Vos données, votre licence et vos réglages sont conservés.",
+  "pub_date": "2026-11-27T14:25:18.016Z",
   "platforms": {
     "darwin-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTSjYyKy85eHIrNkwvejNVVk1UNEtNK2psRDNpbGpHc0tjR1hnZWxCVlZpbG1tOHptMDRVMnhpSjU1Q2taRkhMWU1oTms0NThlWFE3MnZtanNVdXlzVTJPY1ZwT1ZiMGdnPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1MzM2ODA1CWZpbGU6VFNBUkkgTUFSQcOOQ0hBR0UuYXBwLnRhci5negp6R2lGdUtGSlVXdFpPQnhKMmp0NVNuaUNMWEh1N1lTQ1VOZllxVG5uUGNlUlZHZllsMXhXcXloQVpCNHFRbU9CcktnWk82VjQyQmJpUXVWNWtYK09BZz09Cg==",
-      "url": "https://tamtui.github.io/TAMTUI-TELECHARGEMENTS/fichiers/maraichage/TAMTUI-Maraichage-Pro-1.1.0-Mac.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTSjYyKy85eHIrNkhPT1FJODVjcE51ZmUyTk9yMnhvNzZOaTd6bG9jclR1dXU4dTJqNGR3TW5LWms2RGJOVGZPbmdKclN2TWlXYVc3MStzbGZEdmVHeEZmcnhJanQwa2dNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1Nzg5MDgzCWZpbGU6VFNBUkkgTUFSQcOOQ0hBR0UuYXBwLnRhci5negpzdU1TaGZqT2dacjl5dTdDN1dnQjA2U0gzNEtmdm55b2ZHRkliWXFCN0xweWFHeko4d0tLTDNMLzZHRW8zNnVTQ3VJQS93eVpHWElxbnE1TlVxbXBDUT09Cg==",
+      "url": "https://tamtui.github.io/TAMTUI-TELECHARGEMENTS/fichiers/maraichage/TAMTUI-Maraichage-Pro-1.2.0-Mac.app.tar.gz"
     },
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTSjYyKy85eHIrNkwvejNVVk1UNEtNK2psRDNpbGpHc0tjR1hnZWxCVlZpbG1tOHptMDRVMnhpSjU1Q2taRkhMWU1oTms0NThlWFE3MnZtanNVdXlzVTJPY1ZwT1ZiMGdnPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1MzM2ODA1CWZpbGU6VFNBUkkgTUFSQcOOQ0hBR0UuYXBwLnRhci5negp6R2lGdUtGSlVXdFpPQnhKMmp0NVNuaUNMWEh1N1lTQ1VOZllxVG5uUGNlUlZHZllsMXhXcXloQVpCNHFRbU9CcktnWk82VjQyQmJpUXVWNWtYK09BZz09Cg==",
-      "url": "https://tamtui.github.io/TAMTUI-TELECHARGEMENTS/fichiers/maraichage/TAMTUI-Maraichage-Pro-1.1.0-Mac.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTSjYyKy85eHIrNkhPT1FJODVjcE51ZmUyTk9yMnhvNzZOaTd6bG9jclR1dXU4dTJqNGR3TW5LWms2RGJOVGZPbmdKclN2TWlXYVc3MStzbGZEdmVHeEZmcnhJanQwa2dNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1Nzg5MDgzCWZpbGU6VFNBUkkgTUFSQcOOQ0hBR0UuYXBwLnRhci5negpzdU1TaGZqT2dacjl5dTdDN1dnQjA2U0gzNEtmdm55b2ZHRkliWXFCN0xweWFHeko4d0tLTDNMLzZHRW8zNnVTQ3VJQS93eVpHWElxbnE1TlVxbXBDUT09Cg==",
+      "url": "https://tamtui.github.io/TAMTUI-TELECHARGEMENTS/fichiers/maraichage/TAMTUI-Maraichage-Pro-1.2.0-Mac.app.tar.gz"
     },
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTSjYyKy85eHIrNk1oKzVMdGM2cVZxVEhBanc0dXJlWXFjS29nQ0FOV3ZYelhocHF4S0JaV2dSU0R6MldJRkorNkJKbmtRN1FZNGxEY1JEZXRNZHNTMzRoc3ZCaVdidXdBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1MzM2ODc5CWZpbGU6VFNBUkkgTUFSQcOOQ0hBR0VfMS4xLjBfeDY0LXNldHVwLmV4ZQpRWVpyMWl3dHBRZXpFUmJGQjlMbUxwK2xRakZjWlV2M0d3MkJ0enBOMFBkVGJHZnFSOWgxZVBNYXZycWFoTlcxZnpjT29nb2JEaCttQ2FZQVQ0M3BBUT09Cg==",
-      "url": "https://tamtui.github.io/TAMTUI-TELECHARGEMENTS/fichiers/maraichage/TAMTUI-Maraichage-Pro-1.1.0-Windows-installateur.exe"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTSjYyKy85eHIrNk16SXFkOU5TZm5CcUo2MkRTY01Fb3d6TjNTMk1PcS9wdXJQSSt3SE5qaEdzLzJZd1ppT3pnL0Fka1NqMm4vTHJPaTRSb2xyVWNnRXVQM1I4UkdZNXdRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1Nzg5MTg4CWZpbGU6VFNBUkkgTUFSQcOOQ0hBR0VfMS4yLjBfeDY0LXNldHVwLmV4ZQprNmtTVi9GMzVjdmJNZC94YzNTNzhtWU1JYnU5VHFmcjV2KzFZN1ZnR2U4dlg2Y0wwMldsZ3pMemZIN0VNcmhGOE10ZzR4dnVYZkF0L1Y3RmV2dkNEUT09Cg==",
+      "url": "https://tamtui.github.io/TAMTUI-TELECHARGEMENTS/fichiers/maraichage/TAMTUI-Maraichage-Pro-1.2.0-Windows-installateur.exe"
     }
   }
 }

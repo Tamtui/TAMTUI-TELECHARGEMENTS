@@ -1,19 +1,19 @@
 {
-  "version": "2.2.0",
-  "notes": "TAMTUI devient TSARI : nouveau nom, nouveau logo et menus plus clairs. Rien ne change pour vous : vos données, votre licence et vos réglages sont conservés.",
-  "pub_date": "2026-11-22T08:48:05.244Z",
+  "version": "2.3.0",
+  "notes": "Nouveau : « Messages aux membres » (éditions GESTION et supérieures). Préparez des SMS pour vos membres : assemblée, intrants, vente groupée, alertes, reçus de livraison. Le téléphone Android de la coopérative les envoie avec l'application TSARI Relais, sans Internet ; chaque membre les reçoit même sur un téléphone simple. Vos données, votre licence et vos réglages sont conservés.",
+  "pub_date": "2026-11-27T14:25:05.769Z",
   "platforms": {
     "darwin-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTSjYyKy85eHIrNklndENTNEpiRHpSSFM2MWJFNGwrSGhyblpTd0lUNDI5dzZPYzZveElMWUxEWWh2Sm5kRUh0YStKYVB0VHlUaXJOMHhDSG53bThoY2I3dCsraVQxeWdBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1MzM2OTU3CWZpbGU6VFNBUkkgQUdSSUNVTFRVUkUuYXBwLnRhci5negoyK205VDUzOW10M21hZWdJbnl4RHBLU2dFS2p6KzE4QVdidTBsSWI5bFM1bW1oZjVhd25QSlh6UzA5ckYyenVRWHNSMVJDZWVNdHNMY1Z3T25lbFlCQT09Cg==",
-      "url": "https://tamtui.github.io/TAMTUI-TELECHARGEMENTS/fichiers/agriculture/TAMTUI-Suite-Pro-2.2.0-Mac.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTSjYyKy85eHIrNklZanhzZ2xIVjVuR2k2YkNlUmNSYkdkZUR6YzZGU04vSVpSZmZnSnRpV01uMlFxdGNnOGNBRTlGYXRWSDl4WlA0M2hqYXQrcDhpK1JsR1lPMTY2L1FBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1Nzg5MDQ1CWZpbGU6VFNBUkkgQUdSSUNVTFRVUkUuYXBwLnRhci5negpxZjk4U0VMbUg4RVh4T1N6YVR5TDVkR2w5THhGY2c0NG9LVTFMdHl6bHgzandDVzBXWTh4a1VSRkZFS0pqdjVoN2w3Ym5IWEFrdlZPM3ZBUTJOdzZCUT09Cg==",
+      "url": "https://tamtui.github.io/TAMTUI-TELECHARGEMENTS/fichiers/agriculture/TAMTUI-Suite-Pro-2.3.0-Mac.app.tar.gz"
     },
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTSjYyKy85eHIrNklndENTNEpiRHpSSFM2MWJFNGwrSGhyblpTd0lUNDI5dzZPYzZveElMWUxEWWh2Sm5kRUh0YStKYVB0VHlUaXJOMHhDSG53bThoY2I3dCsraVQxeWdBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1MzM2OTU3CWZpbGU6VFNBUkkgQUdSSUNVTFRVUkUuYXBwLnRhci5negoyK205VDUzOW10M21hZWdJbnl4RHBLU2dFS2p6KzE4QVdidTBsSWI5bFM1bW1oZjVhd25QSlh6UzA5ckYyenVRWHNSMVJDZWVNdHNMY1Z3T25lbFlCQT09Cg==",
-      "url": "https://tamtui.github.io/TAMTUI-TELECHARGEMENTS/fichiers/agriculture/TAMTUI-Suite-Pro-2.2.0-Mac.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTSjYyKy85eHIrNklZanhzZ2xIVjVuR2k2YkNlUmNSYkdkZUR6YzZGU04vSVpSZmZnSnRpV01uMlFxdGNnOGNBRTlGYXRWSDl4WlA0M2hqYXQrcDhpK1JsR1lPMTY2L1FBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1Nzg5MDQ1CWZpbGU6VFNBUkkgQUdSSUNVTFRVUkUuYXBwLnRhci5negpxZjk4U0VMbUg4RVh4T1N6YVR5TDVkR2w5THhGY2c0NG9LVTFMdHl6bHgzandDVzBXWTh4a1VSRkZFS0pqdjVoN2w3Ym5IWEFrdlZPM3ZBUTJOdzZCUT09Cg==",
+      "url": "https://tamtui.github.io/TAMTUI-TELECHARGEMENTS/fichiers/agriculture/TAMTUI-Suite-Pro-2.3.0-Mac.app.tar.gz"
     },
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTSjYyKy85eHIrNk1PNWNZMlA4ZmVRUU9UelJWcHZ6ajcrdGpQTk9xckRRLzJlYlROY1ZLdzZtdC9OVkp4c0xTazl4c05yWU1rM3VqSDBFbXRTRmowUjRiVFlKYjEybndJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1MzM2NjMzCWZpbGU6VFNBUkkgQUdSSUNVTFRVUkVfMi4yLjBfeDY0LXNldHVwLmV4ZQpTUkNxcnBGRFdja3JCOGM5UGY3c1BjbmY0TFFXT2QxKytxdEdIZHZhMGRwdG5jaG1VU25GMS9aVUxwM2NQaWQwOSsxTDhCNTdYVlFxa2o3SXdvUmFCZz09Cg==",
-      "url": "https://tamtui.github.io/TAMTUI-TELECHARGEMENTS/fichiers/agriculture/TAMTUI-Suite-Pro-2.2.0-Windows-installateur.exe"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTSjYyKy85eHIrNkMwWFllZzNZOWF3S1cxaDdFbFl5MDl2aEZGdExOTkNZT3kyOTV0c0ZSRERmYzNIaUJBUHgraitPWmF6R2Jjb0F3azYzbms3eGNvYktYY1N1SmtReHdrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1Nzg5MTk5CWZpbGU6VFNBUkkgQUdSSUNVTFRVUkVfMi4zLjBfeDY0LXNldHVwLmV4ZQo0b3kvSWdzSnp4dzlzQUVBaG1WbFlIL0hsQzZoOHBxSzdCTENwclhMLzIwZDhnNHV5VTVLS05KUmpCTzhReEZOVGhOSFRVenRiMHVGTWhsREJPYW5Edz09Cg==",
+      "url": "https://tamtui.github.io/TAMTUI-TELECHARGEMENTS/fichiers/agriculture/TAMTUI-Suite-Pro-2.3.0-Windows-installateur.exe"
     }
   }
 }

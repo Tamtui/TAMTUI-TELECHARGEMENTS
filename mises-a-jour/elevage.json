@@ -1,19 +1,19 @@
 {
-  "version": "1.1.0",
-  "notes": "TAMTUI devient TSARI : nouveau nom, nouveau logo et menus plus clairs. Rien ne change pour vous : vos données, votre licence et vos réglages sont conservés.",
-  "pub_date": "2026-11-22T08:48:09.340Z",
+  "version": "1.2.0",
+  "notes": "Nouveau : « Messages aux membres » (éditions GESTION et supérieures). Préparez des SMS pour vos membres : assemblée, intrants, vente groupée, alertes, reçus de livraison. Le téléphone Android de la coopérative les envoie avec l'application TSARI Relais, sans Internet ; chaque membre les reçoit même sur un téléphone simple. Vos données, votre licence et vos réglages sont conservés.",
+  "pub_date": "2026-11-27T14:25:09.882Z",
   "platforms": {
     "darwin-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTSjYyKy85eHIrNk1FdlIvMEZhczhRQzdRbnZyUk90bERxaENlM2g0YmJadWRWaXFUU2lJNlB4UUFaNlI3S1U5dEFLb3lCakxzdGZsOUZEQ1B2ZEtmOWpaQmd2RGlNcndVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1MzM2OTg0CWZpbGU6VFNBUkkgw4lMRVZBR0UuYXBwLnRhci5nego0YmVqb2dXRkdPMnZtaytLWGJnQXRrT1ZuQy9YUGI0eFQ2NnUxWHFmMmJmbnFZUG9JMW5xK3VrVzExWkloN1NpdUs5dk1YZlJ1KzhncFBNTVk5L2RBdz09Cg==",
-      "url": "https://tamtui.github.io/TAMTUI-TELECHARGEMENTS/fichiers/elevage/TAMTUI-Elevage-Pro-1.1.0-Mac.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTSjYyKy85eHIrNkhJdDFhUHVaZStscXh1YlV2YXpXekxySXZDVzBlS2RYbGV4bnp0TTlGYzFzVS9oSUV0cDdvbEdFcG1DaDM3bStjMzhpekVXZzRESzJPZ1BEdWdQZmdjPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1Nzg5MjIzCWZpbGU6VFNBUkkgw4lMRVZBR0UuYXBwLnRhci5negp3OCthQ0tZaHZ3OEFkYUpsMHFOaHRkWXM1aFRqUjVFUjB6T2RGdUQ5OVltV3dONC9UVDZNakNWRFM1STd5Um53OGlnMHZXWC9Vb2p3UlJwV2lZNFdCdz09Cg==",
+      "url": "https://tamtui.github.io/TAMTUI-TELECHARGEMENTS/fichiers/elevage/TAMTUI-Elevage-Pro-1.2.0-Mac.app.tar.gz"
     },
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTSjYyKy85eHIrNk1FdlIvMEZhczhRQzdRbnZyUk90bERxaENlM2g0YmJadWRWaXFUU2lJNlB4UUFaNlI3S1U5dEFLb3lCakxzdGZsOUZEQ1B2ZEtmOWpaQmd2RGlNcndVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1MzM2OTg0CWZpbGU6VFNBUkkgw4lMRVZBR0UuYXBwLnRhci5nego0YmVqb2dXRkdPMnZtaytLWGJnQXRrT1ZuQy9YUGI0eFQ2NnUxWHFmMmJmbnFZUG9JMW5xK3VrVzExWkloN1NpdUs5dk1YZlJ1KzhncFBNTVk5L2RBdz09Cg==",
-      "url": "https://tamtui.github.io/TAMTUI-TELECHARGEMENTS/fichiers/elevage/TAMTUI-Elevage-Pro-1.1.0-Mac.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTSjYyKy85eHIrNkhJdDFhUHVaZStscXh1YlV2YXpXekxySXZDVzBlS2RYbGV4bnp0TTlGYzFzVS9oSUV0cDdvbEdFcG1DaDM3bStjMzhpekVXZzRESzJPZ1BEdWdQZmdjPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1Nzg5MjIzCWZpbGU6VFNBUkkgw4lMRVZBR0UuYXBwLnRhci5negp3OCthQ0tZaHZ3OEFkYUpsMHFOaHRkWXM1aFRqUjVFUjB6T2RGdUQ5OVltV3dONC9UVDZNakNWRFM1STd5Um53OGlnMHZXWC9Vb2p3UlJwV2lZNFdCdz09Cg==",
+      "url": "https://tamtui.github.io/TAMTUI-TELECHARGEMENTS/fichiers/elevage/TAMTUI-Elevage-Pro-1.2.0-Mac.app.tar.gz"
     },
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTSjYyKy85eHIrNkFXUWcvS25EWGZJZ2oyN2d5c2NiTVJkZGhjWktEdFg2MnpJVXJKeEtET1NLV1RWNVNGMnJBTlpJZ0UzeUtMT2c1WWkxYjJ3NUoydTdRWmk4c1UweXdVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1MzM2NzIxCWZpbGU6VFNBUkkgw4lMRVZBR0VfMS4xLjBfeDY0LXNldHVwLmV4ZQpwZjh0eGJsNWY1WnMxdlVkUEFkK2JGUnE5SGpOYk0rWTJZTjVRaGxGTGNDa1RaVmxlM2ZKUlhSTmtZNlVvcHdUeDhoVUlzNkdmdWk5aGRoQ0c3bjFCUT09Cg==",
-      "url": "https://tamtui.github.io/TAMTUI-TELECHARGEMENTS/fichiers/elevage/TAMTUI-Elevage-Pro-1.1.0-Windows-installateur.exe"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTSjYyKy85eHIrNk1iQVBNRVRSbEFTc3ZiN3lHWU96V2Npbm83dmkxTFhhTHBkSktYbnB0dWFESHQ3aUkram1hMFJXR3RoMGhnS2Z6dmJ6cEs5bGRBaUdIcUI3S1pRMVFzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1Nzg4ODExCWZpbGU6VFNBUkkgw4lMRVZBR0VfMS4yLjBfeDY0LXNldHVwLmV4ZQp6alJHdHR6ZC9yTWQ2ZWVyUHNsWk9mNkwwb2ZjQ3I0endPa3Q0OEJsYWVPTTZoQ0ZjNUxwbCtkUnowVitCOFcvWEx5TUgvNUJTbWNPTVpJU1pWQ1hCQT09Cg==",
+      "url": "https://tamtui.github.io/TAMTUI-TELECHARGEMENTS/fichiers/elevage/TAMTUI-Elevage-Pro-1.2.0-Windows-installateur.exe"
     }
   }
 }

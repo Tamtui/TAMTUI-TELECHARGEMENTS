@@ -1,77 +1,77 @@
 {
   "agriculture": {
-    "version": "2.2.0",
-    "date": "2026-11-22",
+    "version": "2.3.0",
+    "date": "2026-11-27",
     "majAuto": true,
     "windows": {
-      "nom": "TAMTUI-Suite-Pro-2.2.0-Windows-installateur.exe",
+      "nom": "TAMTUI-Suite-Pro-2.3.0-Windows-installateur.exe",
       "taille": "3,7 Mo",
-      "url": "https://tamtui.github.io/TAMTUI-TELECHARGEMENTS/fichiers/agriculture/TAMTUI-Suite-Pro-2.2.0-Windows-installateur.exe"
+      "url": "https://tamtui.github.io/TAMTUI-TELECHARGEMENTS/fichiers/agriculture/TAMTUI-Suite-Pro-2.3.0-Windows-installateur.exe"
     },
     "mac": {
-      "nom": "TAMTUI-Suite-Pro-2.2.0-Mac-tous-modeles.dmg",
+      "nom": "TAMTUI-Suite-Pro-2.3.0-Mac-tous-modeles.dmg",
       "taille": "10,1 Mo",
-      "url": "https://tamtui.github.io/TAMTUI-TELECHARGEMENTS/fichiers/agriculture/TAMTUI-Suite-Pro-2.2.0-Mac-tous-modeles.dmg"
+      "url": "https://tamtui.github.io/TAMTUI-TELECHARGEMENTS/fichiers/agriculture/TAMTUI-Suite-Pro-2.3.0-Mac-tous-modeles.dmg"
     }
   },
   "elevage": {
-    "version": "1.1.0",
-    "date": "2026-11-22",
+    "version": "1.2.0",
+    "date": "2026-11-27",
     "majAuto": true,
     "windows": {
-      "nom": "TAMTUI-Elevage-Pro-1.1.0-Windows-installateur.exe",
+      "nom": "TAMTUI-Elevage-Pro-1.2.0-Windows-installateur.exe",
       "taille": "3,7 Mo",
-      "url": "https://tamtui.github.io/TAMTUI-TELECHARGEMENTS/fichiers/elevage/TAMTUI-Elevage-Pro-1.1.0-Windows-installateur.exe"
+      "url": "https://tamtui.github.io/TAMTUI-TELECHARGEMENTS/fichiers/elevage/TAMTUI-Elevage-Pro-1.2.0-Windows-installateur.exe"
     },
     "mac": {
-      "nom": "TAMTUI-Elevage-Pro-1.1.0-Mac-tous-modeles.dmg",
-      "taille": "10,2 Mo",
-      "url": "https://tamtui.github.io/TAMTUI-TELECHARGEMENTS/fichiers/elevage/TAMTUI-Elevage-Pro-1.1.0-Mac-tous-modeles.dmg"
+      "nom": "TAMTUI-Elevage-Pro-1.2.0-Mac-tous-modeles.dmg",
+      "taille": "10,3 Mo",
+      "url": "https://tamtui.github.io/TAMTUI-TELECHARGEMENTS/fichiers/elevage/TAMTUI-Elevage-Pro-1.2.0-Mac-tous-modeles.dmg"
     }
   },
   "pisciculture": {
-    "version": "1.1.0",
-    "date": "2026-11-22",
+    "version": "1.2.0",
+    "date": "2026-11-27",
     "majAuto": true,
     "windows": {
-      "nom": "TAMTUI-Pisciculture-Pro-1.1.0-Windows-installateur.exe",
+      "nom": "TAMTUI-Pisciculture-Pro-1.2.0-Windows-installateur.exe",
       "taille": "3,7 Mo",
-      "url": "https://tamtui.github.io/TAMTUI-TELECHARGEMENTS/fichiers/pisciculture/TAMTUI-Pisciculture-Pro-1.1.0-Windows-installateur.exe"
+      "url": "https://tamtui.github.io/TAMTUI-TELECHARGEMENTS/fichiers/pisciculture/TAMTUI-Pisciculture-Pro-1.2.0-Windows-installateur.exe"
     },
     "mac": {
-      "nom": "TAMTUI-Pisciculture-Pro-1.1.0-Mac-tous-modeles.dmg",
-      "taille": "10,2 Mo",
-      "url": "https://tamtui.github.io/TAMTUI-TELECHARGEMENTS/fichiers/pisciculture/TAMTUI-Pisciculture-Pro-1.1.0-Mac-tous-modeles.dmg"
+      "nom": "TAMTUI-Pisciculture-Pro-1.2.0-Mac-tous-modeles.dmg",
+      "taille": "10,3 Mo",
+      "url": "https://tamtui.github.io/TAMTUI-TELECHARGEMENTS/fichiers/pisciculture/TAMTUI-Pisciculture-Pro-1.2.0-Mac-tous-modeles.dmg"
     }
   },
   "maraichage": {
-    "version": "1.1.0",
-    "date": "2026-11-22",
+    "version": "1.2.0",
+    "date": "2026-11-27",
     "majAuto": true,
     "windows": {
-      "nom": "TAMTUI-Maraichage-Pro-1.1.0-Windows-installateur.exe",
+      "nom": "TAMTUI-Maraichage-Pro-1.2.0-Windows-installateur.exe",
       "taille": "3,7 Mo",
-      "url": "https://tamtui.github.io/TAMTUI-TELECHARGEMENTS/fichiers/maraichage/TAMTUI-Maraichage-Pro-1.1.0-Windows-installateur.exe"
+      "url": "https://tamtui.github.io/TAMTUI-TELECHARGEMENTS/fichiers/maraichage/TAMTUI-Maraichage-Pro-1.2.0-Windows-installateur.exe"
     },
     "mac": {
-      "nom": "TAMTUI-Maraichage-Pro-1.1.0-Mac-tous-modeles.dmg",
+      "nom": "TAMTUI-Maraichage-Pro-1.2.0-Mac-tous-modeles.dmg",
       "taille": "10,3 Mo",
-      "url": "https://tamtui.github.io/TAMTUI-TELECHARGEMENTS/fichiers/maraichage/TAMTUI-Maraichage-Pro-1.1.0-Mac-tous-modeles.dmg"
+      "url": "https://tamtui.github.io/TAMTUI-TELECHARGEMENTS/fichiers/maraichage/TAMTUI-Maraichage-Pro-1.2.0-Mac-tous-modeles.dmg"
     }
   },
   "sahel360": {
-    "version": "1.2.0",
-    "date": "2026-11-22",
+    "version": "1.3.0",
+    "date": "2026-11-27",
     "majAuto": true,
     "windows": {
-      "nom": "TAMTUI-SAHEL-360-1.2.0-Windows-installateur.exe",
+      "nom": "TAMTUI-SAHEL-360-1.3.0-Windows-installateur.exe",
       "taille": "3,8 Mo",
-      "url": "https://tamtui.github.io/TAMTUI-TELECHARGEMENTS/fichiers/sahel360/TAMTUI-SAHEL-360-1.2.0-Windows-installateur.exe"
+      "url": "https://tamtui.github.io/TAMTUI-TELECHARGEMENTS/fichiers/sahel360/TAMTUI-SAHEL-360-1.3.0-Windows-installateur.exe"
     },
     "mac": {
-      "nom": "TAMTUI-SAHEL-360-1.2.0-Mac-tous-modeles.dmg",
-      "taille": "10,4 Mo",
-      "url": "https://tamtui.github.io/TAMTUI-TELECHARGEMENTS/fichiers/sahel360/TAMTUI-SAHEL-360-1.2.0-Mac-tous-modeles.dmg"
+      "nom": "TAMTUI-SAHEL-360-1.3.0-Mac-tous-modeles.dmg",
+      "taille": "10,5 Mo",
+      "url": "https://tamtui.github.io/TAMTUI-TELECHARGEMENTS/fichiers/sahel360/TAMTUI-SAHEL-360-1.3.0-Mac-tous-modeles.dmg"
     }
   }
 }
